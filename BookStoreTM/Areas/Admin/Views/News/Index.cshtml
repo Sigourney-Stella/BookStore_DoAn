@@ -1,59 +1,253 @@
-﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+﻿@* @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @model IEnumerable<BookStoreTM.Models.News>
+ *@
 
+@model X.PagedList.IPagedList<BookStoreTM.Models.News>
+@using X.PagedList.Mvc.Core;
 @{
     ViewData["Title"] = "Danh sách tin tức";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<div class="row">
-    <div class="col-12">
-        <div class="card">
-            <div class="card-header">
-                <h3 class="card-title">Danh mục Tin tức</h3>
 
-                <div class="card-tools">
-                    <div class="input-group input-group-sm" style="width: 100px;">
-                        <div class="input-group-append">
-                            <a href="/admin/news/ThemTinTuc" class="btn-sm btn-primary">Thêm mới</a>
-                        </div>
-                    </div>
-                </div>
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Quản Lý Tin Tức  </h1>
             </div>
-            <!-- /.card-header -->
-            <div class="card-body table-responsive p-0">
-                <table class="table table-hover text-nowrap">
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                    <li class="breadcrumb-item active">@ViewBag.Title</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+    <!-- Default box -->
+    <div class="card">
+        <form action="" method="get" class="form-inline">
+            <div class="form-group">
+                <label class="sr-only" for="keyword">Tìm theo tên loại</label>
+                <input class="form-control" name="title" id="keyword" placeholder="Nhập tên cần tìm" value="@ViewBag.keyword">
+            </div>
+            <button type="submit" class="btn btn-default mr-1"><i class="fas fa-search"></i></button>
+            @* <a asp-action="Create" class="btn btn-primary"><i class="fas fa-plus"></i> Thêm mới</a> *@
+        </form>
+        <div class="card-header">
+            <h3 class="card-title"> @ViewBag.Title </h3>
+            <div class="card-tools">
+                <a href="/admin/news/ThemTinTuc" class="btn btn-primary">Thêm mới  </a>
+                <a href="#" class="btn btn-danger" id="BtnDeleteAll">Xóa</a>
+            </div>
+
+            <div class="card-body">
+                <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>STT</th>
-                            <th>Hình ảnh</th>
-                            <th>Tiêu đề tin tức</th>
-                            @* <th>Ngày tạo</th> *@
+                            <th>stt</th>
+                            <th>hình ảnh</th>
+                            <th>tiêu đề tin </th>
+                            <th>ngày tạo</th>
+                            <th>hiển thị</th>
+                            <th>mô tả </th>
                             <th></th>
+                            <th><input type="checkbox" id="SelectAll" /></th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var item in Model)
+                        @if (Model != null && Model.Any())
+                        {
+                            var i = 1;
+                            foreach (var item in Model)
+                            {
+                                var strCheck = item.IsActicve ? "<i class='fa fa-check text-success'></i>" :
+                                "<i class='fas fa-times text-danger'></i>"; //kiểm tra xem IsActicve là true hay false
+                                <tr id="trow_@item.NewsId">
+                                    <td>@i</td>
+                                    <td>
+                                        <img src="@item.Image" style="height:64px;width:64px" />
+                                    </td>
+                                    <td>@item.Title</td>
+                                    <td>@string.Format("{0:dd/MM/yyy}", item.CreatedDate)</td>
+                                    <td class="text-center">
+                                        <a href='#' data-id="@item.NewsId" class="btnActive">@Html.Raw(strCheck)</a>
+                                    </td>
+                                    <td>@item.Description</td>
+                                    <td>
+                                        <a asp-action="SuaTinTuc" asp-route-TinTuc="@item.NewsId" class="btn-sm btn-primary">Sửa</a>
+                                        <a href="#" data-id="@item.NewsId" class="btn-sm btn-danger btnDelete">Xóa</a>
+                                    </td>
+                                    <td><input type="checkbox" class="cbkItem" value="@item.NewsId" /></td>
+                                </tr>
+                                i++;
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="4">Không có bản ghi nào </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <hr />
+                @Html.PagedListPager(Model, page => Url.Action("index", new { page = page }), new PagedListRenderOptions
+                {
+                       LiElementClasses = new string[] { "page-item" },
+                       PageClasses = new string[] { "page-link" }
+                })
+            </div>
+        </div>
+    </div>
+
+</section>
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            //xoá bản ghi
+            $('body').on('click', '.btnDelete', function () {
+
+                var id = $(this).data("id");
+                var conf = confirm("Bạn có muốn xóa không  ")
+                if (conf == true) {
+                    $.ajax(
+                        {
+                            url: '/admin/news/delete',
+                            type: 'POST',
+                            data: { id: id },
+                            success: function (rs) {
+                                if (rs.success) {
+                                    $('#trow_' + id).remove();
+                                }
+                            }
+                        }
+                    )
+                }
+
+            });
+
+            //chọn nhều bản ghi cùng lúc
+            $('body').on('change', '#SelectAll', function () {
+                var checkStatus = this.checked;
+                var checkbox = $(this).parents('.card-body').find('tr td input:checkbox');
+                checkbox.each(function () {
+                    this.checked = checkStatus;
+                    if (this.checked) {
+                        checkbox.attr('selected', 'checked');
+                    } else {
+                        checkbox.attr('selected', '');
+                    }
+                });
+            });
+
+            //xoá nhiều bản ghi cùng lúc
+            $('body').on('click', '#BtnDeleteAll', function (e) {
+                e.preventDefault();
+                var str = "";
+                var checkbox = $(this).parents('.card').find('tr td input:checkbox');
+                var i = 0;
+                checkbox.each(function () {
+                    if (this.checked) {
+                        var _id = $(this).val();
+                        if (i === 0) {
+                            str += _id;
+                        } else {
+                            str += "," + _id;
+                        }
+                        i++;
+                    } else {
+                        checkbox.attr('selected', '');
+                    }
+                });
+                if (str.length > 0) {
+                    var conf = confirm('Bạn có muốn xóa các bản ghi này hay không?');
+                    if (conf === true) {
+                        $.ajax({
+                            url: '/admin/news/deleteAll',
+                            type: 'POST',
+                            data: { ids: str },
+                            success: function (rs) {
+                                if (rs.success) {
+                                    location.reload();
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+
+            // checkbox tình trạng bật tắt tin tức
+            $('body').on('click', '.btnActive', function (e) {
+                e.preventDefault();
+                var btn = $(this);
+                var id = btn.data("id");
+                $.ajax({
+                    url: '/admin/news/IsActicve', // chay vào IActionResult IsActicve(int id)
+                    type: 'POST',
+                    data: { id: id },
+                    success: function (rs) {
+                        if (rs.success) {
+                            if (rs.isActicve) {
+                                btn.html("<i class='fa fa-check text-success'></i>");
+                            } else {
+                                btn.html("<i class='fas fa-times text-danger'></i>");
+                            }
+                        }
+
+                    }
+                });
+            });
+        });
+    </script>
+}
+
+
+
+@* @section Scripts {
+    <script>
+        $(document).ready(function () {
+
+            $('body').on('click', '.btnDelete', function(){
+
+               var id = $(this).data("id");
+               var conf= confirm("Bạn có muốn xóa không  ")
+               if(conf == true ){
+                 $.ajax(
+                     {
+                            url: '/admin/news/XoaTinTuc',
+                         type: 'POST',
+                         data : {id : id },
+                         success: function (rs){
+                             if(rs.success){
+                                 $('#trow_' + id).remove();
+                             }
+                         }
+                     }
+                 )
+               }
+
+            });
+        });
+    </script>
+} *@
+
+@* @foreach (var item in Model)
                         {
                             <tr>
                                 <td>@item.NewsId</td>
                                 <td>
                                     <img src="@Url.Content(item.Image)" alt="@item.Title" style="width: 4rem" />
-                                    @* <img src="/@item.Image" alt="@item.Title" style="width: 4rem"/> *@
                                     </td>
                                 <td>@item.Title</td>
                                 <td>
                                     <a asp-action="SuaTinTuc" asp-route-TinTuc="@item.NewsId" class="btn-sm btn-primary">Sửa</a>
-                                    <a asp-action="XoaDMSanPham" asp-route-TinTuc="@item.NewsId" class="btn-sm btn-danger btnDelete">Xóa</a>
+                                    <a href="#" data-id="@item.CategoryId" class="btn-sm btn-danger btnDelete">Xóa</a>
                                 </td>
                             </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
-            <!-- /.card-body -->
-        </div>
-        <!-- /.card -->
-    </div>
-</div>
-
+                        }*@

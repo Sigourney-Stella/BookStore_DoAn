@@ -5,13 +5,109 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>SuaTinTuc</h1>
 
-<h4>News</h4>
-<hr />
-<div class="row">
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Thêm mới  Tin tức</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#"> Tin tức</a></li>
+                    <li class="breadcrumb-item active">Thêm mới</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+<section class="content">
+
+    <!-- Default box -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Thông tin Tin tức</h3>
+        </div>
+
+        <div class="bs-stepper-content">
+            @using (Html.BeginForm("SuaTinTuc", "News", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(false)
+                @Html.HiddenFor(x => x.NewsId)
+                @Html.HiddenFor(x => x.CategoryId)
+                <div class="form-horizontal">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div id="logins-part" class="content active dstepper-block" role="tabpanel" aria-labelledby="logins-part-trigger">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Tiêu đề </label>
+                            @Html.TextBoxFor(x => x.Title, new { @class = "form-control", @plachilder = "Tên danh mục" })
+                            @Html.ValidationMessageFor(x => x.Title, null, new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label class="exampleInputEmail1">Hình ảnh</label>
+                            <div class="input-group">
+                                <div class="input-group">
+                                    <input asp-for="Image" type="file" class="form-control" />
+                                    @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Mô tả</label>
+                            @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.Description, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Chi Tiết </label>
+                            <div>
+                                <textarea class="form-group" name="Detail" id="inputDetail"></textarea>
+                                @* @Html.TextAreaFor(x => x.Detail, new { @class = "form-control", @id = "txtDetail" }) *@
+                                @Html.ValidationMessageFor(Model => Model.Detail, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Hiển thị</label>
+                            @Html.CheckBoxFor(x => x.IsActicve)
+                            @Html.ValidationMessageFor(x => x.Description, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label for="CategoryId" class="control-label">CategoryId</label>
+                            <select id="CategoryId" name="CategoryId" class="form-control">
+                                @foreach (var item in ViewBag.CategoryId as IEnumerable<SelectListItem>)
+                                {
+                                    <option value="@item.Value">@item.Text</option>
+                                }
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Detail, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                <textarea class="form-group" name="Detail" id="Detail"></textarea>
+                                @Html.ValidationMessageFor(model => model.Detail, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <a href="/admin/category" class="btn btn-danger">Quay lại</a>
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+
+@* <div class="row">
     <div class="col-md-4">
-        <form asp-action="SuaTinTuc">
+        <form asp-action="SuaTinTuc" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="NewsId" />
             <div class="form-group">
@@ -21,7 +117,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Image" class="control-label"></label>
-                <input asp-for="Image" class="form-control" />
+                <input asp-for="Image" type="file" class="form-control" />
                 <span asp-validation-for="Image" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -83,5 +179,5 @@
 
 <div>
     <a asp-action="Index">Back to List</a>
-</div>
+</div> *@
 

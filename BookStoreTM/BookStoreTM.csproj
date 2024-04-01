@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <!--<Nullable>enable</Nullable>-->
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
@@ -19,94 +19,13 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.2" />
+    <PackageReference Include="X.PagedList" Version="9.1.2" />
+    <PackageReference Include="X.PagedList.Mvc.Core" Version="9.1.2" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\adapters\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\lang\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\plugins\a11yhelp\dialogs\lang\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\plugins\about\dialogs\hidpi\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\plugins\clipboard\dialogs\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\plugins\colordialog\dialogs\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\plugins\dialog\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\plugins\div\dialogs\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\plugins\fakeobjects\images\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\plugins\find\dialogs\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\plugins\flash\dialogs\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\plugins\flash\images\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\plugins\forms\dialogs\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\plugins\forms\images\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\plugins\iframe\dialogs\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\plugins\iframe\images\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\plugins\image\dialogs\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\plugins\image\images\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\plugins\link\dialogs\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\plugins\link\images\hidpi\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\plugins\liststyle\dialogs\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\plugins\magicline\images\hidpi\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\plugins\pagebreak\images\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\plugins\pastefromword\filter\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\plugins\preview\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\plugins\scayt\dialogs\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\plugins\showblocks\images\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\plugins\smiley\dialogs\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\plugins\smiley\images\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\plugins\specialchar\dialogs\lang\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\plugins\tabletools\dialogs\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\plugins\table\dialogs\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\plugins\templates\dialogs\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\plugins\templates\templates\images\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\plugins\wsc\dialogs\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\samples\assets\inlineall\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\samples\assets\outputxhtml\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\samples\assets\uilanguages\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\samples\plugins\dialog\assets\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\samples\plugins\enterkey\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\samples\plugins\magicline\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\samples\plugins\toolbar\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\samples\plugins\wysiwygarea\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckeditor\skins\moono\images\hidpi\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\bin\Debug\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\bin\Release\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\core\connector\aspx\lang\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\help\cs\files\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\help\en\files\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\help\es-mx\files\images\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\help\es\files\images\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\help\files\images\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\help\files\other\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\help\fi\files\images\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\help\lt\files\images\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\help\pl\files\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\lang\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\plugins\dummy\lang\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\plugins\fileeditor\bin\Debug\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\plugins\fileeditor\bin\Release\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\plugins\fileeditor\codemirror\lib\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\plugins\fileeditor\codemirror\mode\clike\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\plugins\fileeditor\codemirror\mode\css\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\plugins\fileeditor\codemirror\mode\htmlmixed\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\plugins\fileeditor\codemirror\mode\javascript\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\plugins\fileeditor\codemirror\mode\xml\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\plugins\flashupload\flash\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\plugins\gallery\colorbox\images\ie6\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\plugins\imageresize\bin\Debug\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\plugins\imageresize\bin\Release\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\plugins\imageresize\images\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\plugins\watermark\bin\Debug\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\plugins\watermark\bin\Release\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\skins\kama\images\icons\16\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\skins\kama\images\icons\32\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\skins\kama\images\loaders\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\skins\kama\images\toolbar\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\skins\v1\images\icons\16\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\skins\v1\images\icons\32\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\skins\v1\images\loaders\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\skins\v1\images\toolbar\" />
-    <Folder Include="wwwroot\LayoutAdmin\ckfinder\userfiles\" />
   </ItemGroup>
 
 </Project>

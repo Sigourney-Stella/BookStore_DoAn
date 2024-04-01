@@ -32,6 +32,7 @@ namespace BookStoreTM.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                SanPham.CreatedDate = DateTime.Now;
                 _db.ProductCategories.Add(SanPham);
                 _db.SaveChanges();
                 return RedirectToAction("index");
@@ -52,6 +53,7 @@ namespace BookStoreTM.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                MaLoai.CreatedDate = DateTime.Now;
                 _db.Update(MaLoai);
                 //_db.Entry(loai).State = EntityState.Modified;
                 _db.SaveChanges();

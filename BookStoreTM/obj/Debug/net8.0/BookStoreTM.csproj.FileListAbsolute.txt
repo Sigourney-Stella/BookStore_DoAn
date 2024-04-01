@@ -262,3 +262,6 @@ E:\DoAn\code\BookStoreTM\BookStoreTM\bin\Debug\net8.0\runtimes\win\lib\net7.0\Mi
 E:\DoAn\code\BookStoreTM\BookStoreTM\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 E:\DoAn\code\BookStoreTM\BookStoreTM\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 E:\DoAn\code\BookStoreTM\BookStoreTM\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+E:\DoAn\code\BookStoreTM\BookStoreTM\bin\Debug\net8.0\X.PagedList.dll
+E:\DoAn\code\BookStoreTM\BookStoreTM\bin\Debug\net8.0\X.PagedList.Mvc.Core.dll
+E:\DoAn\code\BookStoreTM\BookStoreTM\obj\Debug\net8.0\BookStoreTM.MvcApplicationPartsAssemblyInfo.cs

@@ -1,6 +1,8 @@
 ﻿using BookStoreTM.Models.Entities;
 using BookStoreTM.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using X.PagedList;
 
 namespace BookStoreTM.Areas.Admin.Controllers
 {
@@ -15,9 +17,10 @@ namespace BookStoreTM.Areas.Admin.Controllers
             _db = db;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int page = 1)
         {
-            var items = _db.Categories.ToList();
+            int limit = 2; // số lượng bản ghi trên trang
+            var items = _db.Categories.ToPagedList(page, limit);
             return View(items);
         }
 
@@ -56,6 +59,7 @@ namespace BookStoreTM.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                loai.CreatedDate = DateTime.Now;
                 _db.Update(loai);
                 //_db.Entry(loai).State = EntityState.Modified;
                 _db.SaveChanges();
@@ -65,7 +69,7 @@ namespace BookStoreTM.Areas.Admin.Controllers
         }
 
         //xoá
-        public IActionResult XoaDanhMuc(int maLoai)
+        public IActionResult XoaTinTuc(int maLoai)
         {
             var item = _db.Categories.Find(maLoai);
             if (item != null)

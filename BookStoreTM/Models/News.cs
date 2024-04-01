@@ -32,6 +32,8 @@ namespace BookStoreTM.Models
 
         [Column(TypeName = "nvarchar(500)")]
         public string? SeoDescription { get; set; }
+
+        public bool IsActicve { get; set; }
         //
         public int CategoryId { get; set; }
         //

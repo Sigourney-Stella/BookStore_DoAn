@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "PY1e/Gsm1d9Sgfxs6qXZWX/V1w/6EgJoisdIlz8bzzC67nlnZlv2/c/atCLIFvYeerX6Hd3fJrm//ezTOr/y9Q==",
+  "dgSpecHash": "q5TW4YQzCNk1s2qvN2IHtfBkxKzZ2D3vnTVA1IemCAzCnbvPCKch1JrxwTEsvI4eIxwzhOXZVXEjnQw8Z0HJEA==",
   "success": true,
   "projectFilePath": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\BookStoreTM.csproj",
   "expectedPackageFiles": [
@@ -171,7 +171,9 @@
     "C:\\Users\\HOA\\.nuget\\packages\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512",
     "C:\\Users\\HOA\\.nuget\\packages\\system.threading.tasks.dataflow\\7.0.0\\system.threading.tasks.dataflow.7.0.0.nupkg.sha512",
     "C:\\Users\\HOA\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\HOA\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512"
+    "C:\\Users\\HOA\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512",
+    "C:\\Users\\HOA\\.nuget\\packages\\x.pagedlist\\9.1.2\\x.pagedlist.9.1.2.nupkg.sha512",
+    "C:\\Users\\HOA\\.nuget\\packages\\x.pagedlist.mvc.core\\9.1.2\\x.pagedlist.mvc.core.9.1.2.nupkg.sha512"
   ],
   "logs": []
 }

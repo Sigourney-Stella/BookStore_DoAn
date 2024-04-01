@@ -1,7 +1,9 @@
-﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-@* @model BookStore.Models.Category *@
-@model IEnumerable<BookStoreTM.Models.Category>
+﻿@* @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model IEnumerable<BookStoreTM.Models.News>
+ *@
 
+@model X.PagedList.IPagedList<BookStoreTM.Models.Category>
+@using X.PagedList.Mvc.Core;
 @{
     ViewData["Title"] = "Danh mục loại";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
@@ -55,16 +57,19 @@
                         {
                             <tr>
                                 <td colspan="4">Không có bản ghi nào </td>
-
                             </tr>
-
                         }
                     </tbody>
                 </table>
+                @* phân trang  *@
+                <hr />
+                @Html.PagedListPager(Model, page => Url.Action("index", new { page = page }), new PagedListRenderOptions
+           {
+               LiElementClasses = new string[] { "page-item" },
+               PageClasses = new string[] { "page-link" }
+           })
             </div>
-            <!-- /.card-body -->
         </div>
-        <!-- /.card -->
     </div>
 </div>
 

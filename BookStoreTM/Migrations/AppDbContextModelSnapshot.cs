@@ -36,7 +36,6 @@ namespace BookStoreTM.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Address")
-                        .IsRequired()
                         .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("Avatar")
@@ -51,7 +50,6 @@ namespace BookStoreTM.Migrations
                         .HasColumnType("datetime");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("FullName")
@@ -60,11 +58,9 @@ namespace BookStoreTM.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Password")
-                        .IsRequired()
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Phone")
-                        .IsRequired()
                         .HasColumnType("varchar(64)");
 
                     b.Property<string>("UpdatedBy")
@@ -193,6 +189,9 @@ namespace BookStoreTM.Migrations
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(500)");
 
+                    b.Property<bool>("IsActicve")
+                        .HasColumnType("bit");
+
                     b.Property<string>("SeoDescription")
                         .HasColumnType("nvarchar(500)");
 
@@ -238,15 +237,12 @@ namespace BookStoreTM.Migrations
                         .HasColumnType("datetime");
 
                     b.Property<string>("ReceiveAddress")
-                        .IsRequired()
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("ReceiveName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("ReceivePhone")
-                        .IsRequired()
                         .HasColumnType("varchar(64)");
 
                     b.HasKey("OrderId");
@@ -264,7 +260,7 @@ namespace BookStoreTM.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderDetailsId"));
 
-                    b.Property<int>("OrderBookOrderId")
+                    b.Property<int?>("OrderBookOrderId")
                         .HasColumnType("int");
 
                     b.Property<int>("OrderId")
@@ -394,7 +390,7 @@ namespace BookStoreTM.Migrations
                     b.Property<decimal?>("PriceSale")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("ProductCategoryId")
+                    b.Property<int?>("ProductCategoryId")
                         .HasColumnType("int");
 
                     b.Property<string>("ProductName")
@@ -489,7 +485,6 @@ namespace BookStoreTM.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ProductImgName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("Url")
@@ -628,9 +623,7 @@ namespace BookStoreTM.Migrations
                 {
                     b.HasOne("BookStoreTM.Models.OrderBook", "OrderBook")
                         .WithMany()
-                        .HasForeignKey("OrderBookOrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("OrderBookOrderId");
 
                     b.HasOne("BookStoreTM.Models.Product", "Product")
                         .WithMany()
@@ -669,9 +662,7 @@ namespace BookStoreTM.Migrations
                 {
                     b.HasOne("BookStoreTM.Models.ProductCategory", "ProductCategory")
                         .WithMany()
-                        .HasForeignKey("ProductCategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ProductCategoryId");
 
                     b.HasOne("BookStoreTM.Models.Publisher", "Publisher")
                         .WithMany()
