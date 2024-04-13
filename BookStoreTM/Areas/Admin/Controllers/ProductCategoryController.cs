@@ -1,6 +1,9 @@
 ﻿using BookStoreTM.Models.Entities;
 using BookStoreTM.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using X.PagedList;
 
 namespace BookStoreTM.Areas.Admin.Controllers
 {
@@ -13,9 +16,15 @@ namespace BookStoreTM.Areas.Admin.Controllers
         {
             _db = db;
         }
-        public IActionResult Index()
+        public IActionResult Index(string name, int page = 1)
         {
-            var items = _db.ProductCategories.ToList();
+            int limit = 2;
+            var items = _db.ProductCategories.OrderByDescending(x => x.Id).ToPagedList(page, limit);
+            if (!string.IsNullOrEmpty(name))
+            {
+                items = _db.ProductCategories.Where(x => x.Name.Contains(name)).ToPagedList(page, limit);
+            }
+            ViewBag.keyword = name;
             return View(items);
         }
 
@@ -63,17 +72,50 @@ namespace BookStoreTM.Areas.Admin.Controllers
         }
 
         //xoá
-        //[Route("XoaDanhMuc")]
-        public IActionResult XoaDMSanPham(int maLoai)
+        public IActionResult Delete(int id)
         {
-            var item = _db.ProductCategories.Find(maLoai);
+            var item = _db.ProductCategories.Find(id);
             if (item != null)
             {
                 _db.ProductCategories.Remove(item);
                 _db.SaveChanges();
-                return RedirectToAction("index");
+                return Json(new { success = true });
             }
-            return View(maLoai);
+            return Json(new { success = false });
         }
+
+        [HttpPost]
+        public ActionResult DeleteAll(string ids)
+        {
+            if (!string.IsNullOrEmpty(ids))
+            {
+                var items = ids.Split(',');
+                if (items != null && items.Any())
+                {
+                    foreach (var item in items)
+                    {
+                        var obj = _db.ProductCategories.Find(Convert.ToInt32(item));
+                        _db.ProductCategories.Remove(obj);
+                        _db.SaveChanges();
+                    }
+                }
+                return Json(new { success = true });
+            }
+            return Json(new { success = false });
+        }
+
+        ////xoá
+        ////[Route("XoaDanhMuc")]
+        //public IActionResult XoaDMSanPham(int maLoai)
+        //{
+        //    var item = _db.ProductCategories.Find(maLoai);
+        //    if (item != null)
+        //    {
+        //        _db.ProductCategories.Remove(item);
+        //        _db.SaveChanges();
+        //        return RedirectToAction("index");
+        //    }
+        //    return View(maLoai);
+        //}
     }
 }

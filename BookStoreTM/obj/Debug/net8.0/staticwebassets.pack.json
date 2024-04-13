@@ -285,6 +285,14 @@
       "PackagePath": "staticwebassets\\LayoutAdmin\\dist\\js\\pages\\dashboard3.js"
     },
     {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\1.jfif",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\images\\tintuc\\1.jfif"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\2.jfif",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\images\\tintuc\\2.jfif"
+    },
+    {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\P63952.jpg",
       "PackagePath": "staticwebassets\\LayoutAdmin\\images\\tintuc\\P63952.jpg"
     },
@@ -317,12 +325,40 @@
       "PackagePath": "staticwebassets\\LayoutAdmin\\images\\tintuc\\P68102.jpg"
     },
     {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\Sousou-No-Frieren1.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\images\\tintuc\\Sousou-No-Frieren1.jpg"
+    },
+    {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\ava1.jpeg",
       "PackagePath": "staticwebassets\\LayoutAdmin\\images\\tintuc\\ava1.jpeg"
     },
     {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\ava2.jpg",
       "PackagePath": "staticwebassets\\LayoutAdmin\\images\\tintuc\\ava2.jpg"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\ava3.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\images\\tintuc\\ava3.jpg"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\nen1.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\images\\tintuc\\nen1.jpg"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\nèn 4.webp",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\images\\tintuc\\nèn 4.webp"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\nền5.jfif",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\images\\tintuc\\nền5.jfif"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\vio1.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\images\\tintuc\\vio1.jpg"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\vio2.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\images\\tintuc\\vio2.jpg"
     },
     {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\plugins\\bootstrap-colorpicker\\css\\bootstrap-colorpicker.css",

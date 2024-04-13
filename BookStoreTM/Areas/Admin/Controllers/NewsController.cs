@@ -18,26 +18,18 @@ namespace BookStoreTM.Areas.Admin.Controllers
         {
             _db = db;
         }
-        public IActionResult Index(string title, int page =1)
+        public IActionResult Index(string name, int page =1)
         {
             int limit = 2;
             var items = _db.News.OrderByDescending(x => x.NewsId).ToPagedList(page, limit);
-            if (!string.IsNullOrEmpty(title))
+            if (!string.IsNullOrEmpty(name))
             {
-                items = _db.News.Where(x => x.Title.Contains(title)).ToPagedList(page, limit);
+                items = _db.News.Where(x => x.Title.Contains(name)).ToPagedList(page, limit);
             }
-            ViewBag.keyword = title;
+            ViewBag.keyword = name;
             return View(items);
-
-            //var items = _db.News.OrderByDescending(x => x.NewsId).ToList();
-            //return View(items);
-            //var news = _db.News.OrderByDescending(n => n.NewsId); // Giả sử bạn muốn sắp xếp theo thứ tự giảm dần theo CreatedDate
-            //var pagedNews = news.ToPagedList(pageNumber, pageSize); // Áp dụng phân trang
-            //return View(pagedNews);
-            //// số bản ghi trên một trang
-            //int pageNumber = page == null || page < 0 ? 1 : page.Value;
-            //PagedList<News> lst = new PagedList<News>(items, pageNumber, pageSize);
         }
+
         [HttpGet]
         public IActionResult ThemTinTuc()
         {
@@ -49,28 +41,36 @@ namespace BookStoreTM.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult ThemTinTuc(News TinTuc)
         {
-            if (ModelState.IsValid)
+            try
             {
-                var files = HttpContext.Request.Form.Files;
-                if (files.Count() > 0 && files[0].Length > 0) // kiểm tra xem tập có đc gửi từ file lên không 
+                if (ModelState.IsValid)
                 {
-                    var file = files[0];
-                    var FileName = file.FileName;
-                    // upload ảnh vào thư mục wwwroot\\images\\category
-                    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\LayoutAdmin\\images\\tintuc", FileName);
-                    using (var stream = new FileStream(path, FileMode.Create))
+                    var files = HttpContext.Request.Form.Files;
+                    if (files.Count() > 0 && files[0].Length > 0) // kiểm tra xem tập có đc gửi từ file lên không 
                     {
-                        file.CopyTo(stream);
-                        TinTuc.Image = "/LayoutAdmin/images/tintuc/" + FileName; // gán tên ảnh cho thuộc tinh Image
+                        var file = files[0];
+                        var FileName = file.FileName;
+                        // upload ảnh vào thư mục wwwroot\\images\\category
+                        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\LayoutAdmin\\images\\tintuc", FileName);
+                        using (var stream = new FileStream(path, FileMode.Create))
+                        {
+                            file.CopyTo(stream);
+                            TinTuc.Image = "/LayoutAdmin/images/tintuc/" + FileName; // gán tên ảnh cho thuộc tinh Image
+                        }
                     }
+                    TinTuc.CreatedDate = DateTime.Now;
 
+                    _db.Add(TinTuc);
+                    _db.SaveChanges(); 
+                    return RedirectToAction(nameof(Index));
                 }
-                TinTuc.CreatedDate = DateTime.Now;
-
-                _db.Add(TinTuc);
-                _db.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
             }
+            catch (Exception ex )
+            {
+                ViewBag.error = ex.Message.ToString();
+                return View(TinTuc);
+            }
+            
 
             return View(TinTuc);
         }
@@ -105,13 +105,11 @@ namespace BookStoreTM.Areas.Admin.Controllers
                 }
                 TinTuc.CreatedDate = DateTime.Now;
                 _db.Update(TinTuc);
-                _db.SaveChangesAsync();
+                _db.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             return View(TinTuc);
         }
-
-
 
         //xoá
         public IActionResult Delete(int id)
@@ -125,21 +123,7 @@ namespace BookStoreTM.Areas.Admin.Controllers
             }
             return Json(new { success = false });
         }
-
-        //bật tắt tin tức
-        public IActionResult IsActicve(int id)
-        {
-            var item = _db.News.Find(id);
-            if (item != null)
-            {
-                item.IsActicve = !item.IsActicve;
-                _db.Entry(item).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-                _db.SaveChanges();
-                return Json(new { success = true, isActicve = item.IsActicve });
-            }
-            return Json(new { success = false });
-        }
-
+        
         [HttpPost]
         public ActionResult DeleteAll(string ids)
         {
@@ -156,6 +140,20 @@ namespace BookStoreTM.Areas.Admin.Controllers
                     }
                 }
                 return Json(new { success = true });
+            }
+            return Json(new { success = false });
+        }
+
+        //bật tắt tin tức
+        public IActionResult IsActicve(int id)
+        {
+            var item = _db.News.Find(id);
+            if (item != null)
+            {
+                item.IsActicve = !item.IsActicve;
+                _db.Entry(item).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                _db.SaveChanges();
+                return Json(new { success = true, isActicve = item.IsActicve });
             }
             return Json(new { success = false });
         }

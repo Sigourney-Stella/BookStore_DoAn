@@ -17,10 +17,21 @@ namespace BookStoreTM.Areas.Admin.Controllers
             _db = db;
         }
 
-        public IActionResult Index(int page = 1)
+        //public IActionResult Index(int page = 1)
+        //{
+        //    int limit = 2; // số lượng bản ghi trên trang
+        //    var items = _db.Categories.ToPagedList(page, limit);
+        //    return View(items);
+        //}
+        public IActionResult Index(string name, int page = 1)
         {
-            int limit = 2; // số lượng bản ghi trên trang
-            var items = _db.Categories.ToPagedList(page, limit);
+            int limit = 2;
+            var items = _db.Categories.OrderByDescending(x => x.CategoryId).ToPagedList(page, limit);
+            if (!string.IsNullOrEmpty(name))
+            {
+                items = _db.Categories.Where(x => x.Title.Contains(name)).ToPagedList(page, limit);
+            }
+            ViewBag.keyword = name;
             return View(items);
         }
 
@@ -69,16 +80,49 @@ namespace BookStoreTM.Areas.Admin.Controllers
         }
 
         //xoá
-        public IActionResult XoaTinTuc(int maLoai)
+        public IActionResult Delete(int id)
         {
-            var item = _db.Categories.Find(maLoai);
+            var item = _db.Categories.Find(id);
             if (item != null)
             {
                 _db.Categories.Remove(item);
                 _db.SaveChanges();
-                return RedirectToAction("index");
+                return Json(new { success = true });
             }
-            return View(maLoai);
+            return Json(new { success = false });
         }
+
+        [HttpPost]
+        public ActionResult DeleteAll(string ids)
+        {
+            if (!string.IsNullOrEmpty(ids))
+            {
+                var items = ids.Split(',');
+                if (items != null && items.Any())
+                {
+                    foreach (var item in items)
+                    {
+                        var obj = _db.Categories.Find(Convert.ToInt32(item));
+                        _db.Categories.Remove(obj);
+                        _db.SaveChanges();
+                    }
+                }
+                return Json(new { success = true });
+            }
+            return Json(new { success = false });
+        }
+
+        ////xoá
+        //public IActionResult XoaTinTuc(int maLoai)
+        //{
+        //    var item = _db.Categories.Find(maLoai);
+        //    if (item != null)
+        //    {
+        //        _db.Categories.Remove(item);
+        //        _db.SaveChanges();
+        //        return RedirectToAction("index");
+        //    }
+        //    return View(maLoai);
+        //}
     }
 }

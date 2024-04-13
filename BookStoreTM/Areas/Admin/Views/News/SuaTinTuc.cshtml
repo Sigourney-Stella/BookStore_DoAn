@@ -76,6 +76,12 @@
                         </div>
 
                         <div class="form-group">
+                            <label asp-for="CategoryId" class="control-label">CategoryId</label>
+                            <select asp-for="CategoryId" asp-items="ViewBag.CategoryId" class="form-control">
+                            </select>
+                        </div>
+
+                        @* <div class="form-group">
                             <label for="CategoryId" class="control-label">CategoryId</label>
                             <select id="CategoryId" name="CategoryId" class="form-control">
                                 @foreach (var item in ViewBag.CategoryId as IEnumerable<SelectListItem>)
@@ -83,7 +89,7 @@
                                     <option value="@item.Value">@item.Text</option>
                                 }
                             </select>
-                        </div>
+                        </div> *@
 
                         <div class="form-group">
                             @Html.LabelFor(model => model.Detail, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -94,7 +100,7 @@
                         </div>
 
                         <div class="form-group">
-                            <a href="/admin/category" class="btn btn-danger">Quay lại</a>
+                            <a asp-action="Index" class="btn btn-danger">Quay lại</a>
                             <input type="submit" value="Create" class="btn btn-primary" />
                         </div>
                     </div>
