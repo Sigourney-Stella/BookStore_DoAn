@@ -5,7 +5,7 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-
+<script src="~/ckeditor5-build-classic/ckeditor.js"></script>
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
@@ -61,12 +61,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Chi Tiết </label>
-                            <div>
-                                <textarea class="form-group" name="Detail" id="inputDetail"></textarea>
-                                @* @Html.TextAreaFor(x => x.Detail, new { @class = "form-control", @id = "txtDetail" }) *@
-                                @Html.ValidationMessageFor(Model => Model.Detail, "", new { @class = "text-danger" })
-                            </div>
+                            <label asp-for="Detail" class="control-label">Chi Tiết </label>
+                            <textarea asp-for="Detail" id="inputDetai" class="form-control"></textarea>
                         </div>
 
                         <div class="form-group">
@@ -92,14 +88,6 @@
                         </div> *@
 
                         <div class="form-group">
-                            @Html.LabelFor(model => model.Detail, htmlAttributes: new { @class = "control-label col-md-2" })
-                            <div class="col-md-10">
-                                <textarea class="form-group" name="Detail" id="Detail"></textarea>
-                                @Html.ValidationMessageFor(model => model.Detail, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-
-                        <div class="form-group">
                             <a asp-action="Index" class="btn btn-danger">Quay lại</a>
                             <input type="submit" value="Create" class="btn btn-primary" />
                         </div>
@@ -110,80 +98,91 @@
     </div>
 </section>
 
+<script>
+    class MyUploadAdapter {
+    constructor( loader ) {
+        this.loader = loader;
+    }
 
-@* <div class="row">
-    <div class="col-md-4">
-        <form asp-action="SuaTinTuc" enctype="multipart/form-data">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="NewsId" />
-            <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Image" class="control-label"></label>
-                <input asp-for="Image" type="file" class="form-control" />
-                <span asp-validation-for="Image" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Detail" class="control-label"></label>
-                <input asp-for="Detail" class="form-control" />
-                <span asp-validation-for="Detail" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SeoTitle" class="control-label"></label>
-                <input asp-for="SeoTitle" class="form-control" />
-                <span asp-validation-for="SeoTitle" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SeoKeywords" class="control-label"></label>
-                <input asp-for="SeoKeywords" class="form-control" />
-                <span asp-validation-for="SeoKeywords" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SeoDescription" class="control-label"></label>
-                <input asp-for="SeoDescription" class="form-control" />
-                <span asp-validation-for="SeoDescription" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CategoryId" class="control-label"></label>
-                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
-                <span asp-validation-for="CategoryId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CreatedDate" class="control-label"></label>
-                <input asp-for="CreatedDate" class="form-control" />
-                <span asp-validation-for="CreatedDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UpdatedDate" class="control-label"></label>
-                <input asp-for="UpdatedDate" class="form-control" />
-                <span asp-validation-for="UpdatedDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CreatedBy" class="control-label"></label>
-                <input asp-for="CreatedBy" class="form-control" />
-                <span asp-validation-for="CreatedBy" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UpdatedBy" class="control-label"></label>
-                <input asp-for="UpdatedBy" class="form-control" />
-                <span asp-validation-for="UpdatedBy" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
+    upload() {
+        return this.loader.file
+            .then( file => new Promise( ( resolve, reject ) => {
+                this._initRequest();
+                this._initListeners( resolve, reject, file );
+                this._sendRequest( file );
+            } ) );
+    }
+    // Aborts the upload process.
+    abort() {
+        if ( this.xhr ) {
+            this.xhr.abort();
+        }
+    }
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div> *@
+    // Initializes the XMLHttpRequest object using the URL passed to the constructor.
+    _initRequest() {
+        const xhr = this.xhr = new XMLHttpRequest();
 
+        xhr.open( 'POST', '@Url.Action("UploadImage","News")', true );
+        xhr.responseType = 'json';
+    }
+
+    // Initializes XMLHttpRequest listeners.
+    _initListeners( resolve, reject, file ) {
+        const xhr = this.xhr;
+        const loader = this.loader;
+        const genericErrorText = `Couldn't upload file: ${ file.name }.`;
+
+        xhr.addEventListener( 'error', () => reject( genericErrorText ) );
+        xhr.addEventListener( 'abort', () => reject() );
+        xhr.addEventListener( 'load', () => {
+            const response = xhr.response;
+
+            if ( !response || response.error ) {
+                return reject( response && response.error ? response.error.message : genericErrorText );
+            }
+
+            resolve( {
+                default: response.url
+            } );
+        } );
+
+        if ( xhr.upload ) {
+            xhr.upload.addEventListener( 'progress', evt => {
+                if ( evt.lengthComputable ) {
+                    loader.uploadTotal = evt.total;
+                    loader.uploaded = evt.loaded;
+                }
+            } );
+        }
+    }
+
+    _sendRequest( file ) {
+        // Prepare the form data.
+        const data = new FormData();
+
+        data.append( 'upload', file );
+
+        // Send the request.
+        this.xhr.send( data );
+    }
+}
+
+function MyCustomUploadAdapterPlugin( editor ) {
+    editor.plugins.get( 'FileRepository' ).createUploadAdapter = ( loader ) => {
+        // Configure the URL to the upload script in your backend here!
+        return new MyUploadAdapter( loader );
+    };
+}
+
+ClassicEditor
+    .create( document.querySelector( '#inputDetai' ), {
+        extraPlugins: [ MyCustomUploadAdapterPlugin ],
+    } )
+    .then( editor => {
+        window.editor = editor;
+    })
+    .catch( error => {
+        console.error( error.stack );
+    } );
+</script>

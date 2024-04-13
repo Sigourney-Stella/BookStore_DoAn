@@ -5,18 +5,21 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using X.PagedList;
 
+using Microsoft.AspNetCore.Hosting;
+
+
 namespace BookStoreTM.Areas.Admin.Controllers
 {
     [Area("Admin")]
     public class NewsController : Controller
     {
         private readonly AppDbContext _db;
+        private readonly IWebHostEnvironment _env;
 
-        public object DataLocal { get; private set; }
-
-        public NewsController(AppDbContext db)
+        public NewsController(AppDbContext db, IWebHostEnvironment env)
         {
             _db = db;
+            _env = env;
         }
         public IActionResult Index(string name, int page =1)
         {
@@ -28,6 +31,21 @@ namespace BookStoreTM.Areas.Admin.Controllers
             }
             ViewBag.keyword = name;
             return View(items);
+        }
+        //ckeditor
+        public IActionResult UploadImage(List<IFormFile> files)
+        {
+            var filepath = "";
+            foreach (IFormFile photo in Request.Form.Files)
+            {
+                string serverMapPath = Path.Combine(_env.WebRootPath, "Images", photo.FileName);
+                using (var stream = new FileStream(serverMapPath, FileMode.Create))
+                {
+                    photo.CopyTo(stream);
+                }
+                filepath = "https://localhost:44388/" + "Images/" + photo.FileName;
+            }
+            return Json(new { url = filepath });
         }
 
         [HttpGet]
@@ -70,8 +88,6 @@ namespace BookStoreTM.Areas.Admin.Controllers
                 ViewBag.error = ex.Message.ToString();
                 return View(TinTuc);
             }
-            
-
             return View(TinTuc);
         }
 
@@ -101,7 +117,6 @@ namespace BookStoreTM.Areas.Admin.Controllers
                         file.CopyTo(stream);
                         TinTuc.Image = "/LayoutAdmin/images/tintuc/" + FileName; // gán tên ảnh cho thuộc tinh Image
                     }
-
                 }
                 TinTuc.CreatedDate = DateTime.Now;
                 _db.Update(TinTuc);

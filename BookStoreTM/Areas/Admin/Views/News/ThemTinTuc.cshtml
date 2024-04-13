@@ -4,7 +4,7 @@
     ViewData["Title"] = "ThemTinTuc";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
-
+<script src="~/ckeditor5-build-classic/ckeditor.js"></script>
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
@@ -45,9 +45,7 @@
                             <label for="exampleInputFile">Hình ảnh</label>
                             <div class="input-group">
                                 <div class="custom-file">
-                                    <input asp-for="Image" type="file" class="custom-file-input" id="exampleInputFile" />
-                                    @* <input type="file" class="custom-file-input" id="exampleInputFile"> *@
-                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                    <input asp-for="Image" type="file" class="form-control" />
                                 </div>
                                 <div class="input-group-append">
                                     <span class="input-group-text">Upload</span>
@@ -55,14 +53,14 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                       @*  <div class="form-group">
                             <label class="exampleInputEmail1">Hình ảnh</label>
                             <div class="input-group">
                                 <div class="input-group">
                                     <input asp-for="Image" type="file" class="form-control" />
                                 </div>
                             </div>
-                        </div>
+                        </div> *@
                         <div class="form-group">
                             <label for="exampleInputEmail1">Mô tả</label>
                             @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
@@ -70,18 +68,20 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Chi Tiết </label>
+                            <label asp-for="Detail" class="control-label">Chi Tiết </label>
+                            <textarea asp-for="Detail" id="inputDetai" class="form-control"></textarea>
+                            <span asp-validation-for="Detail" class="text-danger"></span>
+                            @* <label for="exampleInputEmail1">Chi Tiết </label>
                             <div>
                                 <textarea class="form-group" name="Detail" id="inputDetail"></textarea>
-                                @* @Html.TextAreaFor(x => x.Detail, new { @class = "form-control", @id = "txtDetail" }) *@
                                 @Html.ValidationMessageFor(Model => Model.Detail, "", new { @class = "text-danger" })
-                            </div>
+                            </div> *@
                         </div>
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Hiển thị</label>
                             @Html.CheckBoxFor(x => x.IsActicve)
-                            @Html.ValidationMessageFor(x => x.Description, "", new { @class = "text-danger" })
+                            @Html.ValidationMessageFor(x => x.IsActicve, "", new { @class = "text-danger" })
                         </div>
 
                         <div class="form-group">
@@ -94,14 +94,14 @@
                             </select>
                         </div>
 
-                        <div class="form-group">
+                        @* <div class="form-group">
                             @Html.LabelFor(model => model.Detail, htmlAttributes: new { @class = "control-label col-md-2" })
                             <div class="col-md-10">
                                 <textarea class="form-group" name="Detail" id="Detail"></textarea>
                                 @Html.ValidationMessageFor(model => model.Detail, "", new { @class = "text-danger" })
                             </div>
-
-                        </div>
+                        </div> *@
+                        @* @Html.TextAreaFor(x => x.Detail, new { @class = "form-control", @id = "txtDetail" }) *@
 
                         <div class="form-group">
                             <a href="/admin/category" class="btn btn-danger">Quay lại</a>
@@ -115,6 +115,111 @@
 </section>
 
 
+
+<script>
+    class MyUploadAdapter {
+    constructor( loader ) {
+        this.loader = loader;
+    }
+
+    upload() {
+        return this.loader.file
+            .then( file => new Promise( ( resolve, reject ) => {
+                this._initRequest();
+                this._initListeners( resolve, reject, file );
+                this._sendRequest( file );
+            } ) );
+    }
+    // Aborts the upload process.
+    abort() {
+        if ( this.xhr ) {
+            this.xhr.abort();
+        }
+    }
+
+    // Initializes the XMLHttpRequest object using the URL passed to the constructor.
+    _initRequest() {
+        const xhr = this.xhr = new XMLHttpRequest();
+
+        xhr.open( 'POST', '@Url.Action("UploadImage","News")', true );
+        xhr.responseType = 'json';
+    }
+
+    // Initializes XMLHttpRequest listeners.
+    _initListeners( resolve, reject, file ) {
+        const xhr = this.xhr;
+        const loader = this.loader;
+        const genericErrorText = `Couldn't upload file: ${ file.name }.`;
+
+        xhr.addEventListener( 'error', () => reject( genericErrorText ) );
+        xhr.addEventListener( 'abort', () => reject() );
+        xhr.addEventListener( 'load', () => {
+            const response = xhr.response;
+
+            if ( !response || response.error ) {
+                return reject( response && response.error ? response.error.message : genericErrorText );
+            }
+
+            resolve( {
+                default: response.url
+            } );
+        } );
+
+        if ( xhr.upload ) {
+            xhr.upload.addEventListener( 'progress', evt => {
+                if ( evt.lengthComputable ) {
+                    loader.uploadTotal = evt.total;
+                    loader.uploaded = evt.loaded;
+                }
+            } );
+        }
+    }
+
+    _sendRequest( file ) {
+        // Prepare the form data.
+        const data = new FormData();
+
+        data.append( 'upload', file );
+
+        // Send the request.
+        this.xhr.send( data );
+    }
+}
+
+function MyCustomUploadAdapterPlugin( editor ) {
+    editor.plugins.get( 'FileRepository' ).createUploadAdapter = ( loader ) => {
+        // Configure the URL to the upload script in your backend here!
+        return new MyUploadAdapter( loader );
+    };
+}
+
+ClassicEditor
+    .create( document.querySelector( '#inputDetai' ), {
+        extraPlugins: [ MyCustomUploadAdapterPlugin ],
+    } )
+    .then( editor => {
+        window.editor = editor;
+    })
+    .catch( error => {
+        console.error( error.stack );
+    } );
+</script>
+
+@* @section Scripts {
+    <script src="~/ckeditor/ckeditor.js"></script>
+    <script>
+        $(document).ready(function()
+        {
+            CKEDITOR.replace('Detail', {
+                height:300,
+                width:600,
+                filebrowserUploadUrl: '/news/UploadImage',
+                filebrowserUploadUrl: '/news/UploadExplorer',
+
+            });
+        )}
+    </script>
+} *@
 
 @* <div class="content-wrapper" style="min-height: 1345.31px;"> *@
 <!-- Content Header (Page header) -->

@@ -7965,12 +7965,1652 @@
       "PackagePath": "staticwebassets\\LayoutAdmin\\plugins\\uplot\\uPlot.min.css"
     },
     {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\LICENSE.md",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\LICENSE.md"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\README.md",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\README.md"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\ckeditor.d.ts",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\ckeditor.d.ts"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\ckeditor.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\ckeditor.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\ckeditor.js.map",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\ckeditor.js.map"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\index.html",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\index.html"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\sample\\css\\sample.css",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\sample\\css\\sample.css"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\sample\\img\\bg.png",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\sample\\img\\bg.png"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\sample\\img\\github.svg",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\sample\\img\\github.svg"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\sample\\img\\logo.svg",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\sample\\img\\logo.svg"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\sample\\img\\umbrellas.jpg",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\sample\\img\\umbrellas.jpg"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\af.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\af.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\ar.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\ar.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\ast.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\ast.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\az.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\az.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\bg.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\bg.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\bn.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\bn.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\bs.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\bs.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\ca.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\ca.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\cs.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\cs.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\da.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\da.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\de-ch.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\de-ch.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\de.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\de.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\el.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\el.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\en-au.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\en-au.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\en-gb.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\en-gb.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\eo.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\eo.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\es-co.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\es-co.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\es.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\es.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\et.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\et.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\eu.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\eu.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\fa.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\fa.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\fi.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\fi.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\fr.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\fr.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\gl.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\gl.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\gu.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\gu.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\he.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\he.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\hi.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\hi.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\hr.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\hr.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\hu.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\hu.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\hy.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\hy.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\id.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\id.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\it.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\it.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\ja.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\ja.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\jv.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\jv.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\km.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\km.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\kn.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\kn.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\ko.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\ko.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\ku.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\ku.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\lt.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\lt.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\lv.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\lv.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\ms.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\ms.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\nb.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\nb.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\ne.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\ne.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\nl.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\nl.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\no.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\no.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\oc.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\oc.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\pl.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\pl.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\pt-br.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\pt-br.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\pt.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\pt.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\ro.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\ro.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\ru.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\ru.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\si.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\si.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\sk.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\sk.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\sl.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\sl.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\sq.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\sq.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\sr-latn.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\sr-latn.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\sr.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\sr.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\sv.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\sv.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\th.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\th.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\tk.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\tk.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\tr.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\tr.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\tt.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\tt.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\ug.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\ug.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\uk.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\uk.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\ur.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\ur.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\uz.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\uz.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\vi.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\vi.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\zh-cn.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\zh-cn.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor5-build-classic\\translations\\zh.js",
+      "PackagePath": "staticwebassets\\ckeditor5-build-classic\\translations\\zh.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\CHANGES.md",
+      "PackagePath": "staticwebassets\\ckeditor\\CHANGES.md"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\LICENSE.md",
+      "PackagePath": "staticwebassets\\ckeditor\\LICENSE.md"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\README.md",
+      "PackagePath": "staticwebassets\\ckeditor\\README.md"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\SECURITY.md",
+      "PackagePath": "staticwebassets\\ckeditor\\SECURITY.md"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\adapters\\jquery.js",
+      "PackagePath": "staticwebassets\\ckeditor\\adapters\\jquery.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\build-config.js",
+      "PackagePath": "staticwebassets\\ckeditor\\build-config.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\ckeditor.js",
+      "PackagePath": "staticwebassets\\ckeditor\\ckeditor.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\config.js",
+      "PackagePath": "staticwebassets\\ckeditor\\config.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\contents.css",
+      "PackagePath": "staticwebassets\\ckeditor\\contents.css"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\af.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\af.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\ar.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\ar.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\az.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\az.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\bg.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\bg.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\bn.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\bn.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\bs.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\bs.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\ca.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\ca.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\cs.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\cs.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\cy.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\cy.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\da.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\da.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\de-ch.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\de-ch.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\de.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\de.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\el.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\el.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\en-au.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\en-au.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\en-ca.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\en-ca.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\en-gb.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\en-gb.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\en.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\en.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\eo.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\eo.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\es-mx.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\es-mx.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\es.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\es.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\et.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\et.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\eu.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\eu.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\fa.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\fa.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\fi.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\fi.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\fo.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\fo.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\fr-ca.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\fr-ca.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\fr.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\fr.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\gl.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\gl.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\gu.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\gu.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\he.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\he.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\hi.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\hi.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\hr.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\hr.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\hu.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\hu.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\id.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\id.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\is.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\is.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\it.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\it.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\ja.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\ja.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\ka.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\ka.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\km.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\km.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\ko.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\ko.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\ku.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\ku.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\lt.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\lt.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\lv.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\lv.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\mk.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\mk.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\mn.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\mn.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\ms.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\ms.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\nb.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\nb.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\nl.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\nl.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\no.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\no.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\oc.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\oc.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\pl.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\pl.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\pt-br.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\pt-br.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\pt.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\pt.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\ro.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\ro.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\ru.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\ru.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\si.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\si.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\sk.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\sk.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\sl.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\sl.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\sq.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\sq.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\sr-latn.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\sr-latn.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\sr.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\sr.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\sv.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\sv.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\th.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\th.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\tr.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\tr.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\tt.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\tt.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\ug.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\ug.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\uk.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\uk.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\vi.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\vi.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\zh-cn.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\zh-cn.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\lang\\zh.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\zh.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\a11yhelp.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\a11yhelp.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\_translationstatus.txt",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\_translationstatus.txt"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\af.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\af.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\ar.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\ar.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\az.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\az.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\bg.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\bg.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\ca.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\ca.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\cs.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\cs.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\cy.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\cy.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\da.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\da.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\de-ch.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\de-ch.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\de.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\de.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\el.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\el.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\en-au.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\en-au.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\en-gb.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\en-gb.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\en.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\en.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\eo.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\eo.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\es-mx.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\es-mx.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\es.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\es.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\et.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\et.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\eu.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\eu.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\fa.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\fa.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\fi.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\fi.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\fo.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\fo.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\fr-ca.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\fr-ca.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\fr.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\fr.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\gl.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\gl.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\gu.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\gu.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\he.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\he.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\hi.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\hi.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\hr.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\hr.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\hu.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\hu.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\id.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\id.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\it.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\it.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\ja.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\ja.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\km.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\km.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\ko.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\ko.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\ku.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\ku.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\lt.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\lt.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\lv.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\lv.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\mk.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\mk.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\mn.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\mn.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\nb.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\nb.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\nl.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\nl.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\no.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\no.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\oc.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\oc.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\pl.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\pl.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\pt-br.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\pt-br.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\pt.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\pt.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\ro.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\ro.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\ru.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\ru.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\si.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\si.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\sk.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\sk.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\sl.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\sl.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\sq.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\sq.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\sr-latn.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\sr-latn.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\sr.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\sr.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\sv.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\sv.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\th.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\th.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\tr.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\tr.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\tt.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\tt.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\ug.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\ug.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\uk.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\uk.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\vi.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\vi.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\zh-cn.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\zh-cn.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\zh.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\a11yhelp\\dialogs\\lang\\zh.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\about\\dialogs\\about.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\about\\dialogs\\about.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\about\\dialogs\\hidpi\\logo_ckeditor.png",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\about\\dialogs\\hidpi\\logo_ckeditor.png"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\about\\dialogs\\logo_ckeditor.png",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\about\\dialogs\\logo_ckeditor.png"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\clipboard\\dialogs\\paste.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\clipboard\\dialogs\\paste.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\dialog\\dialogDefinition.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\dialog\\dialogDefinition.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\dialog\\styles\\dialog.css",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\dialog\\styles\\dialog.css"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\icons.png",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\icons.png"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\icons_hidpi.png",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\icons_hidpi.png"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\image\\dialogs\\image.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\image\\dialogs\\image.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\image\\images\\noimage.png",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\image\\images\\noimage.png"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\link\\dialogs\\anchor.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\link\\dialogs\\anchor.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\link\\dialogs\\link.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\link\\dialogs\\link.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\link\\images\\anchor.png",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\link\\images\\anchor.png"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\link\\images\\hidpi\\anchor.png",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\link\\images\\hidpi\\anchor.png"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\magicline\\images\\hidpi\\icon-rtl.png",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\magicline\\images\\hidpi\\icon-rtl.png"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\magicline\\images\\hidpi\\icon.png",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\magicline\\images\\hidpi\\icon.png"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\magicline\\images\\icon-rtl.png",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\magicline\\images\\icon-rtl.png"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\magicline\\images\\icon.png",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\magicline\\images\\icon.png"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\pastefromgdocs\\filter\\default.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\pastefromgdocs\\filter\\default.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\pastefromlibreoffice\\filter\\default.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\pastefromlibreoffice\\filter\\default.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\pastefromword\\filter\\default.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\pastefromword\\filter\\default.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\pastetools\\filter\\common.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\pastetools\\filter\\common.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\pastetools\\filter\\image.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\pastetools\\filter\\image.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\scayt\\CHANGELOG.md",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\scayt\\CHANGELOG.md"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\scayt\\LICENSE.md",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\scayt\\LICENSE.md"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\scayt\\README.md",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\scayt\\README.md"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\scayt\\dialogs\\dialog.css",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\scayt\\dialogs\\dialog.css"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\scayt\\dialogs\\options.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\scayt\\dialogs\\options.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\scayt\\dialogs\\toolbar.css",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\scayt\\dialogs\\toolbar.css"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\scayt\\skins\\moono-lisa\\scayt.css",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\scayt\\skins\\moono-lisa\\scayt.css"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\_translationstatus.txt",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\_translationstatus.txt"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\af.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\af.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\ar.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\ar.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\az.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\az.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\bg.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\bg.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\ca.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\ca.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\cs.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\cs.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\cy.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\cy.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\da.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\da.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\de-ch.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\de-ch.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\de.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\de.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\el.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\el.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\en-au.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\en-au.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\en-ca.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\en-ca.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\en-gb.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\en-gb.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\en.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\en.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\eo.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\eo.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\es-mx.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\es-mx.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\es.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\es.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\et.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\et.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\eu.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\eu.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\fa.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\fa.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\fi.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\fi.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\fr-ca.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\fr-ca.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\fr.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\fr.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\gl.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\gl.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\he.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\he.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\hr.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\hr.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\hu.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\hu.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\id.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\id.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\it.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\it.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\ja.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\ja.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\km.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\km.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\ko.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\ko.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\ku.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\ku.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\lt.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\lt.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\lv.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\lv.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\nb.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\nb.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\nl.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\nl.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\no.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\no.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\oc.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\oc.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\pl.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\pl.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\pt-br.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\pt-br.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\pt.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\pt.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\ro.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\ro.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\ru.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\ru.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\si.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\si.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\sk.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\sk.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\sl.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\sl.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\sq.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\sq.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\sr-latn.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\sr-latn.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\sr.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\sr.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\sv.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\sv.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\th.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\th.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\tr.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\tr.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\tt.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\tt.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\ug.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\ug.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\uk.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\uk.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\vi.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\vi.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\zh-cn.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\zh-cn.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\zh.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\lang\\zh.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\specialchar\\dialogs\\specialchar.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\specialchar\\dialogs\\specialchar.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\table\\dialogs\\table.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\table\\dialogs\\table.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\tableselection\\styles\\tableselection.css",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\tableselection\\styles\\tableselection.css"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\tabletools\\dialogs\\tableCell.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\tabletools\\dialogs\\tableCell.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\plugins\\widget\\images\\handle.png",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\widget\\images\\handle.png"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\css\\samples.css",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\css\\samples.css"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\img\\github-top.png",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\img\\github-top.png"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\img\\header-bg.png",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\img\\header-bg.png"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\img\\header-separator.png",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\img\\header-separator.png"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\img\\logo.png",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\img\\logo.png"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\img\\logo.svg",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\img\\logo.svg"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\img\\navigation-tip.png",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\img\\navigation-tip.png"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\index.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\index.html"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\js\\sample.js",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\js\\sample.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\js\\sf.js",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\js\\sf.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\old\\ajax.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\ajax.html"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\old\\api.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\api.html"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\old\\appendto.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\appendto.html"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\old\\assets\\inlineall\\logo.png",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\assets\\inlineall\\logo.png"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\old\\assets\\outputxhtml\\outputxhtml.css",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\assets\\outputxhtml\\outputxhtml.css"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\old\\assets\\posteddata.php",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\assets\\posteddata.php"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\old\\assets\\sample.jpg",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\assets\\sample.jpg"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\old\\assets\\uilanguages\\languages.js",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\assets\\uilanguages\\languages.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\old\\datafiltering.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\datafiltering.html"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\old\\dialog\\assets\\my_dialog.js",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\dialog\\assets\\my_dialog.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\old\\dialog\\dialog.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\dialog\\dialog.html"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\old\\divreplace.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\divreplace.html"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\old\\enterkey\\enterkey.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\enterkey\\enterkey.html"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\old\\htmlwriter\\outputhtml.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\htmlwriter\\outputhtml.html"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\old\\index.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\index.html"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\old\\inlineall.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\inlineall.html"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\old\\inlinebycode.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\inlinebycode.html"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\old\\inlinetextarea.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\inlinetextarea.html"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\old\\jquery.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\jquery.html"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\old\\magicline\\magicline.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\magicline\\magicline.html"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\old\\readonly.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\readonly.html"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\old\\replacebyclass.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\replacebyclass.html"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\old\\replacebycode.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\replacebycode.html"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\old\\sample.css",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\sample.css"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\old\\sample.js",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\sample.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\old\\sample_posteddata.php",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\sample_posteddata.php"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\old\\tabindex.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\tabindex.html"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\old\\toolbar\\toolbar.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\toolbar\\toolbar.html"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\old\\uicolor.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\uicolor.html"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\old\\uilanguages.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\uilanguages.html"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\old\\wysiwygarea\\fullpage.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\wysiwygarea\\fullpage.html"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\old\\xhtmlstyle.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\xhtmlstyle.html"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\css\\fontello.css",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\css\\fontello.css"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\font\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\font\\LICENSE.txt"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\font\\config.json",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\font\\config.json"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\font\\fontello.eot",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\font\\fontello.eot"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\font\\fontello.svg",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\font\\fontello.svg"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\font\\fontello.ttf",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\font\\fontello.ttf"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\font\\fontello.woff",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\font\\fontello.woff"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\index.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\index.html"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\js\\abstracttoolbarmodifier.js",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\js\\abstracttoolbarmodifier.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\js\\fulltoolbareditor.js",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\js\\fulltoolbareditor.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\js\\toolbarmodifier.js",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\js\\toolbarmodifier.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\js\\toolbartextmodifier.js",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\js\\toolbartextmodifier.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\lib\\codemirror\\LICENSE",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\lib\\codemirror"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\lib\\codemirror\\codemirror.css",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\lib\\codemirror\\codemirror.css"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\lib\\codemirror\\codemirror.js",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\lib\\codemirror\\codemirror.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\lib\\codemirror\\javascript.js",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\lib\\codemirror\\javascript.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\lib\\codemirror\\neo.css",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\lib\\codemirror\\neo.css"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\lib\\codemirror\\show-hint.css",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\lib\\codemirror\\show-hint.css"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\lib\\codemirror\\show-hint.js",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\lib\\codemirror\\show-hint.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\skins\\moono-lisa\\dialog.css",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\dialog.css"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\skins\\moono-lisa\\dialog_ie.css",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\dialog_ie.css"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\skins\\moono-lisa\\dialog_ie8.css",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\dialog_ie8.css"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\skins\\moono-lisa\\dialog_iequirks.css",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\dialog_iequirks.css"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\skins\\moono-lisa\\editor.css",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\editor.css"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\skins\\moono-lisa\\editor_gecko.css",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\editor_gecko.css"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\skins\\moono-lisa\\editor_ie.css",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\editor_ie.css"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\skins\\moono-lisa\\editor_ie8.css",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\editor_ie8.css"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\skins\\moono-lisa\\editor_iequirks.css",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\editor_iequirks.css"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\skins\\moono-lisa\\icons.png",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\icons.png"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\skins\\moono-lisa\\icons_hidpi.png",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\icons_hidpi.png"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\skins\\moono-lisa\\images\\arrow.png",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\images\\arrow.png"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\skins\\moono-lisa\\images\\close.png",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\images\\close.png"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\skins\\moono-lisa\\images\\hidpi\\close.png",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\images\\hidpi\\close.png"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\skins\\moono-lisa\\images\\hidpi\\lock-open.png",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\images\\hidpi\\lock-open.png"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\skins\\moono-lisa\\images\\hidpi\\lock.png",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\images\\hidpi\\lock.png"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\skins\\moono-lisa\\images\\hidpi\\refresh.png",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\images\\hidpi\\refresh.png"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\skins\\moono-lisa\\images\\lock-open.png",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\images\\lock-open.png"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\skins\\moono-lisa\\images\\lock.png",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\images\\lock.png"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\skins\\moono-lisa\\images\\refresh.png",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\images\\refresh.png"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\skins\\moono-lisa\\images\\spinner.gif",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\images\\spinner.gif"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\skins\\moono-lisa\\readme.md",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\readme.md"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\styles.js",
+      "PackagePath": "staticwebassets\\ckeditor\\styles.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ckeditor\\vendor\\promise.js",
+      "PackagePath": "staticwebassets\\ckeditor\\vendor\\promise.js"
+    },
+    {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\images\\Violet_Evergarden.jpg",
+      "PackagePath": "staticwebassets\\images\\Violet_Evergarden.jpg"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\images\\ava1.jpeg",
+      "PackagePath": "staticwebassets\\images\\ava1.jpeg"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\images\\vio1.jpg",
+      "PackagePath": "staticwebassets\\images\\vio1.jpg"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\images\\vio2.jpg",
+      "PackagePath": "staticwebassets\\images\\vio2.jpg"
     },
     {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\js\\site.js",
