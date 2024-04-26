@@ -14,6 +14,7 @@ namespace BookStoreTM.Models
         [StringLength(500)]
         [Column(TypeName = "nvarchar(500)")]
         public string Title { get; set; }
+        public string Alias { get; set; }
 
         [Column(TypeName = "nvarchar(500)")]
         public string? Image { get; set; }

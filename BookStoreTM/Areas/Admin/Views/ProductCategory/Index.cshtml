@@ -1,6 +1,4 @@
-﻿@* @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-@model IEnumerable<BookStoreTM.Models.ProductCategory>
- *@
+﻿
 @model X.PagedList.IPagedList<BookStoreTM.Models.ProductCategory>
 @using X.PagedList.Mvc.Core;
 @{
@@ -61,15 +59,15 @@
                         var i = 1;
                         foreach (var item in Model)
                         {
-                            <tr id="trow_@item.Id">
+                            <tr id="trow_@item.ProductCategoryId">
                                 <td>@i</td>
                                 <td>@item.Name</td>
                                 <td>@string.Format("{0:dd/MM/yyy}", item.CreatedDate)</td>
                                 <td>
-                                    <a asp-action="SuaDMSanPham" asp-route-MaSanPham="@item.Id" class="btn-sm btn-primary">Sửa</a>
+                                    <a asp-action="SuaDMSanPham" asp-route-MaSanPham="@item.ProductCategoryId" class="btn-sm btn-primary">Sửa</a>
                                     @* <a href="#" data-id="@item.NewsId" class="btn-sm btn-danger btnDelete">Xóa</a> *@
                                 </td>
-                                <td><input type="checkbox" class="cbkItem" value="@item.Id" /></td>
+                                <td><input type="checkbox" class="cbkItem" value="@item.ProductCategoryId" /></td>
                             </tr>
                             i++;
                         }

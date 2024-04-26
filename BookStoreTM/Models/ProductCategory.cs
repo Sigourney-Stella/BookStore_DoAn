@@ -8,15 +8,16 @@ namespace BookStoreTM.Models
     {
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int ProductCategoryId { get; set; }
 
         [Required]
         [StringLength(500)]
         [Column(TypeName = "nvarchar(500)")]
         public string Name { get; set; }
+        public string Alias { get; set; }
 
         [Column(TypeName = "nvarchar(250)")]
-        public int? Icon { get; set; }
+        public string? Icon { get; set; }
 
         [Column(TypeName = "nvarchar(500)")]
         public string? SeoTitle { get; set; }
@@ -26,5 +27,6 @@ namespace BookStoreTM.Models
 
         [Column(TypeName = "nvarchar(500)")]
         public string? SeoDescription { get; set; }
+        public ICollection<Product> Products { get;}
     }
 }

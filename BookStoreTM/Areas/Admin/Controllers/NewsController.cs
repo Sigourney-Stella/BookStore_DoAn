@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using X.PagedList;
 
 using Microsoft.AspNetCore.Hosting;
+using BookStoreTM.Common;
 
 
 namespace BookStoreTM.Areas.Admin.Controllers
@@ -21,17 +22,34 @@ namespace BookStoreTM.Areas.Admin.Controllers
             _db = db;
             _env = env;
         }
-        public IActionResult Index(string name, int page =1)
+        public IActionResult Index(string name, int? page)
         {
-            int limit = 2;
-            var items = _db.News.OrderByDescending(x => x.NewsId).ToPagedList(page, limit);
-            if (!string.IsNullOrEmpty(name))
+            var products = _db.News.Include(p => p.Category).ToList();
+
+            var pageSize = 3;
+            if (page == null)
             {
-                items = _db.News.Where(x => x.Title.Contains(name)).ToPagedList(page, limit);
+                page = 1;
             }
-            ViewBag.keyword = name;
-            return View(items);
+            var pageIndex = page.HasValue ? Convert.ToInt32(page) : 1;
+
+            var item = _db.News.OrderByDescending(x => x.NewsId).ToPagedList(pageIndex, pageSize);
+
+            ViewBag.PageSize = pageSize;
+            ViewBag.Page = page;
+            return View(item);
         }
+        //public IActionResult Index(string name, int page =1)
+        //{
+        //    int limit = 5;
+        //    var items = _db.News.OrderByDescending(x => x.NewsId).ToPagedList(page, limit);
+        //    if (!string.IsNullOrEmpty(name))
+        //    {
+        //        items = _db.News.Where(x => x.Title.Contains(name)).ToPagedList(page, limit);
+        //    }
+        //    ViewBag.keyword = name;
+        //    return View(items);
+        //}
         //ckeditor
         public IActionResult UploadImage(List<IFormFile> files)
         {
@@ -68,16 +86,19 @@ namespace BookStoreTM.Areas.Admin.Controllers
                     {
                         var file = files[0];
                         var FileName = file.FileName;
+                        string[] tokens = FileName.Split('.');
+                        var nameImg = "Tintuc" + ConvertVietNamToEnglish.LocDau(TinTuc.Title) +"."+ tokens[tokens.Length-1];
+                        string result = nameImg.Replace(" ", "");
                         // upload ảnh vào thư mục wwwroot\\images\\category
-                        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\LayoutAdmin\\images\\tintuc", FileName);
+                        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\LayoutAdmin\\images\\tintuc", result);
                         using (var stream = new FileStream(path, FileMode.Create))
                         {
                             file.CopyTo(stream);
-                            TinTuc.Image = "/LayoutAdmin/images/tintuc/" + FileName; // gán tên ảnh cho thuộc tinh Image
+                            TinTuc.Image = "/LayoutAdmin/images/tintuc/" + result; // gán tên ảnh cho thuộc tinh Image
                         }
                     }
                     TinTuc.CreatedDate = DateTime.Now;
-
+                    TinTuc.Alias = BookStoreTM.Common.Filter.FilterChar(TinTuc.Title);
                     _db.Add(TinTuc);
                     _db.SaveChanges(); 
                     return RedirectToAction(nameof(Index));
@@ -94,8 +115,8 @@ namespace BookStoreTM.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult SuaTinTuc(int TinTuc)
         {
-            //ViewBag.CategoryId = new SelectList(_db.Categories.ToList(), "CategoryId", "Title", TinTuc);
             var tinTuc = _db.News.Find(TinTuc);
+            tinTuc.Image = "wwwroot\\LayoutAdmin\\images\\tintuc";
             ViewBag.CategoryId = new SelectList(_db.Categories.ToList(), "CategoryId", "Title", tinTuc.CategoryId);
             return View(tinTuc);
         }
@@ -119,6 +140,7 @@ namespace BookStoreTM.Areas.Admin.Controllers
                     }
                 }
                 TinTuc.CreatedDate = DateTime.Now;
+                TinTuc.Alias = BookStoreTM.Common.Filter.FilterChar(TinTuc.Title);
                 _db.Update(TinTuc);
                 _db.SaveChanges();
                 return RedirectToAction(nameof(Index));
@@ -166,23 +188,13 @@ namespace BookStoreTM.Areas.Admin.Controllers
             if (item != null)
             {
                 item.IsActicve = !item.IsActicve;
-                _db.Entry(item).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                var entry = _db.Entry<News>(item);
+                entry.State = EntityState.Modified;
+                //_db.Entry(item).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                 _db.SaveChanges();
                 return Json(new { success = true, isActicve = item.IsActicve });
             }
             return Json(new { success = false });
         }
-        //[HttpPost]
-        //public IActionResult XoaTintuc(int maTin)
-        //{
-        //    var news =  _db.News.Find(maTin);
-        //    if (news == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    _db.News.Remove(news);
-        //    _db.SaveChanges();
-        //    return RedirectToAction(nameof(Index));
     }
 }

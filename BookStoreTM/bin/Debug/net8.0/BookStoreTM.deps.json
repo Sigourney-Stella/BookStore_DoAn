@@ -15,7 +15,11 @@
           "Microsoft.EntityFrameworkCore.Tools": "8.0.3",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.2",
           "X.PagedList": "9.1.2",
-          "X.PagedList.Mvc.Core": "9.1.2"
+          "X.PagedList.Mvc.Core": "9.1.2",
+          "CKFinder": "2.6.0.2792",
+          "CKFinder_FileEditor": "2.1.0.1132",
+          "CKFinder_ImageResize": "2.1.0.1132",
+          "CKFinder_Watermark": "2.1.0.0"
         },
         "runtime": {
           "BookStoreTM.dll": {}
@@ -2000,6 +2004,38 @@
             "fileVersion": "9.1.2.0"
           }
         }
+      },
+      "CKFinder/2.6.0.2792": {
+        "runtime": {
+          "CKFinder.dll": {
+            "assemblyVersion": "2.6.0.2792",
+            "fileVersion": "2.6.0.2792"
+          }
+        }
+      },
+      "CKFinder_FileEditor/2.1.0.1132": {
+        "runtime": {
+          "CKFinder_FileEditor.dll": {
+            "assemblyVersion": "2.1.0.1132",
+            "fileVersion": "2.1.0.1132"
+          }
+        }
+      },
+      "CKFinder_ImageResize/2.1.0.1132": {
+        "runtime": {
+          "CKFinder_ImageResize.dll": {
+            "assemblyVersion": "2.1.0.1132",
+            "fileVersion": "2.1.0.1132"
+          }
+        }
+      },
+      "CKFinder_Watermark/2.1.0.0": {
+        "runtime": {
+          "CKFinder_Watermark.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.0"
+          }
+        }
       }
     }
   },
@@ -3198,6 +3234,26 @@
       "sha512": "sha512-+g8fJgXXVhl17BzVv8bGAkWooul23REeGNIJ4jUlA1Iqbw8Yq0OFMx/mGvjjEhIBNwDrjdhJKXGt7N7jejZWcQ==",
       "path": "x.pagedlist.mvc.core/9.1.2",
       "hashPath": "x.pagedlist.mvc.core.9.1.2.nupkg.sha512"
+    },
+    "CKFinder/2.6.0.2792": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CKFinder_FileEditor/2.1.0.1132": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CKFinder_ImageResize/2.1.0.1132": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CKFinder_Watermark/2.1.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

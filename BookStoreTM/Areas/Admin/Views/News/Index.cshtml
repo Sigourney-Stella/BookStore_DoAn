@@ -1,7 +1,4 @@
-﻿@* @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-@model IEnumerable<BookStoreTM.Models.News>
- *@
-
+﻿
 @model X.PagedList.IPagedList<BookStoreTM.Models.News>
 @using X.PagedList.Mvc.Core;
 @{
@@ -57,7 +54,7 @@
                         <th>Ngày tạo</th>
                         <th>Hiển thị</th>
                         <th>Mô tả </th>
-                        <th style="width: 80px;"></th>
+                        <th style="width: 80px;">Sửa</th>
                         <th style="width: 80px;"><input type="checkbox" id="SelectAll" /></th>
                     </tr>
                 </thead>

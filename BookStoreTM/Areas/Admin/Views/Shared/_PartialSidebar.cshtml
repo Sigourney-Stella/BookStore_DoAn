@@ -1,4 +1,4 @@
-﻿@* 
+﻿@*
 @{
     ViewData["Title"] = "_PartialSidebar";
     Layout = "~/Areas/Admin/Views/Shared/Admin.cshtml";
@@ -11,21 +11,9 @@
             <img src="../../LayoutAdmin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-            <a href="#" class="d-block">Alexander Pierce</a>
+            <a href="#" class="d-block">Admin</a>
         </div>
     </div>
-
-    <!-- SidebarSearch Form -->
-    @* <div class="form-inline">
-        <div class="input-group" data-widget="sidebar-search">
-            <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-            <div class="input-group-append">
-                <button class="btn btn-sidebar">
-                    <i class="fas fa-search fa-fw"></i>
-                </button>
-            </div>
-        </div>
-    </div> *@
 
     <!-- Sidebar Menu -->
     <nav class="mt-2">
@@ -37,6 +25,14 @@
                     <i class="nav-icon fas fa-tachometer-alt"></i>
                     <p>
                         Danh mục
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/Admin/Publisher" class="nav-link">
+                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <p>
+                        Nhà xuất bản
                     </p>
                 </a>
             </li>
@@ -59,7 +55,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="../examples/profile.html" class="nav-link">
+                        <a href="/Admin/product" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sản phẩm</font></font></p>
                         </a>
@@ -82,7 +78,47 @@
                     </p>
                 </a>
             </li>
-           
+            <li class="nav-item">
+                <a href="/Admin/quangcao" class="nav-link">
+                    <i class="nav-icon fas fa-edit"></i>
+                    <p>
+                        Đơn hàng
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/Admin/quangcao" class="nav-link">
+                    <i class="nav-icon fas fa-edit"></i>
+                    <p>
+                        Nhập kho
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/Admin/quangcao" class="nav-link">
+                    <i class="nav-icon fas fa-edit"></i>
+                    <p>
+                        Tài khoản
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/Admin/quangcao" class="nav-link">
+                    <i class="nav-icon fas fa-edit"></i>
+                    <p>
+                        Thống kê
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/Admin/quangcao" class="nav-link">
+                    <i class="nav-icon fas fa-edit"></i>
+                    <p>
+                        Hệ thống
+                    </p>
+                </a>
+            </li>
+        </ul>
     </nav>
     <!-- /.sidebar-menu -->
 </div>

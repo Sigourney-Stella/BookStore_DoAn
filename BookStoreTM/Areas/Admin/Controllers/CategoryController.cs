@@ -49,6 +49,7 @@ namespace BookStoreTM.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 DanhMuc.CreatedDate = DateTime.Now;
+                DanhMuc.Alias = BookStoreTM.Common.Filter.FilterChar(DanhMuc.Title);
                 //DanhMuc.UpdatedDate = DateTime.Now;
                 _db.Categories.Add(DanhMuc);
                 _db.SaveChanges();
@@ -71,6 +72,7 @@ namespace BookStoreTM.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 loai.CreatedDate = DateTime.Now;
+                loai.Alias = BookStoreTM.Common.Filter.FilterChar(loai.Title);
                 _db.Update(loai);
                 //_db.Entry(loai).State = EntityState.Modified;
                 _db.SaveChanges();

@@ -23,7 +23,7 @@ namespace BookStoreTM.Models
         public string ReceivePhone { get; set; }
 
         [Column(TypeName = "ntext")]
-        public int? Notes { get; set; }
+        public int Notes { get; set; }
         //khoá ngoại
         public int AccountId { get; set; }
         //public int PaymentId { get; set; }

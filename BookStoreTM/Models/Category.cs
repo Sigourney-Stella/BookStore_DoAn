@@ -14,20 +14,23 @@ namespace BookStoreTM.Models
         [StringLength(500)]
         [Column(TypeName = "nvarchar(500)")]
         public string Title { get; set; }
+        public string Alias { get; set; }
 
         [Column(TypeName = "int")]
         public int? Position { get; set; }
 
         [Column(TypeName = "nvarchar(500)")]
-        public string? Description { get; set; }
+        public string Description { get; set; }
 
         [Column(TypeName = "nvarchar(500)")]
-        public string? SeoTitle { get; set; }
+        public string SeoTitle { get; set; }
 
         [Column(TypeName = "nvarchar(500)")]
-        public string? SeoKeywords { get; set; }
+        public string SeoKeywords { get; set; }
 
         [Column(TypeName = "nvarchar(500)")]
-        public string? SeoDescription { get; set; }
+        public string SeoDescription { get; set; }
+
+        public ICollection<News> News { get; set; }
     }
 }

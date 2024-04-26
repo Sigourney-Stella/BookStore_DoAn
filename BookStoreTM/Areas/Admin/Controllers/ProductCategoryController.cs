@@ -19,7 +19,7 @@ namespace BookStoreTM.Areas.Admin.Controllers
         public IActionResult Index(string name, int page = 1)
         {
             int limit = 2;
-            var items = _db.ProductCategories.OrderByDescending(x => x.Id).ToPagedList(page, limit);
+            var items = _db.ProductCategories.OrderByDescending(x => x.ProductCategoryId).ToPagedList(page, limit);
             if (!string.IsNullOrEmpty(name))
             {
                 items = _db.ProductCategories.Where(x => x.Name.Contains(name)).ToPagedList(page, limit);
@@ -42,6 +42,8 @@ namespace BookStoreTM.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 SanPham.CreatedDate = DateTime.Now;
+                SanPham.Alias = BookStoreTM.Common.Filter.FilterChar(SanPham.Name);
+
                 _db.ProductCategories.Add(SanPham);
                 _db.SaveChanges();
                 return RedirectToAction("index");
@@ -63,6 +65,8 @@ namespace BookStoreTM.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 MaLoai.CreatedDate = DateTime.Now;
+                MaLoai.Alias = BookStoreTM.Common.Filter.FilterChar(MaLoai.Name);
+
                 _db.Update(MaLoai);
                 //_db.Entry(loai).State = EntityState.Modified;
                 _db.SaveChanges();

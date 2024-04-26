@@ -29,8 +29,9 @@
   <link rel="stylesheet" href="../../LayoutAdmin/plugins/dropzone/min/dropzone.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../../LayoutAdmin/dist/css/adminlte.min.css">
-
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="~/js/autonumeric-1.9.45.js"></script>
+  <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -167,7 +168,7 @@
     <!-- Brand Logo -->
     <a href="../../index3.html" class="brand-link">
       <img src="../../LayoutAdmin/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <span class="brand-text font-weight-light">THANH MAI STORE</span>
     </a>
 
     <!-- Sidebar -->
@@ -220,7 +221,7 @@
 <script src="../../LayoutAdmin/plugins/dropzone/min/dropzone.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../../LayoutAdmin/dist/js/adminlte.min.js"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    @await RenderSectionAsync("scripts", required: false)
 
 <!-- AdminLTE for demo purposes -->
 @* <script src="../../LayoutAdmin/dist/js/demo.js"></script> *@

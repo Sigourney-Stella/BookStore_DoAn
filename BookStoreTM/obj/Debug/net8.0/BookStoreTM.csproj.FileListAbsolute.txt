@@ -265,3 +265,11 @@ E:\DoAn\code\BookStoreTM\BookStoreTM\bin\Debug\net8.0\runtimes\win\lib\net7.0\Sy
 E:\DoAn\code\BookStoreTM\BookStoreTM\bin\Debug\net8.0\X.PagedList.dll
 E:\DoAn\code\BookStoreTM\BookStoreTM\bin\Debug\net8.0\X.PagedList.Mvc.Core.dll
 E:\DoAn\code\BookStoreTM\BookStoreTM\obj\Debug\net8.0\BookStoreTM.MvcApplicationPartsAssemblyInfo.cs
+E:\DoAn\code\BookStoreTM\BookStoreTM\bin\Debug\net8.0\CKFinder.dll
+E:\DoAn\code\BookStoreTM\BookStoreTM\bin\Debug\net8.0\CKFinder_FileEditor.dll
+E:\DoAn\code\BookStoreTM\BookStoreTM\bin\Debug\net8.0\CKFinder_ImageResize.dll
+E:\DoAn\code\BookStoreTM\BookStoreTM\bin\Debug\net8.0\CKFinder_Watermark.dll
+E:\DoAn\code\BookStoreTM\BookStoreTM\bin\Debug\net8.0\CKFinder.pdb
+E:\DoAn\code\BookStoreTM\BookStoreTM\bin\Debug\net8.0\CKFinder_FileEditor.pdb
+E:\DoAn\code\BookStoreTM\BookStoreTM\bin\Debug\net8.0\CKFinder_ImageResize.pdb
+E:\DoAn\code\BookStoreTM\BookStoreTM\bin\Debug\net8.0\CKFinder_Watermark.pdb

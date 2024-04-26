@@ -26,11 +26,29 @@
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Views\News\" />
     <Folder Include="wwwroot\images\" />
+    <Folder Include="wwwroot\LayoutAdmin\images\products\" />
+    <Folder Include="wwwroot\LayoutAdmin\images\tintuc\" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="wwwroot\ckeditor\.circleci\config.yml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="CKFinder">
+      <HintPath>..\..\..\ckfinder\bin\Debug\CKFinder.dll</HintPath>
+    </Reference>
+    <Reference Include="CKFinder_FileEditor">
+      <HintPath>..\..\..\ckfinder\bin\Debug\CKFinder_FileEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="CKFinder_ImageResize">
+      <HintPath>..\..\..\ckfinder\bin\Debug\CKFinder_ImageResize.dll</HintPath>
+    </Reference>
+    <Reference Include="CKFinder_Watermark">
+      <HintPath>..\..\..\ckfinder\bin\Debug\CKFinder_Watermark.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
