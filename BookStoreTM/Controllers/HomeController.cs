@@ -1,23 +1,26 @@
 using BookStoreTM.Models;
+using BookStoreTM.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace BookStoreTM.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly AppDbContext _db;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(AppDbContext db, ILogger<HomeController> logger)
         {
-
+            _db = db;
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-
-            return View();
+            var products = await _db.Products.Include(c => c.ProductCategory).Where(x => x.IsHome && x.IsActicve).Take(12).ToListAsync();
+            return View(products);
         }
         public IActionResult LienHe()
         {

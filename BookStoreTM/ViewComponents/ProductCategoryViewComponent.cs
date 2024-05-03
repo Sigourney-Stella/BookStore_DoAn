@@ -1,5 +1,6 @@
 ﻿using BookStoreTM.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace BookStoreTM.ViewComponents
 {
@@ -14,7 +15,7 @@ namespace BookStoreTM.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var product = _context.ProductCategories.ToList();
+            var product = await _context.ProductCategories.ToListAsync();
             //var categories = await _context.Categories.Include(c => c.ProductCategories).ToListAsync();
             return View(product);
         }

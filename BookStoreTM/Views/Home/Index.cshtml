@@ -1,29 +1,78 @@
-﻿<section class="hero">
+﻿@{
+    ViewData["Title"] = "Trang chủ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<BookStoreTM.Models.Product>
+
+<section class="hero">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
 
                 <div class="hero__item set-bg" data-setbg="../ImagesBook/banner3.jpg">
-                    @* <div class="hero__text">
-                        <span>FRUIT FRESH</span>
-                        <h2>Vegetable <br />100% Organic</h2>
-                        <p>Free Pickup and Delivery Available</p>
-                        <a href="#" class="primary-btn">SHOP NOW</a>
-                    </div> *@
+                    
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Categories Section Begin -->
-
-<!-- Categories Section End -->
-
 <!-- Featured Section Begin -->
 <section class="featured spad">
     <div class="container">
-        @await Component.InvokeAsync("Product")
+        @if (Model != null && Model.Any())
+        {
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Sản phẩm nổi bật</h2>
+                    </div>
+                    <div class="featured__controls">
+                        <ul>
+                            <li class="active" data-filter="*">All</li>
+                            @foreach (var item in Model)
+                            {
+                                <li data-filter=".@item.ProductCategory.Alias">@item.ProductCategory.Name</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row featured__filter">
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-3 col-md-4 col-sm-6 mix @item.ProductCategory.Alias fresh-meat">
+                        <div class="featured__item product__discount__item">
+                            <div class="featured__item__pic set-bg" data-setbg="@item.Images">
+                                <ul class="featured__item__pic__hover">
+                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="featured__item__text product__discount__item__text">
+                                <h6><a href="@item.Alias">@item.ProductName</a></h6>
+                                @if (item.PriceSale > 0)
+                                {
+                                    <div class="product__item__price">
+                                        @item.Price
+                                        <br />
+                                        <span>@item.PriceSale</span>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="product__item__price">
+                                        @item.Price
+                                    </div>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
     </div>
 </section>
 <!-- Featured Section End -->
