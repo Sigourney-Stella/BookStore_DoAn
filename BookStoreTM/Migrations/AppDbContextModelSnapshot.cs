@@ -190,7 +190,7 @@ namespace BookStoreTM.Migrations
                         .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("Detail")
-                        .HasColumnType("nvarchar(500)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(500)");
@@ -392,7 +392,7 @@ namespace BookStoreTM.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Notes")
-                        .HasColumnType("ntext");
+                        .HasColumnType("nvarchar(4000)");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");

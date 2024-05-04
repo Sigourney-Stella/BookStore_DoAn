@@ -2,43 +2,76 @@
 
 @if (Model != null && Model.Any())
 {
-    <section class="hero hero-normal">
+    <div class="header-middle py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="hero__categories">
-                        <div class="hero__categories__all">
-                            <i class="fa fa-bars"></i>
-                            <span>Danh mục sản phẩm</span>
-                        </div>
-                        <ul style="display: none;">
-                            @foreach(var item in Model)
-                            {
-                                <li><a href="/products/index/@item.ProductCategoryId">@item.Name</a></li>
-                            }
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-9">
-                    <div class="hero__search">
-                        <div class="hero__search__form">
-                            <form action="#">
-                                <input type="text" placeholder="What do yo u need?">
-                                <button type="submit" class="site-btn">SEARCH</button>
-                            </form>
-                        </div>
-                        <div class="hero__search__phone">
-                            <div class="hero__search__phone__icon">
-                                <i class="fa fa-phone"></i>
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="header-middle-wrap">
+                        <a href="index.html" class="header-logo">
+                            <img src="assets/images/logo/dark.png" alt="Header Logo">
+                        </a>
+                        <div class="row" style="width: 730px;">
+                            <div class="col-2">
+                                <ul class="dropdown-wrap text-matterhorn" style="border: solid 1px #e8e8e8; height: 84%; width: 125%;">
+                                    <li class="dropdown">
+                                        <button class="btn btn-link dropdown-toggle ht-btn" type="button" id="languageButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Danh Mục
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="languageButton" style="">
+                                            @foreach (var item in Model)
+                                            {
+                                                <li><a class="dropdown-item" href="/products/productcategory/@item.ProductCategoryId">@item.Name</a></li>
+                                            }
+                                        </ul>
+                                    </li>
+                                </ul>
                             </div>
-                            <div class="hero__search__phone__text">
-                                <h5>+65 11.188.888</h5>
-                                <span>support 24/7 time</span>
+                            <div class="col-10">
+                                <form action="#" class="header-searchbox">
+                                    <input class="input-field" type="text" placeholder="Search Products">
+                                    <button class="btn btn-outline-whisper btn-primary-hover" type="submit"><i class="pe-7s-search"></i></button>
+                                </form>
                             </div>
+                        </div>
+                        <div class="header-right">
+                            <ul>
+                                <li class="dropdown d-none d-md-block">
+                                    <button class="btn btn-link dropdown-toggle ht-btn p-0" type="button" id="settingButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="pe-7s-users"></i>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="settingButton">
+                                        <li><a class="dropdown-item" href="my-account.html">My account</a></li>
+                                        <li><a class="dropdown-item" href="login-register.html">Login | Register</a></li>
+                                    </ul>
+                                </li>
+                                <li class="d-none d-md-block">
+                                    <a href="wishlist.html">
+                                        <i class="pe-7s-like"></i>
+                                    </a>
+                                </li>
+                                <li class="d-block d-lg-none">
+                                    <a href="#searchBar" class="search-btn toolbar-btn">
+                                        <i class="pe-7s-search"></i>
+                                    </a>
+                                </li>
+                                <li class="minicart-wrap me-3 me-lg-0">
+                                    <a href="#miniCart" class="minicart-btn toolbar-btn">
+                                        <i class="pe-7s-shopbag"></i>
+                                        <span class="quantity">3</span>
+                                    </a>
+                                </li>
+                                <li class="mobile-menu_wrap d-block d-lg-none">
+                                    <a href="#mobileMenu" class="mobile-menu_btn toolbar-btn pl-0">
+                                        <i class="pe-7s-menu"></i>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 }
+
+

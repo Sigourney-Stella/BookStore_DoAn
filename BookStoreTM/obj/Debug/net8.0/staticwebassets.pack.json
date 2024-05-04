@@ -357,6 +357,10 @@
       "PackagePath": "staticwebassets\\LayoutAdmin\\images\\products\\SanPhamCaubebutchi.jpg"
     },
     {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\products\\SanPhamCayCamNgotCuaToi.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\images\\products\\SanPhamCayCamNgotCuaToi.jpg"
+    },
+    {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\products\\SanPhamChipheo.jpg",
       "PackagePath": "staticwebassets\\LayoutAdmin\\images\\products\\SanPhamChipheo.jpg"
     },
@@ -383,6 +387,10 @@
     {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\Tintuc10sachhay.jpg",
       "PackagePath": "staticwebassets\\LayoutAdmin\\images\\tintuc\\Tintuc10sachhay.jpg"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\book6.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\images\\tintuc\\book6.jpg"
     },
     {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\plugins\\bootstrap-colorpicker\\css\\bootstrap-colorpicker.css",
@@ -12249,6 +12257,10 @@
       "PackagePath": "staticwebassets\\js\\autoNumeric-1.9.45.js"
     },
     {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\js\\jsShopCart.js",
+      "PackagePath": "staticwebassets\\js\\jsShopCart.js"
+    },
+    {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
@@ -12479,6 +12491,10 @@
     {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\product\\book10.jpg",
+      "PackagePath": "staticwebassets\\product\\book10.jpg"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.BookStoreTM.Microsoft.AspNetCore.StaticWebAssets.props",

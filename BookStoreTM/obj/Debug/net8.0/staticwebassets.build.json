@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Qj8ooWxa48RHyMpJMn3AKSFLCINn93tlS0IaLDKkYzI=",
+  "Hash": "vebrfYExdDqofe9VE6jc8FNr+jvz7KQyavwtlBP4WZQ=",
   "Source": "BookStoreTM",
   "BasePath": "_content/BookStoreTM",
   "Mode": "Default",
@@ -18903,6 +18903,25 @@
       "OriginalItemSpec": "wwwroot\\js\\autoNumeric-1.9.45.js"
     },
     {
+      "Identity": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\js\\jsShopCart.js",
+      "SourceId": "BookStoreTM",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\",
+      "BasePath": "_content/BookStoreTM",
+      "RelativePath": "js/jsShopCart.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\jsShopCart.js"
+    },
+    {
       "Identity": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\js\\site.js",
       "SourceId": "BookStoreTM",
       "SourceType": "Discovered",
@@ -20290,6 +20309,25 @@
       "OriginalItemSpec": "wwwroot\\LayoutAdmin\\images\\products\\SanPhamCaubebutchi.jpg"
     },
     {
+      "Identity": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\products\\SanPhamCayCamNgotCuaToi.jpg",
+      "SourceId": "BookStoreTM",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\",
+      "BasePath": "_content/BookStoreTM",
+      "RelativePath": "LayoutAdmin/images/products/SanPhamCayCamNgotCuaToi.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\LayoutAdmin\\images\\products\\SanPhamCayCamNgotCuaToi.jpg"
+    },
+    {
       "Identity": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\products\\SanPhamChipheo.jpg",
       "SourceId": "BookStoreTM",
       "SourceType": "Discovered",
@@ -20402,6 +20440,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\LayoutAdmin\\images\\products\\SanPhamTruyenkieu.jpg"
+    },
+    {
+      "Identity": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\book6.jpg",
+      "SourceId": "BookStoreTM",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\",
+      "BasePath": "_content/BookStoreTM",
+      "RelativePath": "LayoutAdmin/images/tintuc/book6.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\LayoutAdmin\\images\\tintuc\\book6.jpg"
     },
     {
       "Identity": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\Tintuc10sachhay.jpg",
@@ -59352,6 +59409,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\product\\book10.jpg",
+      "SourceId": "BookStoreTM",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\",
+      "BasePath": "_content/BookStoreTM",
+      "RelativePath": "product/book10.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\product\\book10.jpg"
     }
   ]
 }

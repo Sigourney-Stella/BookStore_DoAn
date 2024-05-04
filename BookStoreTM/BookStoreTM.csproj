@@ -30,6 +30,7 @@
     <Folder Include="wwwroot\images\" />
     <Folder Include="wwwroot\LayoutAdmin\images\products\" />
     <Folder Include="wwwroot\LayoutAdmin\images\tintuc\" />
+    <Folder Include="wwwroot\product\" />
   </ItemGroup>
 
   <ItemGroup>

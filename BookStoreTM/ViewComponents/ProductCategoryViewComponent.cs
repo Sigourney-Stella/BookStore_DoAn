@@ -16,7 +16,6 @@ namespace BookStoreTM.ViewComponents
         public async Task<IViewComponentResult> InvokeAsync()
         {
             var product = await _context.ProductCategories.ToListAsync();
-            //var categories = await _context.Categories.Include(c => c.ProductCategories).ToListAsync();
             return View(product);
         }
     }

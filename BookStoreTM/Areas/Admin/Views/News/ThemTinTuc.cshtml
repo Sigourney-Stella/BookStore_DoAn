@@ -70,11 +70,6 @@
                             <label asp-for="Detail" class="control-label">Chi Tiết </label>
                             <textarea asp-for="Detail" id="inputDetai" class="form-control"></textarea>
                             <span asp-validation-for="Detail" class="text-danger"></span>
-                            @* <label for="exampleInputEmail1">Chi Tiết </label>
-                            <div>
-                                <textarea class="form-group" name="Detail" id="inputDetail"></textarea>
-                                @Html.ValidationMessageFor(Model => Model.Detail, "", new { @class = "text-danger" })
-                            </div> *@
                         </div>
 
                         <div class="form-group">
@@ -88,17 +83,6 @@
                             @Html.DropDownListFor(x => x.CategoryId, ViewBag.CategoryId as SelectList, "-Chọn danh mục hiển thị-", new { @class = "form-control", @placeholder = "Mã danh mục" })
                             @Html.ValidationMessageFor(x => x.CategoryId, null, new { @class = "text-danger" })
                         </div>
-
-                        @* <div class="form-group">
-                            <label for="CategoryId" class="control-label">CategoryId</label>
-                            <select id="CategoryId" name="CategoryId" class="form-control">
-                                @foreach (var item in ViewBag.CategoryId as IEnumerable<SelectListItem>)
-                                {
-                                    <option value="@item.Value">@item.Text</option>
-                                }
-                            </select>
-                        </div> *@
-
                         <div class="form-group">
                             <a href="/admin/news" class="btn btn-danger">Quay lại</a>
                             <input type="submit" value="Thêm mới" class="btn btn-primary" />
@@ -239,119 +223,3 @@
     </script>
 } *@
 
-@* <div class="content-wrapper" style="min-height: 1345.31px;"> *@
-<!-- Content Header (Page header) -->
-@* <section class="content-header">
-    <div class="container-fluid">
-        <div class="row mb-2">
-            <div class="col-sm-6">
-                <h1>Thêm tin tức</h1>
-            </div>
-            <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active">Advanced Form</li>
-                </ol>
-            </div>
-        </div>
-    </div><!-- /.container-fluid -->
-</section>
-
-<!-- Main content -->
-<section class="content">
-    <div class="container-fluid">
-        <!-- SELECT2 EXAMPLE -->
-        <!-- /.row -->
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card card-default">
-                    <div class="card-header">
-                        <h3 class="card-title">Thông tin tin tức</h3>
-                    </div>
-                    <div class="card-body p-0">
-                        <div class="bs-stepper linear">
-                            <div class="bs-stepper-content">
-                                <form asp-action="ThemTinTuc" method="post" enctype="multipart/form-data">
-                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                                    <div class="form-group">
-                                        <label asp-for="Title" class="control-label"></label>
-                                        <input asp-for="Title" class="form-control" />
-                                        <span asp-validation-for="Title" class="text-danger"></span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label asp-for="Image" class="control-label"></label>
-                                        <input asp-for="Image" type="file" class="form-control" />
-                                        <span asp-validation-for="Image" class="text-danger"></span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label asp-for="Description" class="control-label"></label>
-                                        <input asp-for="Description" class="form-control" />
-                                        <span asp-validation-for="Description" class="text-danger"></span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label asp-for="Detail" class="control-label"></label>
-                                        <input asp-for="Detail" class="form-control" />
-                                        <span asp-validation-for="Detail" class="text-danger"></span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label asp-for="SeoTitle" class="control-label"></label>
-                                        <input asp-for="SeoTitle" class="form-control" />
-                                        <span asp-validation-for="SeoTitle" class="text-danger"></span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label asp-for="SeoKeywords" class="control-label"></label>
-                                        <input asp-for="SeoKeywords" class="form-control" />
-                                        <span asp-validation-for="SeoKeywords" class="text-danger"></span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label asp-for="SeoDescription" class="control-label"></label>
-                                        <input asp-for="SeoDescription" class="form-control" />
-                                        <span asp-validation-for="SeoDescription" class="text-danger"></span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label asp-for="CategoryId" class="control-label"></label>
-                                        <select asp-for="CategoryId" class="form-control"
-                                                asp-items="ViewBag.CategoryId"></select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label asp-for="CreatedDate" class="control-label"></label>
-                                        <input asp-for="CreatedDate" class="form-control" />
-                                        <span asp-validation-for="CreatedDate" class="text-danger"></span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label asp-for="UpdatedDate" class="control-label"></label>
-                                        <input asp-for="UpdatedDate" class="form-control" />
-                                        <span asp-validation-for="UpdatedDate" class="text-danger"></span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label asp-for="CreatedBy" class="control-label"></label>
-                                        <input asp-for="CreatedBy" class="form-control" />
-                                        <span asp-validation-for="CreatedBy" class="text-danger"></span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label asp-for="UpdatedBy" class="control-label"></label>
-                                        <input asp-for="UpdatedBy" class="form-control" />
-                                        <span asp-validation-for="UpdatedBy" class="text-danger"></span>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="submit" value="Create" class="btn btn-primary" />
-                                    </div>
-                                </form>
-                                <div>
-                                    <a asp-action="Index">Back to List</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.card-body -->
-                <div class="card-footer">
-                </div>
-            </div>
-            <!-- /.card -->
-        </div>
-    </div>
-    </div>
-    <!-- /.container-fluid -->
-</section>
-<!-- /.content --> *@

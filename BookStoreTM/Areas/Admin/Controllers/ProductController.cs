@@ -13,10 +13,12 @@ namespace BookStoreTM.Areas.Admin.Controllers
     public class ProductController : Controller
     {
         private readonly AppDbContext _db;
+        private readonly IWebHostEnvironment _env;
 
-        public ProductController(AppDbContext db)
+        public ProductController(AppDbContext db, IWebHostEnvironment env)
         {
             _db = db;
+            _env = env;
         }
         public IActionResult Index(string name, int? page)
         {
@@ -34,6 +36,22 @@ namespace BookStoreTM.Areas.Admin.Controllers
             ViewBag.PageSize = pageSize;
             ViewBag.Page = page;
             return View(item);
+        }
+
+        //ckeditor
+        public IActionResult UploadImage(List<IFormFile> files)
+        {
+            var filepath = "";
+            foreach (IFormFile photo in Request.Form.Files)
+            {
+                string serverMapPath = Path.Combine(_env.WebRootPath, "product", photo.FileName);
+                using (var stream = new FileStream(serverMapPath, FileMode.Create))
+                {
+                    photo.CopyTo(stream);
+                }
+                filepath = "https://localhost:44388/" + "product/" + photo.FileName;
+            }
+            return Json(new { url = filepath });
         }
 
 
