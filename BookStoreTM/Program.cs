@@ -1,4 +1,4 @@
-using BookStoreTM.Models.Entities;
+﻿using BookStoreTM.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookStoreTM
@@ -14,6 +14,20 @@ namespace BookStoreTM
 
             var connectionString = builder.Configuration.GetConnectionString("BookStoreTMConnection");
             builder.Services.AddDbContext<AppDbContext>(x => x.UseSqlServer(connectionString));
+
+            //cấu hình sử dụng session
+            builder.Services.AddDistributedMemoryCache();
+
+            //Đăng ký dịch vụ cho HttpContext
+            builder.Services.AddHttpContextAccessor();
+
+            builder.Services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(10);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+                options.Cookie.Name = ".Dev.Session";
+            });
 
             var app = builder.Build();
 
@@ -31,6 +45,10 @@ namespace BookStoreTM
             app.UseRouting();
 
             app.UseAuthorization();
+
+            //sử dụng session đã khai báo
+            app.UseSession();
+
 
             app.MapControllerRoute(
                name: "areas",

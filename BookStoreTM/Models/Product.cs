@@ -29,7 +29,7 @@ namespace BookStoreTM.Models
         public Decimal Price { get; set; }
 
         [Range(0, double.MaxValue)]
-        public Decimal? PriceSale { get; set; }
+        public Decimal PriceSale { get; set; }
 
         [Column(TypeName = "int")]
         public int? Quatity { get; set; }
