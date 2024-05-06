@@ -38,7 +38,7 @@ namespace BookStoreTM.Common
             }
             return rs;
         }
-        public static string FormatNumber(object value, int SoSauDauPhay = 2)
+        public static string FormatNumber(object value, int decimalCount = 2, string decimalSeparator = ".", string thousandsSeparator = ",")
         {
             bool isNumber = IsNumeric(value);
             decimal GT = 0;
@@ -51,21 +51,25 @@ namespace BookStoreTM.Common
             string str = string.Format("{0:#,0}", GT);
 
             // Kiểm tra và thêm số sau dấu phẩy nếu cần
-            if (SoSauDauPhay > 0)
+            if (decimalCount > 0)
             {
-                string thapPhan = "";
-                for (int i = 0; i < SoSauDauPhay; i++)
+                string decimalPart = "";
+                for (int i = 0; i < decimalCount; i++)
                 {
-                    thapPhan += "#";
+                    decimalPart += "#";
                 }
-                if (!string.IsNullOrEmpty(thapPhan))
+                if (!string.IsNullOrEmpty(decimalPart))
                 {
-                    str += "." + thapPhan;
+                    str += decimalSeparator + decimalPart;
                 }
             }
 
+            // Thay thế ký tự phân cách hàng nghìn
+            str = str.Replace(thousandsSeparator, decimalSeparator);
+
             return str;
         }
+
 
         private static bool IsNumeric(object value)
         {

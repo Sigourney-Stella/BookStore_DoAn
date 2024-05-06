@@ -119,7 +119,8 @@
                                     <h2>Tổng số đơn hàng</h2>
                                     <ul>
                                         <li>Số lượng sản phẩm <span>@ViewBag.Count</span></li>
-                                        <li>Tổng tiền <span id="totalMoney">@string.Format("{0:#,##0}", ViewBag.Total)<sup style="font-size: 25px; top: 0rem;}">₫</sup></span></li>
+                                        <li>Tổng tiền <span id="totalMoney">@string.Format("{0:#,##0}", ViewBag.Total)
+                                            <sup style="font-size: 25px; top: 0rem;}">₫</sup></span></li>
                                     </ul>
                                     <a href="javascript:void(0)">Proceed to checkout</a>
                                 </div>
@@ -154,17 +155,16 @@
 @section scripts {
     <script>
         $(document).ready(function () {
-            // debugger;
+           
             //giảm
-            $('.qtybutton .fa-minus').click(function () {
-                console.log("ok");
+            $('.cart-plus-minus .fa-minus').click(function () {
                 let qty = parseInt($(this).parent().siblings('.cart-plus-minus-box').val()); // lấy giá trị ô input
                 let price = parseFloat($(this).closest('td').prev('td').find('.new-price').attr("data-price"));
-                // let price = parseFloat($(this).parent().parent().siblings('td').children('span').attr("data-price");
                 qty -= 1;
+                if (qty < 1) return;
                 let money = qty * price; // Tính thành tiền
                 //hiển thị dữ liệu
-                $(this).parent().siblings('.cart-plus-minus-box').val(qty); //hiển thị lại số lượng
+                $(this).parent().find('.cart-plus-minus-box').val(qty); //hiển thị lại số lượng
                 //cập nhập lại số lượng trong sesion
                 let id = $(this).parent().parent().parent().siblings('.btn-action').children('.update').attr("data-id");
                 let href = "/shopcart/Update/?id=" + id + "&quantity=" + qty; // link cập nhật sản phẩm trong giỏ hàng
@@ -172,32 +172,35 @@
                 $(this).parent().parent().parent().siblings('.product-subtotal').children('.total-money').attr("data-money", money);
                 let total_money = formatMoney(money, 0, ",", ".");
 
-                $(this).parent().parent().parent().siblings('td').children("span#money").text(total_money);
+                $(this).parent().parent().parent().siblings('td').children().children("span#money").text(total_money);
                 let totalMoney = formatMoney(total(), 0, ",", ".");
                 $("#totalMoney").text(totalMoney); // hiển thị tổng tiền
                 //$("#totalMoneyPay").text(totalMoney);// hiển thị tổng tiền
             })
 
             //Tawng
-            $('.qty_btn .fa-plus').click(function () {
-                console.log("fa-plus");
-                // debugger;
-                let qty = parseInt($(this).parent().siblings('.qty_input').val()); // 1
-                let price = parseFloat($(this).parent().parent().siblings('p').attr("data-price"));
-                qty += 1; //2
-                let money = qty * price;
-                // hien thi du lieu
-                $(this).parent().siblings('.qty_input').val(qty);
-                let id = $(this).parent().parent().parent().parent().siblings('.btn-action').children('.update').attr("data-id");
-                let href = "/cart/Update/?id=" + id + "&quantity=" + qty;
-                $(this).parent().parent().parent().parent().siblings('.btn-action').children('.update').attr("href", href);
-                $(this).parent().parent().siblings('p').attr("data-money", money);
+            $('.cart-plus-minus .fa-plus').click(function () {
+                console.log("ok");
+                let qty = parseInt($(this).parent().siblings('.cart-plus-minus-box').val()); // lấy giá trị ô input
+                let price = parseFloat($(this).closest('td').prev('td').find('.new-price').attr("data-price"));
+                // let price = parseFloat($(this).parent().parent().siblings().children("span.new-price").attr("data-price"));
+                
+                qty += 1;
+                let money = qty * price; // Tính thành tiền
+                //hiển thị dữ liệu
+                // $(this).parent().siblings('.cart-plus-minus-box').val(qty); //hiển thị lại số lượng
+                console.log("ok", qty, price, money);
+                //cập nhập lại số lượng trong sesion
+                let id = $(this).parent().parent().parent().siblings('.btn-action').children('.update').attr("data-id");
+                let href = "/shopcart/Update/?id=" + id + "&quantity=" + qty; // link cập nhật sản phẩm trong giỏ hàng
+                $(this).parent().parent().parent().siblings('.btn-action').children('.update').attr("href", href);
+                $(this).parent().parent().parent().siblings('.product-subtotal').children('.total-money').attr("data-money", money);
                 let total_money = formatMoney(money, 0, ",", ".");
-
-                $(this).parent().parent().siblings('p').children("span#money").text(total_money);
+                console.log("ok", qty, price, money, total_money);
+                $(this).parent().parent().parent().siblings('.product-subtotal').children('.total-money').children("#money").text(total_money);
                 let totalMoney = formatMoney(total(), 0, ",", ".");
-                $("#totalMoney").text(totalMoney);
-                $("#totalMoneyPay").text(totalMoney);
+                $("#totalMoney").text(totalMoney); // hiển thị tổng tiền
+                //$("#totalMoneyPay").text(totalMoney);// hiển thị tổng tiền
             })
 
 
