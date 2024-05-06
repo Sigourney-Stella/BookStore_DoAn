@@ -24,7 +24,7 @@ namespace BookStoreTM.Areas.Admin.Controllers
         }
         public IActionResult Index(string name, int? page)
         {
-            var products = _db.News.Include(p => p.Category).ToList();
+            //var products = _db.News.Include(p => p.Category).ToList();
 
             var pageSize = 3;
             if (page == null)
@@ -69,7 +69,7 @@ namespace BookStoreTM.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult ThemTinTuc()
         {
-            ViewBag.CategoryId = new SelectList(_db.Categories.ToList(), "CategoryId", "Title");
+            //ViewBag.CategoryId = new SelectList(_db.Categories.ToList(), "CategoryId", "Title");
             return View();
         }
 
@@ -117,7 +117,7 @@ namespace BookStoreTM.Areas.Admin.Controllers
         {
             var tinTuc = _db.News.Find(TinTuc);
             tinTuc.Image = "wwwroot\\LayoutAdmin\\images\\tintuc";
-            ViewBag.CategoryId = new SelectList(_db.Categories.ToList(), "CategoryId", "Title", tinTuc.CategoryId);
+            //ViewBag.CategoryId = new SelectList(_db.Categories.ToList(), "CategoryId", "Title", tinTuc.CategoryId);
             return View(tinTuc);
         }
         [HttpPost]

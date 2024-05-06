@@ -108,7 +108,7 @@
                                             </div>
                                         </li>
                                         <li class="add-to-cart">
-                                            <a class="btn btn-custom-size lg-size btn-primary btn-secondary-hover rounded-0 btnAddToCart" href="#" data-id="@Model.ProductId">Add to cart</a>
+                                            <a asp-controller="ShopCart" asp-action="Add" asp-route-id="@Model.ProductId" class="btn btn-custom-size lg-size btn-primary btn-secondary-hover rounded-0 btnAddToCart" data-id="@Model.ProductId">Add to cart</a>
                                         </li>
                                         <li class="wishlist-btn-wrap">
                                             <a class="btn rounded-0" href="wishlist.html">

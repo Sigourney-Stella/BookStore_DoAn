@@ -78,11 +78,11 @@
                             @Html.ValidationMessageFor(x => x.IsActicve, "", new { @class = "text-danger" })
                         </div>
 
-                        <div class="form-group">
+                       @*  <div class="form-group">
                             <label for="exampleInputEmail1">Danh mục</label>
                             @Html.DropDownListFor(x => x.CategoryId, ViewBag.CategoryId as SelectList, "-Chọn danh mục hiển thị-", new { @class = "form-control", @placeholder = "Mã danh mục" })
                             @Html.ValidationMessageFor(x => x.CategoryId, null, new { @class = "text-danger" })
-                        </div>
+                        </div> *@
                         <div class="form-group">
                             <a href="/admin/news" class="btn btn-danger">Quay lại</a>
                             <input type="submit" value="Thêm mới" class="btn btn-primary" />

@@ -5,6 +5,18 @@
       "PackagePath": "staticwebassets\\BookStoreTM.bundle.scp.css"
     },
     {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ImageLayout\\FreeShip.png",
+      "PackagePath": "staticwebassets\\ImageLayout\\FreeShip.png"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ImageLayout\\Payment.png",
+      "PackagePath": "staticwebassets\\ImageLayout\\Payment.png"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ImageLayout\\Support.png",
+      "PackagePath": "staticwebassets\\ImageLayout\\Support.png"
+    },
+    {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ImagesBook\\banner1.jpg",
       "PackagePath": "staticwebassets\\ImagesBook\\banner1.jpg"
     },
@@ -23,6 +35,10 @@
     {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ImagesBook\\book10.jpg",
       "PackagePath": "staticwebassets\\ImagesBook\\book10.jpg"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ImagesBook\\book11.jpg",
+      "PackagePath": "staticwebassets\\ImagesBook\\book11.jpg"
     },
     {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ImagesBook\\book2.jpg",
@@ -391,6 +407,10 @@
     {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\Tintuc10sachhay.jpg",
       "PackagePath": "staticwebassets\\LayoutAdmin\\images\\tintuc\\Tintuc10sachhay.jpg"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\TintucRamattacpham.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\images\\tintuc\\TintucRamattacpham.jpg"
     },
     {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\Tintucsachtapthieunhi.jpg",

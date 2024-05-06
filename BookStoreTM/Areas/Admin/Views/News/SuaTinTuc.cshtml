@@ -35,7 +35,7 @@
                 @Html.AntiForgeryToken()
                 @Html.ValidationSummary(false)
                 @Html.HiddenFor(x => x.NewsId)
-                @Html.HiddenFor(x => x.CategoryId)
+                @* @Html.HiddenFor(x => x.CategoryId) *@
 
                 <div class="form-horizontal">
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -72,13 +72,13 @@
                             @Html.CheckBoxFor(x => x.IsActicve)
                             @Html.ValidationMessageFor(x => x.Description, "", new { @class = "text-danger" })
                         </div>
-
+@* 
                         <div class="form-group">
                             <label asp-for="CategoryId" class="control-label">CategoryId</label>
                             <select asp-for="CategoryId" asp-items="ViewBag.CategoryId" class="form-control">
                             </select>
                         </div>
-
+ *@
                         <div class="form-group">
                             <a asp-action="Index" class="btn btn-danger">Quay lại</a>
                             <input type="submit" value="Create" class="btn btn-primary" />

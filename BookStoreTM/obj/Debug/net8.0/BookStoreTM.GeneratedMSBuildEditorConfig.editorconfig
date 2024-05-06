@@ -26,18 +26,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = E:\DoAn\code\BookStoreTM\BookStoreTM
 build_property._RazorSourceGeneratorDebug = 
 
-[E:/DoAn/code/BookStoreTM/BookStoreTM/Areas/Admin/Views/Category/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[E:/DoAn/code/BookStoreTM/BookStoreTM/Areas/Admin/Views/Category/SuaDanhMuc.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcU3VhRGFuaE11Yy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[E:/DoAn/code/BookStoreTM/BookStoreTM/Areas/Admin/Views/Category/ThemMoiDanhMuc.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcVGhlbU1vaURhbmhNdWMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [E:/DoAn/code/BookStoreTM/BookStoreTM/Areas/Admin/Views/HomeAdmin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -124,6 +112,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [E:/DoAn/code/BookStoreTM/BookStoreTM/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/DoAn/code/BookStoreTM/BookStoreTM/Views/News/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmV3c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/DoAn/code/BookStoreTM/BookStoreTM/Views/Products/Detail.cshtml]

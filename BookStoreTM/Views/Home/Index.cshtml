@@ -60,7 +60,7 @@
                                 <div class="product-add-action">
                                     <ul>
                                         <li>
-                                            <a href="#" class="btnAddToCart" data-id="@item.ProductId">
+                                            <a asp-controller="ShopCart" asp-action="Add" asp-route-id="@item.ProductId">
                                                 <i class="pe-7s-cart"></i>
                                             </a>
                                         </li>
@@ -82,15 +82,15 @@
                                 @if (item.PriceSale > 0)
                                 {
                                     <div class="price-box pb-1">
-                                        <span class="new-price">@item.PriceSale</span>
+                                        <span class="new-price">@BookStoreTM.Common.Common.FormatNumber(item.Price, 0)VND</span>
                                         <br />
-                                        <span class="old-price text-primary">@item.Price</span>
+                                        <span class="old-price text-primary">@BookStoreTM.Common.Common.FormatNumber(item.PriceSale, 0)VND</span>
                                     </div>
                                 }
                                 else
                                 {
                                     <div class="price-box pb-1">
-                                        <span class="new-price">@item.Price</span>
+                                        <span class="new-price">@BookStoreTM.Common.Common.FormatNumber(item.Price, 0)VND</span>
                                     </div>
                                 }
                             </div>

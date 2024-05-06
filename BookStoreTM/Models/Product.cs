@@ -19,7 +19,10 @@ namespace BookStoreTM.Models
         [Column(TypeName = "nvarchar(500)")]
         public string Description { get; set; }
 
-        [Column(TypeName = "nvarchar(4000)")]
+        [Column(TypeName = "nvarchar(max)")]
+        public string? Detail { get; set; }
+
+        [Column(TypeName = "nvarchar(max)")]
         public int? Notes { get; set; }
 
         [Column(TypeName = "nvarchar(500)")]

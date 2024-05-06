@@ -275,7 +275,7 @@
                                                 <div class="product-add-action">
                                                     <ul>
                                                         <li>
-                                                            <a href="#" class="btnAddToCart" data-id="@item.ProductId">
+                                                            <a asp-controller="ShopCart" asp-action="Add" asp-route-id="@item.ProductId">
                                                                 <i class="pe-7s-cart"></i>
                                                             </a>
                                                         </li>

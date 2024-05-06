@@ -31,6 +31,7 @@ namespace BookStoreTM.Controllers
             }
             base.OnActionExecuting(context);
         }
+        
         public IActionResult Index()
         {
             decimal total = 0;

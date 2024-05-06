@@ -11,7 +11,7 @@ namespace BookStoreTM.Models.Entities
         {
         }
         public DbSet<News> News { get; set; }
-        public DbSet<Category> Categories { get; set; }
+        //public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Adv> Advs { get; set; }

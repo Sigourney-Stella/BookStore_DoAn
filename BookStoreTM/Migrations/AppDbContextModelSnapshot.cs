@@ -118,54 +118,6 @@ namespace BookStoreTM.Migrations
                     b.ToTable("Adv");
                 });
 
-            modelBuilder.Entity("BookStoreTM.Models.Category", b =>
-                {
-                    b.Property<int>("CategoryId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CategoryId"));
-
-                    b.Property<string>("Alias")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("datetime");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<int?>("Position")
-                        .HasColumnType("int");
-
-                    b.Property<string>("SeoDescription")
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<string>("SeoKeywords")
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<string>("SeoTitle")
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<DateTime?>("UpdatedDate")
-                        .HasColumnType("datetime");
-
-                    b.HasKey("CategoryId");
-
-                    b.ToTable("Category");
-                });
-
             modelBuilder.Entity("BookStoreTM.Models.News", b =>
                 {
                     b.Property<int>("NewsId")
@@ -176,9 +128,6 @@ namespace BookStoreTM.Migrations
 
                     b.Property<string>("Alias")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
 
                     b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(500)");
@@ -219,8 +168,6 @@ namespace BookStoreTM.Migrations
                         .HasColumnType("datetime");
 
                     b.HasKey("NewsId");
-
-                    b.HasIndex("CategoryId");
 
                     b.ToTable("News");
                 });
@@ -373,6 +320,9 @@ namespace BookStoreTM.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(500)");
 
+                    b.Property<string>("Detail")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Images")
                         .HasColumnType("nvarchar(500)");
 
@@ -392,12 +342,12 @@ namespace BookStoreTM.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Notes")
-                        .HasColumnType("nvarchar(4000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<decimal?>("PriceSale")
+                    b.Property<decimal>("PriceSale")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("ProductCategoryId")
@@ -616,17 +566,6 @@ namespace BookStoreTM.Migrations
                     b.Navigation("Account");
                 });
 
-            modelBuilder.Entity("BookStoreTM.Models.News", b =>
-                {
-                    b.HasOne("BookStoreTM.Models.Category", "Category")
-                        .WithMany("News")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
-                });
-
             modelBuilder.Entity("BookStoreTM.Models.OrderBook", b =>
                 {
                     b.HasOne("BookStoreTM.Models.Account", "Account")
@@ -730,11 +669,6 @@ namespace BookStoreTM.Migrations
                     b.Navigation("Product");
 
                     b.Navigation("Receipt");
-                });
-
-            modelBuilder.Entity("BookStoreTM.Models.Category", b =>
-                {
-                    b.Navigation("News");
                 });
 
             modelBuilder.Entity("BookStoreTM.Models.ProductCategory", b =>
