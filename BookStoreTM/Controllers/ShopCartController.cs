@@ -34,11 +34,14 @@ namespace BookStoreTM.Controllers
         public IActionResult Index()
         {
             decimal total = 0;
+            var count = 0;
             foreach (var item in carts)
             {
                 total += item.Quantity * item.PriceSale;
+                count++;
             }
             ViewBag.Total = total;
+            ViewBag.Count = count;
             return View(carts);
         }
         public IActionResult Add(int id)
@@ -64,6 +67,31 @@ namespace BookStoreTM.Controllers
                 carts.Add(item);
             }
             HttpContext.Session.SetString("My-Cart", JsonConvert.SerializeObject(carts));
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Remove(int id)
+        {
+            if (carts.Any(c => c.ProductId == id))
+            {
+                var item = carts.Where(c => c.ProductId == id).First();
+                carts.Remove(item);
+                HttpContext.Session.SetString("My-Cart", JsonConvert.SerializeObject(carts));
+            }
+            return RedirectToAction("Index");
+        }
+        public IActionResult Update(int id, int quantity)
+        {
+            if (carts.Any(c => c.ProductId == id))
+            {
+                carts.Where(c => c.ProductId == id).First().Quantity = quantity;
+                HttpContext.Session.SetString("My-Cart", JsonConvert.SerializeObject(carts));
+            }
+            return RedirectToAction("Index");
+        }
+        public IActionResult Clear()
+        {
+            HttpContext.Session.Remove("My-Cart");
             return RedirectToAction("Index");
         }
         //public IActionResult Index()

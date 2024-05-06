@@ -216,14 +216,13 @@
                     }
                 });
             });
-
             // checkbox tình trạng bật tắt trang chủ
             $('body').on('click', '.btnHome', function (e) {
                 e.preventDefault();
                 var btn = $(this);
                 var id = btn.data("id");
                 $.ajax({
-                    url: '/admin/Product/IsHome', // chay vào IActionResult IsActicve(int id)
+                    url: '/admin/product/IsHome',
                     type: 'POST',
                     data: { id: id },
                     success: function (rs) {
@@ -237,6 +236,28 @@
                     }
                 });
             });
+
+
+            // // checkbox tình trạng bật tắt trang chủ
+            // $('body').on('click', '.btnHome', function (e) {
+            //     e.preventDefault();
+            //     var btn = $(this);
+            //     var id = btn.data("id");
+            //     $.ajax({
+            //         url: '/admin/product/IsHome', // chay vào IActionResult IsActicve(int id)
+            //         type: 'POST',
+            //         data: { id: id },
+            //         success: function (rs) {
+            //             if (rs.success) {
+            //                 if (rs.IsHome) {
+            //                     btn.html("<i class='fa fa-check text-success'></i>");
+            //                 } else {
+            //                     btn.html("<i class='fas fa-times text-danger'></i>");
+            //                 }
+            //             }
+            //         }
+            //     });
+            // });
 
         });
     </script>

@@ -385,8 +385,16 @@
       "PackagePath": "staticwebassets\\LayoutAdmin\\images\\products\\SanPhamTruyenkieu.jpg"
     },
     {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\Sousou-No-Frieren1.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\images\\tintuc\\Sousou-No-Frieren1.jpg"
+    },
+    {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\Tintuc10sachhay.jpg",
       "PackagePath": "staticwebassets\\LayoutAdmin\\images\\tintuc\\Tintuc10sachhay.jpg"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\Tintucsachtapthieunhi.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\images\\tintuc\\Tintucsachtapthieunhi.jpg"
     },
     {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\book6.jpg",
@@ -12231,6 +12239,10 @@
     {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\images\\1.jfif",
+      "PackagePath": "staticwebassets\\images\\1.jfif"
     },
     {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\images\\P67934.jpg",

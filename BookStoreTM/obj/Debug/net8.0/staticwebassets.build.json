@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "vebrfYExdDqofe9VE6jc8FNr+jvz7KQyavwtlBP4WZQ=",
+  "Hash": "yf1c1yduXFNJndy2YxW5DtMWm3CgRhVQE6FS09zXEZM=",
   "Source": "BookStoreTM",
   "BasePath": "_content/BookStoreTM",
   "Mode": "Default",
@@ -18485,6 +18485,25 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\images\\1.jfif",
+      "SourceId": "BookStoreTM",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\",
+      "BasePath": "_content/BookStoreTM",
+      "RelativePath": "images/1.jfif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\1.jfif"
+    },
+    {
       "Identity": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\images\\ava1.jpeg",
       "SourceId": "BookStoreTM",
       "SourceType": "Discovered",
@@ -20461,6 +20480,25 @@
       "OriginalItemSpec": "wwwroot\\LayoutAdmin\\images\\tintuc\\book6.jpg"
     },
     {
+      "Identity": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\Sousou-No-Frieren1.jpg",
+      "SourceId": "BookStoreTM",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\",
+      "BasePath": "_content/BookStoreTM",
+      "RelativePath": "LayoutAdmin/images/tintuc/Sousou-No-Frieren1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\LayoutAdmin\\images\\tintuc\\Sousou-No-Frieren1.jpg"
+    },
+    {
       "Identity": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\Tintuc10sachhay.jpg",
       "SourceId": "BookStoreTM",
       "SourceType": "Discovered",
@@ -20478,6 +20516,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\LayoutAdmin\\images\\tintuc\\Tintuc10sachhay.jpg"
+    },
+    {
+      "Identity": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\Tintucsachtapthieunhi.jpg",
+      "SourceId": "BookStoreTM",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\",
+      "BasePath": "_content/BookStoreTM",
+      "RelativePath": "LayoutAdmin/images/tintuc/Tintucsachtapthieunhi.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\LayoutAdmin\\images\\tintuc\\Tintucsachtapthieunhi.jpg"
     },
     {
       "Identity": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\plugins\\bootstrap\\js\\bootstrap.bundle.js",

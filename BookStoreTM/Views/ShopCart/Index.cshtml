@@ -27,57 +27,72 @@
             <div class="row">
                 <div class="col-12">
                     <form action="javascript:void(0)">
-                        <div class="table-content table-responsive">
+                        <div class="">
                             <table class="table">
                                 <thead>
                                     <tr>
+                                        <th>STT</th>
                                         <th class="product-thumbnail">Hình ảnh</th>
                                         <th class="cart-product-name">Tên Sản Phẩm</th>
                                         <th class="product-price">Giá Tiền</th>
                                         <th class="product-quantity">Số lượng</th>
                                         <th class="product-subtotal">Tổng tiền</th>
-                                        <th class="product_remove">Xoá</th>
+                                        <th class="product_remove"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach (var item in Model)
+                                    @if (Model != null && Model.Any())
                                     {
-                                        var money = item.PriceSale * item.Quantity;
+                                        var i = 1;
+                                        @foreach (var item in Model)
+                                        {
+                                            var money = item.PriceSale * item.Quantity;
+                                            <tr>
+                                                <td>@(i)</td>
+                                                <td class="product-thumbnail">
+                                                    <a href="javascript:void(0)">
+                                                        <img src="@item.ProductImg" alt="@item.ProductName">
+                                                    </a>
+                                                </td>
+                                                <td class="product-name"><a href="">@item.ProductName</a></td>
+                                                <td class="product-price">
+                                                    <span data-price="@item.PriceSale" class="new-price">
+                                                        @BookStoreTM.Common.Common.FormatNumber(item.PriceSale, 0)VND
+                                                    </span> <br />
+                                                    <span class="old-price text-primary">
+                                                        @BookStoreTM.Common.Common.FormatNumber(item.Price, 0)VND
+                                                    </span>
+                                                </td>
+                                                <td class="quantity">
+                                                    <div class="cart-plus-minus">
+                                                        <div class="dec qtybutton"><i class="fa fa-minus"></i></div>
+                                                        <input class="cart-plus-minus-box" value="@item.Quantity" type="text">
+                                                        <div class="inc qtybutton"><i class="fa fa-plus"></i></div>
+                                                    </div>
+                                                </td>
+                                                <td class="product-subtotal">
+                                                    <p data-money="@money" class="total-money">
+                                                        <span id="money">@string.Format("{0:#,##0}", @money)</span>VND
+                                                    </p>
+                                                </td>
+                                                <td class="product_remove btn-action">
+                                                    <a href="/shopcart/remove/?id=@item.ProductId" data-id="@item.ProductId" class="btn btn-primary btn-secondary-hover remove">Xóa</a>
+                                                    <a href="#" data-id="@item.ProductId" class="btn btn-primary btn-secondary-hover update">Cập nhật</a>
+                                                    @* <a href="javascript:void(0)">
+                                                        <i class="pe-7s-close" title="Remove"></i>
+                                                    </a>
+                                                    <div class="button-wrap pt-8">
+                                                        <a class="btn btn-custom-size lg-size btn-primary btn-dark-hover rounded-0" href="shop.html">Shop Now</a>
+                                                    </div> *@
+                                                </td>
+                                            </tr>
+                                            i++;
+                                        }
+                                    }
+                                    else
+                                    {
                                         <tr>
-                                            <td class="product-thumbnail">
-                                                <a href="javascript:void(0)">
-                                                    <img src="@item.ProductImg" alt="@item.ProductName">
-                                                </a>
-                                            </td>
-                                            <td class="product-name"><a href="">@item.ProductName</a></td>
-                                            <td class="product-price">
-                                                <span data-price="@item.PriceSale" class="new-price">
-                                                    @BookStoreTM.Common.Common.FormatNumber(item.PriceSale, 0)<sup style="font-size: 25px; top: 0rem;}">₫</sup>
-                                                </span> <br />
-                                                <span class="old-price text-primary">
-                                                    @BookStoreTM.Common.Common.FormatNumber(item.Price, 0)<sup style="font-size: 25px; top: 0rem;}">₫</sup>
-                                                </span>
-                                            </td>
-                                            <td class="quantity">
-                                                <div class="cart-plus-minus">
-                                                    <div class="dec qtybutton"><i class="fa fa-minus"></i></div>
-                                                    <input class="cart-plus-minus-box" value="@item.Quantity" type="text">
-                                                    <div class="inc qtybutton"><i class="fa fa-plus"></i></div>
-                                                </div>
-                                            </td>
-                                            <td class="product-subtotal">
-                                                <span class="new-price">
-                                                    @BookStoreTM.Common.Common.FormatNumber(item.PriceSale, 0)<sup style="font-size: 25px; top: 0rem;}">₫</sup>
-                                                </span>
-                                            </td>
-                                            <td class="product_remove">
-                                                <a href="javascript:void(0)">
-                                                    <i class="pe-7s-close" title="Remove"></i>
-                                                </a>
-                                                <div class="button-wrap pt-8">
-                                                    <a class="btn btn-custom-size lg-size btn-primary btn-dark-hover rounded-0" href="shop.html">Shop Now</a>
-                                                </div>
-                                            </td>
+                                            <td colspan="6">Không có sản phẩm nào</td>
                                         </tr>
                                     }
                                 </tbody>
@@ -101,10 +116,10 @@
                         <div class="row">
                             <div class="col-md-5 ml-auto">
                                 <div class="cart-page-total">
-                                    <h2>Cart totals</h2>
+                                    <h2>Tổng số đơn hàng</h2>
                                     <ul>
-                                        <li>Tổng <span>$118.60</span></li>
-                                        <li>Tổng tiền <span>@string.Format("{0:#,##0}", ViewBag.Total)<sup style="font-size: 25px; top: 0rem;}">₫</sup></span></li>
+                                        <li>Số lượng sản phẩm <span>@ViewBag.Count</span></li>
+                                        <li>Tổng tiền <span id="totalMoney">@string.Format("{0:#,##0}", ViewBag.Total)<sup style="font-size: 25px; top: 0rem;}">₫</sup></span></li>
                                     </ul>
                                     <a href="javascript:void(0)">Proceed to checkout</a>
                                 </div>
@@ -116,6 +131,24 @@
         </div>
     </div>
 </main>
+
+<style>
+    td.quantity {
+        display: flex;
+        justify-content: center;
+        border: none;
+    }
+
+    tr {
+        /*  font-size: 1.25rem; */
+        text-align: center;
+        /* margin: 5rem !important; */
+    }
+
+    img {
+        max-width: 60% !important;
+    }
+</style>
 
 <script src="~/lib/jquery/dist/jquery.js"></script>
 @section scripts {
@@ -133,16 +166,16 @@
                 //hiển thị dữ liệu
                 $(this).parent().siblings('.cart-plus-minus-box').val(qty); //hiển thị lại số lượng
                 //cập nhập lại số lượng trong sesion
-                let id = $(this).parent().parent().parent().parent().siblings('.btn-action').children('.update').attr("data-id");
-                let href = "/cart/Update/?id=" + id + "&quantity=" + qty; // link cập nhật sản    phẩm trong giỏ hàng
-                $(this).parent().parent().parent().parent().siblings('.btn-action').children('.update').attr("href", href);
-                $(this).parent().parent().siblings('p').attr("data-money", money);
+                let id = $(this).parent().parent().parent().siblings('.btn-action').children('.update').attr("data-id");
+                let href = "/shopcart/Update/?id=" + id + "&quantity=" + qty; // link cập nhật sản phẩm trong giỏ hàng
+                $(this).parent().parent().parent().siblings('.btn-action').children('.update').attr("href", href);
+                $(this).parent().parent().parent().siblings('.product-subtotal').children('.total-money').attr("data-money", money);
                 let total_money = formatMoney(money, 0, ",", ".");
 
-                $(this).parent().parent().siblings('p').children("span#money").text(total_money);
+                $(this).parent().parent().parent().siblings('td').children("span#money").text(total_money);
                 let totalMoney = formatMoney(total(), 0, ",", ".");
                 $("#totalMoney").text(totalMoney); // hiển thị tổng tiền
-                $("#totalMoneyPay").text(totalMoney);// hiển thị tổng tiền
+                //$("#totalMoneyPay").text(totalMoney);// hiển thị tổng tiền
             })
 
             //Tawng
