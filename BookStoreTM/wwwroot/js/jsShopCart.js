@@ -25,6 +25,8 @@
             $('.cart-plus-minus .fa-plus').click(function () {
                 console.log("ok");
                 let qty = parseInt($(this).parent().siblings('.cart-plus-minus-box').val()); // lấy giá trị ô input
+                console.log(qty);
+
                 let price = parseFloat($(this).closest('td').prev('td').find('.new-price').attr("data-price"));
                 // let price = parseFloat($(this).parent().parent().siblings().children("span.new-price").attr("data-price"));
                 

@@ -45,11 +45,28 @@ namespace BookStoreTM.Controllers
             ViewBag.Count = count;
             return View(carts);
         }
+        public IActionResult CheckOut()
+        {
+            decimal total = 0;
+            var count = 0;
+            foreach (var item in carts)
+            {
+                total += item.Quantity * item.PriceSale;
+                count++;
+            }
+            ViewBag.Total = total;
+            ViewBag.Count = count;
+            return View(carts);
+        }
+
+        //thêm sản phẩm vào giỏ hàng
         public IActionResult Add(int id)
         {
+            var items = carts.SingleOrDefault(p => p.ProductId == id);
             if (carts.Any(c => c.ProductId == id))
             {
                 carts.Where(c => c.ProductId == id).First().Quantity += 1;
+                items.SoLuong++;
             }
             else
             {
@@ -65,8 +82,13 @@ namespace BookStoreTM.Controllers
                     ProductImg = p.Images,
                     TotalPrice = (decimal)p.PriceSale * 1
                 };
+                item.SoLuong++;
                 carts.Add(item);
             }
+            var totalQuantity = carts.Sum(c => c.Quantity);
+            HttpContext.Session.SetInt32("CartTotalQuantity", totalQuantity);
+            ViewBag.CartTotalQuantity = totalQuantity;
+
             HttpContext.Session.SetString("My-Cart", JsonConvert.SerializeObject(carts));
             return RedirectToAction("Index");
         }

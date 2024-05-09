@@ -54,10 +54,10 @@
                                         <i class="pe-7s-search"></i>
                                     </a>
                                 </li>
-                                <li class="minicart-wrap me-3 me-lg-0">
-                                    <a href="#miniCart" class="minicart-btn toolbar-btn">
+                                <li class="d-none d-md-block">
+                                    <a href="/shopcart">
                                         <i class="pe-7s-shopbag"></i>
-                                        <span class="quantity">3</span>
+                                        <span class="quantity">@ViewBag.CartTotalQuantity</span>
                                     </a>
                                 </li>
                                 <li class="mobile-menu_wrap d-block d-lg-none">
@@ -73,5 +73,22 @@
         </div>
     </div>
 }
+<style>
+    span.quantity {
+        border-radius: 28rem;
+        background-color: #bac34e;
+        border-radius: 100%;
+        text-align: center;
+        font-size: 14px;
+        color: #fff;
+        display: block;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        position: absolute;
+        top: -5px;
+        right: 0;
+    }
+</style>
 
 

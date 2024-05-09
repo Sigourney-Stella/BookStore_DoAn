@@ -54,14 +54,25 @@
                                                         <img src="@item.ProductImg" alt="@item.ProductName">
                                                     </a>
                                                 </td>
-                                                <td class="product-name"><a href="">@item.ProductName</a></td>
+                                                <td class="product-name"><a asp-controller="Products" asp-action="Detail" asp-route-id="@item.ProductId">@item.ProductName</a></td>
                                                 <td class="product-price">
-                                                    <span data-price="@item.PriceSale" class="new-price">
-                                                        @BookStoreTM.Common.Common.FormatNumber(item.PriceSale, 0)VND
-                                                    </span> <br />
-                                                    <span class="old-price text-primary">
-                                                        @BookStoreTM.Common.Common.FormatNumber(item.Price, 0)VND
-                                                    </span>
+                                                    @if (item.PriceSale > 0)
+                                                    {
+                                                        <span data-price="@item.PriceSale" class="new-price">
+                                                            @BookStoreTM.Common.Common.FormatNumber(item.PriceSale, 0)VND
+                                                        </span>
+                                                        <br />
+                                                        <span data-price="@item.Price" class="old-price text-primary">
+                                                            @BookStoreTM.Common.Common.FormatNumber(item.Price, 0)VND
+                                                        </span>
+                                                    }
+
+                                                    else
+                                                    {
+                                                        <span data-price="@item.Price" class="new-price text-primary">
+                                                            @BookStoreTM.Common.Common.FormatNumber(item.Price, 0)VND
+                                                        </span>
+                                                    }
                                                 </td>
                                                 <td class="quantity">
                                                     <div class="cart-plus-minus">
@@ -78,7 +89,6 @@
                                                 <td class="product_remove btn-action">
                                                     <a href="/shopcart/remove/?id=@item.ProductId" data-id="@item.ProductId" class="btn btn-primary btn-secondary-hover remove">Xóa</a>
                                                     <a href="#" data-id="@item.ProductId" class="btn btn-primary btn-secondary-hover update">Cập nhật</a>
-                                                    
                                                 </td>
                                             </tr>
                                             i++;
@@ -98,7 +108,7 @@
                             <div class="col-12">
                                 <div class="coupon-all">
                                     <div class="coupon2">
-                                        <input asp-controller="Products" asp-action="Index" class="button" name="Tiếp tục mua hàng" value="Update cart" type="submit">
+                                        <input asp-controller="Products" asp-action="Index" class="button" name="Tiếp tục mua hàng" value="Tiếp tục mua hàng" type="submit">
                                     </div>
                                 </div>
                             </div>
@@ -107,13 +117,16 @@
                         <div class="row">
                             <div class="col-md-5 ml-auto">
                                 <div class="cart-page-total">
-                                    <h2>Tổng số đơn hàng</h2>
+                                    <h2>Chi tiết thanh toán</h2>
                                     <ul>
-                                        <li>Số lượng sản phẩm <span>@ViewBag.Count</span></li>
-                                        <li>Tổng tiền <span id="totalMoney">@string.Format("{0:#,##0}", ViewBag.Total)
-                                            <sup style="font-size: 25px; top: 0rem;}">₫</sup></span></li>
+                                        <li>Số sản phẩm <span>@ViewBag.Count</span></li>
+                                        <li>
+                                            Tổng thanh toán <span id="totalMoney">
+                                                @string.Format("{0:#,##0}", ViewBag.Total)VND
+                                            </span>
+                                        </li>
                                     </ul>
-                                    <a href="javascript:void(0)">Proceed to checkout</a>
+                                    <a href="/shopcart/checkout">Mua hàng</a>
                                 </div>
                             </div>
                         </div>
@@ -175,7 +188,7 @@
                 let qty = parseInt($(this).parent().siblings('.cart-plus-minus-box').val()); // lấy giá trị ô input
                 let price = parseFloat($(this).closest('td').prev('td').find('.new-price').attr("data-price"));
                 // let price = parseFloat($(this).parent().parent().siblings().children("span.new-price").attr("data-price"));
-                
+
                 qty += 1;
                 let money = qty * price; // Tính thành tiền
                 //hiển thị dữ liệu

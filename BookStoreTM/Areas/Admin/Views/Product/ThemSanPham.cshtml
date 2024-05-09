@@ -73,7 +73,7 @@
 
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Nhà xuất bản</label>
-                                            @Html.DropDownListFor(x => x.PublisherId, ViewBag.Publisher as SelectList, "-Chọn Nhà xuất bản-", new { @class = "form-control", @placeholder = "Mã mã phẩm" })
+                                            @Html.DropDownListFor(x => x.PublisherId, ViewBag.Publisher as SelectList, "-Chọn Nhà xuất bản-", new { @class = "form-control", @placeholder = "Mã nhà xuất bản" })
                                             @Html.ValidationMessageFor(x => x.PublisherId, null, new { @class = "text-danger" })
                                         </div>
 
