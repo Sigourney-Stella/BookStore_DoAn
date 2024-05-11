@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
 
 namespace BookStoreTM.Models
 {
@@ -9,6 +10,10 @@ namespace BookStoreTM.Models
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int OrderId { get; set; }
+
+        [Required]
+        [Column(TypeName = "nvarchar(100)")]
+        public int CodeOrder { get; set; }
 
         [Column(TypeName = "datetime")]
         public DateTime OrderDate { get; set; }
@@ -25,10 +30,15 @@ namespace BookStoreTM.Models
         [Column(TypeName = "ntext")]
         public int Notes { get; set; }
         //khoá ngoại
-        public int AccountId { get; set; }
-        //public int PaymentId { get; set; }
-        //
-        public Account Account { get; set; }
-        //public Payment Payment { get; set; }
+        public int CustomerID { get; set; }
+        public int TransactStatusID { get; set; }
+        public int PaymentId { get; set; }
+        public Customer Customer { get; set; }
+        public Payment Payment { get; set; }
+        public TransactStatus TransactStatus { get; set; }
+
+        public ICollection<OrderDetails> OrderDetails { get; set; }
+
+
     }
 }

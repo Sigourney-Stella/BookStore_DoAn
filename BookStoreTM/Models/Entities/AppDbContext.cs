@@ -19,11 +19,13 @@ namespace BookStoreTM.Models.Entities
         public DbSet<OrderBook> OrderBooks { get; set; }
         public DbSet<OrderDetails> OrderDetails { get; set; }
         public DbSet<Payment> Payments { get; set; }
-        public DbSet<PaymentDetails> PaymentDetails { get; set; }
+        //public DbSet<PaymentDetails> PaymentDetails { get; set; }
         public DbSet<Publisher> Publishers { get; set; }
         public DbSet<ProductCategory> ProductCategories { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }
         public DbSet<Receipt> Receipts { get; set; }
+        public DbSet<TransactStatus> TransactStatus { get; set; }
+        public DbSet<Customer> Customers { get; set; }
         public DbSet<ReceiptDetails> ReceiptDetails { get; set; }
     }
 }

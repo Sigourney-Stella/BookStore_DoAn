@@ -20,22 +20,38 @@ namespace BookStoreTM.Areas.Admin.Controllers
             _db = db;
             _env = env;
         }
-        public IActionResult Index(string name, int? page)
+        public IActionResult Index(string name, int? page, int? categoryId)
         {
-            var products = _db.Products.Include(p => p.ProductCategory).ToList();
+            IPagedList<Product> products = _db.Products.Include(p => p.ProductCategory).OrderByDescending(p => p.ProductId).ToPagedList();
 
-            var pageSize = 3;
+            var pageSize = 10;
             if (page == null)
             {
                 page = 1;
             }
             var pageIndex = page.HasValue ? Convert.ToInt32(page) : 1;
+            categoryId = categoryId ?? 0;
+            //products = _db.Products.Include(p => p.ProductCategory).OrderByDescending(p => p.ProductId).ToPagedList(pageIndex, pageSize);
 
-            var item = _db.Products.OrderByDescending(x => x.ProductId).ToPagedList(pageIndex, pageSize);
+            var Categories = _db.ProductCategories.ToList();
+
+            Categories.Insert(0, new ProductCategory { ProductCategoryId = 0, Name = "chọn danh mục" });
+
+            ViewBag.CategoryId = new SelectList(Categories, "ProductCategoryId", "Name", categoryId);
+
+            if (categoryId >0)
+            {
+                products = products.Where(x => x.ProductCategoryId == categoryId).OrderByDescending(p => p.ProductId).ToPagedList(pageIndex, pageSize);
+            }
+            else
+            {
+                products = products.ToPagedList(pageIndex, pageSize);
+            }
 
             ViewBag.PageSize = pageSize;
             ViewBag.Page = page;
-            return View(item);
+            ViewBag.cateId = categoryId;
+            return View(products);
         }
 
         //ckeditor

@@ -11,10 +11,6 @@ namespace BookStoreTM.Models
         public int AccountId { get; set; }
 
         [Required]
-        [StringLength(500)]
-        [Column(TypeName = "nvarchar(100)")]
-        public string AccountName { get; set; }
-
         [Column(TypeName = "nvarchar(50)")]
         public string Password { get; set; }
 
@@ -23,7 +19,6 @@ namespace BookStoreTM.Models
         [Column(TypeName = "nvarchar(100)")]
         public string FullName { get; set; }
 
-        [Required]
         [StringLength(500)]
         [Column(TypeName = "nvarchar(500)")]
         public string Avatar { get; set; }

@@ -14,11 +14,9 @@ namespace BookStoreTM.Models
         [StringLength(500)]
         [Column(TypeName = "nvarchar(100)")]
         public string PaymentName { get; set; }
+        public ICollection<OrderBook> OrderBooks { get; set; }
 
         //khoas ngoại
-        public int OrderId { get; set; }
-        //
-        public OrderBook Order { get; set; }
 
     }
 }

@@ -10,12 +10,14 @@ namespace BookStoreTM.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int ReceiptId { get; set; }
 
+        [Required]
+        [Column(TypeName = "nvarchar(100)")]
+        public string Code { get; set; }
+
         [Column(TypeName = "datetime")]
         public DateTime OrderDate { get; set; }
 
-        //khoá ngoại
-        public int AccountId { get; set; }
-        //
-        public Account Account { get; set; }
+        public ICollection<ReceiptDetails> ReceiptDetails { get; set; }
+
     }
 }

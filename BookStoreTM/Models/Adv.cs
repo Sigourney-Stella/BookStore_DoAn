@@ -16,17 +16,17 @@ namespace BookStoreTM.Models
         public string Title { get; set; }
 
         [Column(TypeName = "nvarchar(500)")]
-        public string? Images { get; set; }
+        public string Images { get; set; }
 
         [Column(TypeName = "nvarchar(500)")]
-        public string? Description { get; set; }
+        public string Description { get; set; }
 
         [Column(TypeName = "nvarchar(500)")]
-        public string? Link { get; set; }
+        public string Link { get; set; }
 
-        public int AccountId { get; set; }
-        // khoá ngoại
-        public Account Account { get; set; }
+        //public int AccountId { get; set; }
+        //// khoá ngoại
+        //public Account Account { get; set; }
         
     }
 }

@@ -17,10 +17,8 @@ namespace BookStoreTM.Models
         public Decimal TotalMoney { get; set; }
 
         //khoá ngoại
-        public int ProductId { get; set; }
         public int ReceiptId { get; set; }
         //
-        public Product Product { get; set; }
         public Receipt Receipt { get; set; }
     }
 }

@@ -14,6 +14,10 @@ namespace BookStoreTM.Models
         [StringLength(500)]
         [Column(TypeName = "nvarchar(500)")]
         public string ProductName { get; set; }
+
+        [Required]
+        [Column(TypeName = "nvarchar(100)")]
+        public string Code { get; set; }
         public string Alias { get; set; }
 
         [Column(TypeName = "nvarchar(500)")]
@@ -67,5 +71,8 @@ namespace BookStoreTM.Models
         public ProductCategory ProductCategory { get; set; }
         public Publisher Publisher { get; set; }
         public ProductImage ProductImage { get; set; }
+        //
+        public ICollection<OrderDetails> OrderDetails { get; set; }
+
     }
 }
