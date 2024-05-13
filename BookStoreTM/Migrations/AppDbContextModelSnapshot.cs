@@ -17,7 +17,7 @@ namespace BookStoreTM.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.3")
+                .HasAnnotation("ProductVersion", "8.0.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -222,7 +222,6 @@ namespace BookStoreTM.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Notes")
-                        .IsRequired()
                         .HasColumnType("ntext");
 
                     b.Property<DateTime>("OrderDate")
@@ -240,11 +239,11 @@ namespace BookStoreTM.Migrations
                     b.Property<string>("ReceivePhone")
                         .HasColumnType("varchar(64)");
 
+                    b.Property<decimal>("TotalMoney")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<int>("TransactStatusID")
                         .HasColumnType("int");
-
-                    b.Property<string>("TransactStatusID1")
-                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("OrderId");
 
@@ -252,7 +251,7 @@ namespace BookStoreTM.Migrations
 
                     b.HasIndex("PaymentId");
 
-                    b.HasIndex("TransactStatusID1");
+                    b.HasIndex("TransactStatusID");
 
                     b.ToTable("OrderBook");
                 });
@@ -577,9 +576,11 @@ namespace BookStoreTM.Migrations
 
             modelBuilder.Entity("BookStoreTM.Models.TransactStatus", b =>
                 {
-                    b.Property<string>("TransactStatusID")
+                    b.Property<int>("TransactStatusID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TransactStatusID"));
 
                     b.Property<string>("Status")
                         .IsRequired()
@@ -606,7 +607,9 @@ namespace BookStoreTM.Migrations
 
                     b.HasOne("BookStoreTM.Models.TransactStatus", "TransactStatus")
                         .WithMany("OrderBook")
-                        .HasForeignKey("TransactStatusID1");
+                        .HasForeignKey("TransactStatusID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Customer");
 

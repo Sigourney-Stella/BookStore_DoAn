@@ -1,0 +1,163 @@
+﻿@model IEnumerable<BookStoreTM.Models.Payment>
+
+@{
+    ViewData["Title"] = "Phương thức thanh toán";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Phương thức thanh toán</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                    <li class="breadcrumb-item active">@ViewBag.Title</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title" style="margin-top: 0.5rem;"> @ViewBag.Title </h3>
+            <div class="row card-tools">
+                <form name="frmProduct" asp-action="index" asp-controller="payments" method="get" class="form-inline">
+                    <div class="form-group">
+                        <label class="sr-only" for="keyword">Tìm theo tên loại</label>
+                        <input class="form-control" name="name" id="keyword" placeholder="Nhập tên cần tìm" value="@ViewBag.keyword">
+                    </div>
+                    <button type="submit" class="btn btn-default mr-1"><i class="fas fa-search"></i></button>
+                </form>
+                <div>
+                    <a href="/admin/payments/create" class="btn btn-primary">Thêm mới</a>
+                    <a href="#" class="btn btn-danger" id="BtnDeleteAll">Xóa</a>
+                </div>
+
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th style="width: 56px;">STT</th>
+                        <th>Tên PTTT</th>
+                        <th>Ngày tạo</th>
+                        <th style="width: 80px;">Sửa</th>
+                        <th style="width: 80px;"><input type="checkbox" id="SelectAll" /></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Any())
+                    {
+                        var i = 1;
+                        foreach (var item in Model)
+                        {
+                            <tr id="trow_@item.PaymentId">
+                                <td>@i</td>
+                                
+                                <td>@item.PaymentName</td>
+                                <td>@string.Format("{0:dd/MM/yyy}", item.CreatedDate)</td>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.PaymentId" class="btn-sm btn-primary">Sửa</a>
+                                    <a asp-action="Details" asp-route-id="@item.PaymentId">Details</a>
+                                </td>
+                                <td><input type="checkbox" class="cbkItem" value="@item.PaymentId" /></td>
+                            </tr>
+                            i++;
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="5">Không có bản ghi nào </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            //xoá bản ghi
+            $('body').on('click', '.btnDelete', function () {
+
+                var id = $(this).data("id");
+                var conf = confirm("Bạn có muốn xóa không  ")
+                if (conf == true) {
+                    $.ajax(
+                        {
+                            url: '/admin/Payments/delete',
+                            type: 'POST',
+                            data: { id: id },
+                            success: function (rs) {
+                                if (rs.success) {
+                                    $('#trow_' + id).remove();
+                                }
+                            }
+                        }
+                    )
+                }
+            });
+
+            //chọn nhều bản ghi cùng lúc
+            $('body').on('change', '#SelectAll', function () {
+                var checkStatus = this.checked;
+                var checkbox = $(this).parents('.card-body').find('tr td input:checkbox');
+                checkbox.each(function () {
+                    this.checked = checkStatus;
+                    if (this.checked) {
+                        checkbox.attr('selected', 'checked');
+                    } else {
+                        checkbox.attr('selected', '');
+                    }
+                });
+            });
+
+            //xoá nhiều bản ghi cùng lúc
+            $('body').on('click', '#BtnDeleteAll', function (e) {
+                e.preventDefault();
+                var str = "";
+                var checkbox = $(this).parents('.card').find('tr td input:checkbox');
+                var i = 0;
+                checkbox.each(function () {
+                    if (this.checked) {
+                        var _id = $(this).val();
+                        if (i === 0) {
+                            str += _id;
+                        } else {
+                            str += "," + _id;
+                        }
+                        i++;
+                    } else {
+                        checkbox.attr('selected', '');
+                    }
+                });
+                if (str.length > 0) {
+                    var conf = confirm('Bạn có muốn xóa các bản ghi này hay không?');
+                    if (conf === true) {
+                        $.ajax({
+                            url: '/admin/Payments/deleteAll',
+                            type: 'POST',
+                            data: { ids: str },
+                            success: function (rs) {
+                                if (rs.success) {
+                                    location.reload();
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+}
+

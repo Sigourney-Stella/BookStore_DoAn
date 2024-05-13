@@ -1,4 +1,8 @@
 ﻿@model IEnumerable<BookStoreTM.Models.EF.ShopCart>
+@using Microsoft.AspNetCore.Http;
+@using Newtonsoft.Json;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
 @{
     ViewData["Title"] = "Gio hang";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -126,7 +130,15 @@
                                             </span>
                                         </li>
                                     </ul>
-                                    <a href="/shopcart/checkout">Mua hàng</a>
+                                    @if (HttpContextAccessor.HttpContext.Session.GetString("Member") != null)
+                                    {
+                                        <a asp-action="Order" asp-controller="ShopCart">Mua hàng</a>
+                                    }
+                                    else
+                                    {
+                                        <a asp-action="Login" asp-controller="Customer">Mua hàng</a>
+                                    }
+                                    @* <a href="/shopcart/checkout">Mua hàng</a> *@
                                 </div>
                             </div>
                         </div>

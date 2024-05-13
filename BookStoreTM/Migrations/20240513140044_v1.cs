@@ -17,10 +17,9 @@ namespace BookStoreTM.Migrations
                 {
                     AccountId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    AccountName = table.Column<string>(type: "nvarchar(100)", maxLength: 500, nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(50)", nullable: true),
+                    Password = table.Column<string>(type: "nvarchar(50)", nullable: false),
                     FullName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Avatar = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    Avatar = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(100)", nullable: true),
                     Address = table.Column<string>(type: "nvarchar(200)", nullable: true),
                     Phone = table.Column<string>(type: "varchar(64)", nullable: true),
@@ -60,15 +59,14 @@ namespace BookStoreTM.Migrations
                 {
                     CustomerID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CodeCustomer = table.Column<int>(type: "int", nullable: false),
-                    Fullname = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Fullname = table.Column<string>(type: "nvarchar(100)", nullable: true),
                     Brithday = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Avatar = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Avatar = table.Column<string>(type: "nvarchar(500)", nullable: true),
+                    Address = table.Column<string>(type: "nvarchar(500)", nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(100)", nullable: true),
+                    Phone = table.Column<string>(type: "varchar(64)", nullable: true),
                     CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Password = table.Column<string>(type: "nvarchar(500)", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
                     IsDelete = table.Column<bool>(type: "bit", nullable: false)
                 },
@@ -179,6 +177,7 @@ namespace BookStoreTM.Migrations
                 {
                     ReceiptId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Code = table.Column<string>(type: "nvarchar(100)", nullable: false),
                     OrderDate = table.Column<DateTime>(type: "datetime", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime", nullable: true),
                     UpdatedDate = table.Column<DateTime>(type: "datetime", nullable: true),
@@ -194,8 +193,9 @@ namespace BookStoreTM.Migrations
                 name: "TransactStatus",
                 columns: table => new
                 {
-                    TransactStatusID = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Status = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    TransactStatusID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Status = table.Column<string>(type: "nvarchar(100)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -209,6 +209,7 @@ namespace BookStoreTM.Migrations
                     ProductId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ProductName = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    Code = table.Column<string>(type: "nvarchar(100)", nullable: false),
                     Alias = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Description = table.Column<string>(type: "nvarchar(500)", nullable: true),
                     Detail = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -283,16 +284,16 @@ namespace BookStoreTM.Migrations
                 {
                     OrderId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CodeOrder = table.Column<int>(type: "int", nullable: false),
+                    CodeOrder = table.Column<string>(type: "nvarchar(100)", nullable: false),
                     OrderDate = table.Column<DateTime>(type: "datetime", nullable: false),
+                    TotalMoney = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     ReceiveName = table.Column<string>(type: "nvarchar(100)", nullable: true),
                     ReceiveAddress = table.Column<string>(type: "nvarchar(100)", nullable: true),
                     ReceivePhone = table.Column<string>(type: "varchar(64)", nullable: true),
-                    Notes = table.Column<string>(type: "ntext", nullable: false),
+                    Notes = table.Column<string>(type: "ntext", nullable: true),
                     CustomerID = table.Column<int>(type: "int", nullable: false),
                     TransactStatusID = table.Column<int>(type: "int", nullable: false),
-                    PaymentId = table.Column<int>(type: "int", nullable: false),
-                    TransactStatusID1 = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    PaymentId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -310,10 +311,11 @@ namespace BookStoreTM.Migrations
                         principalColumn: "PaymentId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_OrderBook_TransactStatus_TransactStatusID1",
-                        column: x => x.TransactStatusID1,
+                        name: "FK_OrderBook_TransactStatus_TransactStatusID",
+                        column: x => x.TransactStatusID,
                         principalTable: "TransactStatus",
-                        principalColumn: "TransactStatusID");
+                        principalColumn: "TransactStatusID",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -346,12 +348,6 @@ namespace BookStoreTM.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Customer_CodeCustomer",
-                table: "Customer",
-                column: "CodeCustomer",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
                 name: "IX_OrderBook_CustomerID",
                 table: "OrderBook",
                 column: "CustomerID");
@@ -362,9 +358,9 @@ namespace BookStoreTM.Migrations
                 column: "PaymentId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_OrderBook_TransactStatusID1",
+                name: "IX_OrderBook_TransactStatusID",
                 table: "OrderBook",
-                column: "TransactStatusID1");
+                column: "TransactStatusID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_OrderDetails_OrderBookOrderId",

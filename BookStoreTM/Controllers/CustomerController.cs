@@ -1,6 +1,8 @@
 ﻿using BookStoreTM.Models;
+using BookStoreTM.Models.EF;
 using BookStoreTM.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using NuGet.Protocol;
 
@@ -68,11 +70,49 @@ namespace BookStoreTM.Controllers
             }
         }
 
+        //xem thông tin đơn tài khoản
+        public IActionResult Detail()
+        {
+            var customer = JsonConvert.DeserializeObject<Customer>(HttpContext.Session.GetString("Member"));
+
+            if (customer != null)
+            {
+                var orderBooks = _context.OrderBooks.Where(x => x.CustomerID == customer.CustomerID).Include(p => p.TransactStatus).Include(p=>p.Payment).ToList();
+                //var orderDetails = _context.OrderDetails.Where(x => x.OrderId == orderBooks.Id).Include(p => p.Product).ToListAsync();
+                //var customer = _context.Customers.SingleOrDefault(c => c.CustomerID == customerId);
+                var orderBooksViews = new List<OrderBooksView>();
+                foreach(var item in orderBooks) {
+                    var orderBooksView = new OrderBooksView()
+                    {
+                        OrderId = item.OrderId,
+                        CodeOrder = item.CodeOrder,
+                        OrderDate = item.OrderDate,
+                        TotalMoney = item.TotalMoney,
+                        ReceiveName = item.ReceiveName,
+                        ReceiveAddress = item.ReceiveAddress,
+                        ReceivePhone = item.ReceivePhone,
+                        Notes = item.Notes,
+                        CustomerName = customer.Fullname,
+                        TransactStatus = item.TransactStatus.Status,
+                        PaymentName = item.Payment.PaymentName,
+                    };
+                    orderBooksViews.Add(orderBooksView);
+                };
+                
+                ViewBag.orderBooksViews = orderBooksViews;
+                return View(customer);
+            }
+
+            return View("Home");
+        }
+
         [HttpGet]
         public IActionResult Logout()
         {
             HttpContext.Session.Remove("Member");
             return RedirectToAction("Index","Home");
         }
+
+
     }
 }

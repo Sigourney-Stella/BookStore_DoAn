@@ -7,6 +7,8 @@ using Newtonsoft.Json;
 using Microsoft.AspNetCore.Components.QuickGrid;
 using Microsoft.AspNetCore.Mvc.Filters;
 using BookStoreTM.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using static Azure.Core.HttpHeader;
 
 
 namespace BookStoreTM.Controllers
@@ -31,7 +33,7 @@ namespace BookStoreTM.Controllers
             }
             base.OnActionExecuting(context);
         }
-        
+
         public IActionResult Index()
         {
             decimal total = 0;
@@ -92,7 +94,6 @@ namespace BookStoreTM.Controllers
             HttpContext.Session.SetString("My-Cart", JsonConvert.SerializeObject(carts));
             return RedirectToAction("Index");
         }
-
         public IActionResult Remove(int id)
         {
             if (carts.Any(c => c.ProductId == id))
@@ -117,46 +118,99 @@ namespace BookStoreTM.Controllers
             HttpContext.Session.Remove("My-Cart");
             return RedirectToAction("Index");
         }
-        //public IActionResult Index()
-        //{
-        //    decimal total = 0;
-        //    foreach (var item in carts)
-        //    {
-        //        total += item.Quantity * item.PriceSale;
-        //    }
-        //    ViewBag.Total = total;
-        //    return View(carts);
-        //}
-        //[HttpPost]
-        //public IActionResult Add(int id)
-        //{
-        //    if (carts.Any(c => c.ProductId == id))
-        //    {
-        //        carts.Where(c => c.ProductId == id).First().Quantity += 1;
-        //    }
-        //    else
-        //    {
-        //        var p = _db.Products.Find(id);
-        //        var item = new ShopCart()
-        //        {
-        //            ProductId = p.ProductId,
-        //            ProductName = p.ProductName,
-        //            Price = (decimal)p.Price,
-        //            PriceSale = (decimal)p.PriceSale,
-        //            Quantity = 1,
-        //            ProductImg = p.Images,
-        //            TotalPrice = (decimal)p.Price * 1
-        //        };
-        //        //if (p.PriceSale > 0)
-        //        //{
-        //        //    item.Price = (decimal)p.PriceSale;
-        //        //}
-        //        //item.TotalPrice = item.Quantity * item.Price;
-        //        carts.Add(item);
-        //    }
+        public IActionResult Order()
+        {
+            //nếu chưa đăng nhập
+            if (HttpContext.Session.GetString("Member") == null)
+            {
+                return Redirect("/Customer/Login/?url=/Shopcart/orders");
+            }
+            else
+            {
+                var dataMember = JsonConvert.DeserializeObject<Customer>(HttpContext.Session.GetString("Member"));
+                ViewBag.Customer = dataMember;
 
-        //    HttpContext.Session.SetString("My-Cart", JsonConvert.SerializeObject(carts));
-        //    return RedirectToAction("Index");
-        //}
+                decimal total = 0;
+                foreach (var item in carts)
+                {
+                    if (item.PriceSale > 0 && item.PriceSale < item.Price)
+                    {
+                        total += item.Quantity * item.PriceSale;
+                    }
+                    else
+                    {
+                        total += item.Quantity * item.Price;
+                    }
+                    ViewBag.Total = total;
+                    //phương thức thanh toán
+                    var dataPay = _db.Payments.ToList();
+                    ViewData["IdPayment"] = new SelectList(dataPay, "PaymentId", "PaymentName", 1);
+                }
+            }
+            return View(carts);
+        }
+
+        public async Task<IActionResult> OrderPay(IFormCollection form)
+        {
+            try
+            {
+                //thêm bảng orders
+                var order = new OrderBook();
+                order.ReceiveName = form["ReceiveName"];
+                order.ReceiveAddress = form["AddresslReceive"];
+                order.ReceivePhone = form["PhoneReceive"];
+                order.Notes = form["Notes"];
+                order.PaymentId = int.Parse(form["Idpayment"]);
+                order.OrderDate = DateTime.Now;
+                order.TransactStatusID = 1;
+                var dataMember = JsonConvert.DeserializeObject<Customer>(HttpContext.Session.GetString("Member"));
+                order.CustomerID = dataMember.CustomerID;
+                decimal total = 0;
+                foreach (var item in carts)
+                {
+                    if (item.PriceSale > 0 && item.PriceSale < item.Price)
+                    {
+                        total += item.Quantity * item.PriceSale;
+                    }
+                    else
+                    {
+                        total += item.Quantity * item.Price;
+                    }
+                    order.TotalMoney = total;
+
+                    //tạo OrderId
+                    var strOrderId = "DH";
+
+                    string times = DateTime.Now.ToString("yyyy-MM-dd.HH-mm-ss.fff");
+                    strOrderId += "." + times;
+                    order.CodeOrder = strOrderId;
+
+                    _db.Add(order);
+                    await _db.SaveChangesAsync();
+
+                    //Lấy id bảng orderbook
+                    var dataOrder = _db.OrderBooks.OrderByDescending(x => x.OrderId).FirstOrDefault();
+                    foreach (var items in carts)
+                    {
+                        OrderDetails orderDetails = new OrderDetails();
+                        orderDetails.OrderDetailsId = orderDetails.OrderId;
+                        orderDetails.ProductId = items.ProductId;
+                        orderDetails.Quatity = items.Quantity;
+                        orderDetails.Price = items.Price;
+                        orderDetails.TotalMoney = items.TotalPrice;
+
+                        _db.Add(orderDetails);
+                        await _db.SaveChangesAsync();
+                    }
+                    HttpContext.Session.Remove("My-Cart");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            TempData["success"] = "Thanh toán thành công";
+            return RedirectToAction("Index", "ShopCart");
+        }
     }
 }

@@ -13,10 +13,11 @@ namespace BookStoreTM.Models
 
         [Required]
         [Column(TypeName = "nvarchar(100)")]
-        public int CodeOrder { get; set; }
+        public string CodeOrder { get; set; }
 
         [Column(TypeName = "datetime")]
         public DateTime OrderDate { get; set; }
+        public decimal TotalMoney { get; set; }
 
         [Column(TypeName = "nvarchar(100)")]
         public string ReceiveName { get; set; }
@@ -28,7 +29,7 @@ namespace BookStoreTM.Models
         public string ReceivePhone { get; set; }
 
         [Column(TypeName = "ntext")]
-        public int Notes { get; set; }
+        public string Notes { get; set; }
         //khoá ngoại
         public int CustomerID { get; set; }
         public int TransactStatusID { get; set; }

@@ -8,7 +8,7 @@ namespace BookStoreTM.Models
     {
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
-        public string TransactStatusID { get; set; }
+        public int TransactStatusID { get; set; }
 
         [Required]
         [Column(TypeName = "nvarchar(100)")]

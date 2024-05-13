@@ -2,6 +2,9 @@
 @using Microsoft.AspNetCore.Http;
 @using Newtonsoft.Json;
 @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{
+    var customers = ViewBag.Customer as BookStoreTM.Models.Customer;
+}
 
 @if (Model != null && Model.Any())
 {
@@ -45,7 +48,9 @@
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="settingButton">
                                         @if (HttpContextAccessor.HttpContext.Session.GetString("Member") != null)
                                         {
-                                            <li><a class="dropdown-item" asp-action="Logout" asp-controller="Customer">Xin chào, @ViewBag.Customer</a></li>
+                                            @* var customer = JsonConvert.DeserializeObject<Customer>(HttpContextAccessor.HttpContext.Session.GetString("Member")); *@
+                                            @* <li><a class="dropdown-item" asp-action="Detail" asp-controller="Customer" asp-route-customerId="@customer.CustomerID">Detail</a></li> *@
+                                            <li><a class="dropdown-item" asp-action="Detail" asp-controller="Customer" >Detail</a></li>
                                             <li><a class="dropdown-item" asp-action="Logout" asp-controller="Customer">Thoát tài khoản</a></li>
                                         }
                                         else
