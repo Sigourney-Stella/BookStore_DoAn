@@ -1,0 +1,42 @@
+﻿@model Customer
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Đăng ký -->
+<div class="login-register-area section-space-y-axis-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <form asp-action="Registy" asp-controller="Customer" >
+                    <div class="login-form">
+                        <h4 class="login-title">Đăng ký</h4>
+                        <div class="row">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="mb-3">
+                                <label for="UserName" class="form-label">UserName</label>
+                                <input asp-for="Fullname" class="form-control" />
+                                <span asp-validation-for="Fullname" class=" text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label for="UserName" class="form-label">Email</label>
+                                <input asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email" class=" text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label for="Password" class="form-label">Password</label>
+                                <input asp-for="Password" class="form-control" />
+                                <span asp-validation-for="Password" class=" text-danger"></span>
+                            </div>
+                            <div class="col-lg-12 pt-5">
+                                <button class="btn btn-custom-size lg-size btn-secondary btn-primary-hover rounded-0">Đăng ký</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

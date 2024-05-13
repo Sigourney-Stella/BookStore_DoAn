@@ -142,7 +142,7 @@ namespace BookStoreTM.Migrations
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("Phone")
                         .HasColumnType("varchar(64)");

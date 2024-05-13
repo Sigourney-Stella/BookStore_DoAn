@@ -31,7 +31,7 @@ namespace BookStoreTM.Models
         public DateTime CreateDate { get; set; }
 
         [Required]
-        [Column(TypeName = "nvarchar(50)")]
+        [Column(TypeName = "nvarchar(500)")]
         public string Password { get; set; }
         public bool IsActive { get; set; }
         public bool IsDelete { get; set; }
