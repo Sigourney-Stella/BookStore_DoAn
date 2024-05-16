@@ -41,17 +41,8 @@ namespace BookStoreTM.Models
         [Column(TypeName = "int")]
         public int? Quatity { get; set; }
         public bool IsActicve { get; set; }
-
-        [Column(TypeName = "int")]
         public bool IsHome { get; set; }
-
-        [Column(TypeName = "int")]
         public bool IsSale { get; set; }
-
-        [Column(TypeName = "int")]
-        public bool IsFeature {  get; set; } // sp nổi bật
-
-        [Column(TypeName = "int")]
         public bool IsHot { get; set; }
 
         [Column(TypeName = "nvarchar(500)")]
@@ -73,6 +64,7 @@ namespace BookStoreTM.Models
         public ProductImage ProductImage { get; set; }
         //
         public ICollection<OrderDetails> OrderDetails { get; set; }
+        public ICollection<Favorite> Favorites { get; set; }
 
     }
 }

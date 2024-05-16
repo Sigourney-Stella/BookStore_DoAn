@@ -227,7 +227,7 @@
                                                             </a>
                                                         </li>
                                                         <li>
-                                                            <a href="wishlist.html">
+                                                            <a asp-controller="Favorite" asp-action="AddFavorite" asp-route-productId="@item.ProductId">
                                                                 <i class="pe-7s-like"></i>
                                                             </a>
                                                         </li>
@@ -275,7 +275,7 @@
                                                 <div class="product-add-action">
                                                     <ul>
                                                         <li>
-                                                            <a asp-controller="ShopCart" asp-action="Add" asp-route-id="@item.ProductId">
+                                                            <a asp-route-id="@item.ProductId">
                                                                 <i class="pe-7s-cart"></i>
                                                             </a>
                                                         </li>
@@ -285,7 +285,7 @@
                                                             </a>
                                                         </li>
                                                         <li>
-                                                            <a href="wishlist.html">
+                                                            <a href="#" onclick="addToFavorite(@item.ProductId)">
                                                                 <i class="pe-7s-like"></i>
                                                             </a>
                                                         </li>
@@ -344,15 +344,19 @@
         </div>
     </div>
 </main>
-<!-- Product Section End -->
-@* @section Scripts {
-    <script>
-        $(document).ready(function () {
-            $('body').on('click', '.btnAddToCart', function (e) {
-                e.preventDefault();
-                var id = $(this).data('id');
-                alert(id);
-            })
-        })
-    </script>
-} *@
+
+<script>
+    function addToFavorite(productId) {
+        // Gửi yêu cầu POST đến hành động AddToFavorite với productId
+        fetch('/Favorite/Add?productId=' + productId, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(response => {
+            // Xử lý kết quả nếu cần
+        }).catch(error => {
+            console.error('Error:', error);
+        });
+    }
+</script>

@@ -12,6 +12,7 @@ namespace BookStoreTM.Models
 
         [Range(0, double.MaxValue)]
         public Decimal Price { get; set; }
+        public string Code { get; set; }
 
         [Column(TypeName = "int")]
         public int Quatity { get; set; }

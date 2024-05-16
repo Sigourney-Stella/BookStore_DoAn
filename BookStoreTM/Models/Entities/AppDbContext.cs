@@ -27,5 +27,6 @@ namespace BookStoreTM.Models.Entities
         public DbSet<TransactStatus> TransactStatus { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<ReceiptDetails> ReceiptDetails { get; set; }
+        public DbSet<Favorite> Favorites { get; set; }
     }
 }

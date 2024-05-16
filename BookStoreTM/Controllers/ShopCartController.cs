@@ -17,6 +17,8 @@ namespace BookStoreTM.Controllers
     {
         private readonly AppDbContext _db;
 
+        private static int orderIdCounter = 0;
+
         private List<ShopCart> carts = new List<ShopCart>();
         public ShopCartController(AppDbContext db)
         {
@@ -87,6 +89,8 @@ namespace BookStoreTM.Controllers
                 item.SoLuong++;
                 carts.Add(item);
             }
+
+            //đếm số sản phẩm vào giỏ hàng
             var totalQuantity = carts.Sum(c => c.Quantity);
             HttpContext.Session.SetInt32("CartTotalQuantity", totalQuantity);
             ViewBag.CartTotalQuantity = totalQuantity;
@@ -149,7 +153,6 @@ namespace BookStoreTM.Controllers
             }
             return View(carts);
         }
-
         public async Task<IActionResult> OrderPay(IFormCollection form)
         {
             try
@@ -177,9 +180,12 @@ namespace BookStoreTM.Controllers
                         total += item.Quantity * item.Price;
                     }
                     order.TotalMoney = total;
-
+                    orderIdCounter++;
                     //tạo OrderId
                     var strOrderId = "DH";
+
+                    //var strOrderId = "DH" + orderIdCounter.ToString("D4"); // D4 để đảm bảo có 4 chữ số
+                    //order.CodeOrder = strOrderId;
 
                     string times = DateTime.Now.ToString("yyyy-MM-dd.HH-mm-ss.fff");
                     strOrderId += "." + times;
@@ -193,7 +199,8 @@ namespace BookStoreTM.Controllers
                     foreach (var items in carts)
                     {
                         OrderDetails orderDetails = new OrderDetails();
-                        orderDetails.OrderDetailsId = orderDetails.OrderId;
+                        orderDetails.Code = dataOrder.CodeOrder;
+                        orderDetails.OrderId = dataOrder.OrderId;
                         orderDetails.ProductId = items.ProductId;
                         orderDetails.Quatity = items.Quantity;
                         orderDetails.Price = items.Price;

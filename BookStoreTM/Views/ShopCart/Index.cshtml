@@ -63,18 +63,18 @@
                                                     @if (item.PriceSale > 0)
                                                     {
                                                         <span data-price="@item.PriceSale" class="new-price">
-                                                            @BookStoreTM.Common.Common.FormatNumber(item.PriceSale, 0)VND
+                                                            @BookStoreTM.Common.Common.FormatNumber(item.PriceSale, 0) VND
                                                         </span>
                                                         <br />
                                                         <span data-price="@item.Price" class="old-price text-primary">
-                                                            @BookStoreTM.Common.Common.FormatNumber(item.Price, 0)VND
+                                                            @BookStoreTM.Common.Common.FormatNumber(item.Price, 0) VND
                                                         </span>
                                                     }
 
                                                     else
                                                     {
                                                         <span data-price="@item.Price" class="new-price text-primary">
-                                                            @BookStoreTM.Common.Common.FormatNumber(item.Price, 0)VND
+                                                            @BookStoreTM.Common.Common.FormatNumber(item.Price, 0) VND
                                                         </span>
                                                     }
                                                 </td>
@@ -87,7 +87,7 @@
                                                 </td>
                                                 <td class="product-subtotal">
                                                     <p data-money="@money" class="total-money">
-                                                        <span id="money">@string.Format("{0:#,##0}", @money)</span>VND
+                                                        <span id="money">@string.Format("{0:#,##0}", @money)</span> VND
                                                     </p>
                                                 </td>
                                                 <td class="product_remove btn-action">
@@ -132,11 +132,11 @@
                                     </ul>
                                     @if (HttpContextAccessor.HttpContext.Session.GetString("Member") != null)
                                     {
-                                        <a asp-action="Order" asp-controller="ShopCart">Mua hàng</a>
+                                        <a id="buyButton" asp-action="Order" asp-controller="ShopCart">Mua hàng</a>
                                     }
                                     else
                                     {
-                                        <a asp-action="Login" asp-controller="Customer">Mua hàng</a>
+                                        <a id="buyButton" asp-action="Login" asp-controller="Customer">Mua hàng</a>
                                     }
                                     @* <a href="/shopcart/checkout">Mua hàng</a> *@
                                 </div>
@@ -169,89 +169,22 @@
 
 <script src="~/lib/jquery/dist/jquery.js"></script>
 
-@* @section scripts {
-    <script>
-        $(document).ready(function () {
-            //giảm
-            $('.cart-plus-minus .fa-minus').click(function () {
-                let qty = parseInt($(this).parent().siblings('.cart-plus-minus-box').val()); // lấy giá trị ô input
-                let price = parseFloat($(this).closest('td').prev('td').find('.new-price').attr("data-price"));
-                qty -= 1;
-                if (qty < 1) return;
-                let money = qty * price; // Tính thành tiền
-                //hiển thị dữ liệu
-                $(this).parent().find('.cart-plus-minus-box').val(qty); //hiển thị lại số lượng
-                //cập nhập lại số lượng trong sesion
-                let id = $(this).parent().parent().parent().siblings('.btn-action').children('.update').attr("data-id");
-                let href = "/shopcart/Update/?id=" + id + "&quantity=" + qty; // link cập nhật sản phẩm trong giỏ hàng
-                $(this).parent().parent().parent().siblings('.btn-action').children('.update').attr("href", href);
-                $(this).parent().parent().parent().siblings('.product-subtotal').children('.total-money').attr("data-money", money);
-                let total_money = formatMoney(money, 0, ",", ".");
-
-                $(this).parent().parent().parent().siblings('td').children().children("span#money").text(total_money);
-                let totalMoney = formatMoney(total(), 0, ",", ".");
-                $("#totalMoney").text(totalMoney); // hiển thị tổng tiền
-                //$("#totalMoneyPay").text(totalMoney);// hiển thị tổng tiền
-            })
-
-            //Tawng
-            $('.cart-plus-minus .fa-plus').click(function () {
-                console.log("ok");
-                let qty = parseInt($(this).parent().siblings('.cart-plus-minus-box').val()); // lấy giá trị ô input
-                let price = parseFloat($(this).closest('td').prev('td').find('.new-price').attr("data-price"));
-                // let price = parseFloat($(this).parent().parent().siblings().children("span.new-price").attr("data-price"));
-
-                qty += 1;
-                let money = qty * price; // Tính thành tiền
-                //hiển thị dữ liệu
-                // $(this).parent().siblings('.cart-plus-minus-box').val(qty); //hiển thị lại số lượng
-                console.log("ok", qty, price, money);
-                //cập nhập lại số lượng trong sesion
-                let id = $(this).parent().parent().parent().siblings('.btn-action').children('.update').attr("data-id");
-                let href = "/shopcart/Update/?id=" + id + "&quantity=" + qty; // link cập nhật sản phẩm trong giỏ hàng
-                $(this).parent().parent().parent().siblings('.btn-action').children('.update').attr("href", href);
-                $(this).parent().parent().parent().siblings('.product-subtotal').children('.total-money').attr("data-money", money);
-                let total_money = formatMoney(money, 0, ",", ".");
-                console.log("ok", qty, price, money, total_money);
-                $(this).parent().parent().parent().siblings('.product-subtotal').children('.total-money').children("#money").text(total_money);
-                let totalMoney = formatMoney(total(), 0, ",", ".");
-                $("#totalMoney").text(totalMoney); // hiển thị tổng tiền
-                //$("#totalMoneyPay").text(totalMoney);// hiển thị tổng tiền
-            })
-
-
-
-            function total() {
-                let totalMoney = 0;
-                $("p.total-money").each(function () {
-                    console.log($(this));
-                    console.log($(this).attr("data-money"));
-                    let money = parseFloat($(this).attr("data-money"));
-                    console.log("total-money", money);
-                    totalMoney += money;
-                });
-                return totalMoney;
+<script>
+    $(document).ready(function () {
+        $("#buyButton").click(function (e) {
+            // Kiểm tra giỏ hàng có sản phẩm hay không
+            if ($("tbody tr").length === 1 && $("tbody tr td").length === 1) {
+                alert("Bạn vẫn chưa chọn sản phẩm nào để mua.");
+                e.preventDefault();
+            } else {
+                // Tiến hành mua hàng
+                const member = "@HttpContextAccessor.HttpContext.Session.GetString("Member")";
+                if (member) {
+                    window.location.href = '@Url.Action("Order", "ShopCart")';
+                } else {
+                    window.location.href = '@Url.Action("Login", "Customer")';
+                }
             }
-
-            // total();
-
         });
-        function formatMoney(amount, decimalCount = 2, decimal = ".", thousands = ",") {
-            try {
-                decimalCount = Math.abs(decimalCount);
-                decimalCount = isNaN(decimalCount) ? 2 : decimalCount;
-                const negativeSign = amount < 0 ? "-" : "";
-                let i = parseInt(amount = Math.abs(Number(amount) ||
-                    0).toFixed(decimalCount)).toString();
-                let j = (i.length > 3) ? i.length % 3 : 0;
-                return negativeSign +
-                    (j ? i.substr(0, j) + thousands : '') +
-                    i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousands) +
-                    (decimalCount ? decimal + Math.abs(amount -
-                        i).toFixed(decimalCount).slice(2) : "");
-            } catch (e) {
-                console.log(e)
-            }
-        };
-    </script>
-} *@
+    });
+</script>

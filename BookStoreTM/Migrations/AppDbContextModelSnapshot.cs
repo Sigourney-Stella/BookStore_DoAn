@@ -152,6 +152,35 @@ namespace BookStoreTM.Migrations
                     b.ToTable("Customer");
                 });
 
+            modelBuilder.Entity("BookStoreTM.Models.Favorite", b =>
+                {
+                    b.Property<int>("FavoriteId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FavoriteId"));
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime");
+
+                    b.Property<int>("CustomerID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("FavoriteId");
+
+                    b.HasIndex("CustomerID");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Favorite");
+                });
+
             modelBuilder.Entity("BookStoreTM.Models.News", b =>
                 {
                     b.Property<int>("NewsId")
@@ -264,6 +293,9 @@ namespace BookStoreTM.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderDetailsId"));
 
+                    b.Property<string>("Code")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("OrderBookOrderId")
                         .HasColumnType("int");
 
@@ -354,17 +386,14 @@ namespace BookStoreTM.Migrations
                     b.Property<bool>("IsActicve")
                         .HasColumnType("bit");
 
-                    b.Property<int>("IsFeature")
-                        .HasColumnType("int");
+                    b.Property<bool>("IsHome")
+                        .HasColumnType("bit");
 
-                    b.Property<int>("IsHome")
-                        .HasColumnType("int");
+                    b.Property<bool>("IsHot")
+                        .HasColumnType("bit");
 
-                    b.Property<int>("IsHot")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IsSale")
-                        .HasColumnType("int");
+                    b.Property<bool>("IsSale")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Notes")
                         .HasColumnType("nvarchar(max)");
@@ -591,6 +620,25 @@ namespace BookStoreTM.Migrations
                     b.ToTable("TransactStatus");
                 });
 
+            modelBuilder.Entity("BookStoreTM.Models.Favorite", b =>
+                {
+                    b.HasOne("BookStoreTM.Models.Customer", "Customer")
+                        .WithMany("Favorites")
+                        .HasForeignKey("CustomerID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BookStoreTM.Models.Product", "Product")
+                        .WithMany("Favorites")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Customer");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("BookStoreTM.Models.OrderBook", b =>
                 {
                     b.HasOne("BookStoreTM.Models.Customer", "Customer")
@@ -673,6 +721,8 @@ namespace BookStoreTM.Migrations
 
             modelBuilder.Entity("BookStoreTM.Models.Customer", b =>
                 {
+                    b.Navigation("Favorites");
+
                     b.Navigation("OrderBook");
                 });
 
@@ -688,6 +738,8 @@ namespace BookStoreTM.Migrations
 
             modelBuilder.Entity("BookStoreTM.Models.Product", b =>
                 {
+                    b.Navigation("Favorites");
+
                     b.Navigation("OrderDetails");
                 });
 

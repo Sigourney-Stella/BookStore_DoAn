@@ -220,7 +220,7 @@ namespace BookStoreTM.Areas.Admin.Controllers
                 var entry = _db.Entry<Product>(item);
                 entry.State = EntityState.Modified;
                 _db.SaveChanges();
-                return Json(new { success = true, IsHome = item.IsHome });
+                return Json(new { success = true, isHome = item.IsHome });
             }
             return Json(new { success = false });
         }

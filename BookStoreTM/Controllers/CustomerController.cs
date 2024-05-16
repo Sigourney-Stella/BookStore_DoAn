@@ -41,7 +41,7 @@ namespace BookStoreTM.Controllers
                 {
                     return RedirectToAction(urlAction);
                 }
-                return RedirectToAction("Index", "Shopcart");
+                return RedirectToAction("Index", "Home");
             }
             TempData["errorLogin"] = "Lỗi đăng nhập";
             return RedirectToAction("Index");
@@ -69,19 +69,55 @@ namespace BookStoreTM.Controllers
                 return RedirectToAction("Index");
             }
         }
+        [HttpGet]
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Remove("Member");
+            return RedirectToAction("Index", "Home");
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Customer model)
+        {
+            if (ModelState.IsValid)
+            {
+                // Lấy đối tượng Customer hiện tại từ cơ sở dữ liệu
+                var customer = _context.Customers.Find(model.CustomerID);
+                if (customer == null)
+                {
+                    return NotFound();
+                }
+                // Cập nhật thông tin từ form vào đối tượng Customer
+                customer.Fullname = model.Fullname;
+                customer.Email = model.Email;
+                customer.Address = model.Address;
+                customer.Phone = model.Phone;
+                customer.Brithday = model.Brithday;
+                customer.Avatar = model.Avatar;
+
+                _context.SaveChanges();
+                return RedirectToAction("Detail");
+            }
+            return View("Detail", model);
+        }
 
         //xem thông tin đơn tài khoản
+
         public IActionResult Detail()
         {
             var customer = JsonConvert.DeserializeObject<Customer>(HttpContext.Session.GetString("Member"));
 
             if (customer != null)
             {
-                var orderBooks = _context.OrderBooks.Where(x => x.CustomerID == customer.CustomerID).Include(p => p.TransactStatus).Include(p=>p.Payment).ToList();
-                //var orderDetails = _context.OrderDetails.Where(x => x.OrderId == orderBooks.Id).Include(p => p.Product).ToListAsync();
-                //var customer = _context.Customers.SingleOrDefault(c => c.CustomerID == customerId);
+                var orderBooks = _context.OrderBooks
+                                         .Where(x => x.CustomerID == customer.CustomerID)
+                                         .Include(p => p.TransactStatus)
+                                         .Include(p => p.Payment)
+                                         .ToList();
+
                 var orderBooksViews = new List<OrderBooksView>();
-                foreach(var item in orderBooks) {
+                foreach (var item in orderBooks)
+                {
                     var orderBooksView = new OrderBooksView()
                     {
                         OrderId = item.OrderId,
@@ -97,22 +133,31 @@ namespace BookStoreTM.Controllers
                         PaymentName = item.Payment.PaymentName,
                     };
                     orderBooksViews.Add(orderBooksView);
-                };
-                
+                }
+
+                var orderDetails = _context.OrderDetails
+                                           .Where(od => orderBooks.Select(ob => ob.OrderId).Contains(od.OrderId))
+                                           .Include(od => od.Product)
+                                           .ToList();
+
+                var orderDetailsViews = orderDetails.Select(od => new ProductDetailViewModel
+                {
+                    OrderDetailsId = od.OrderDetailsId,
+                    ProductName = od.Product.ProductName,
+                    Quantity = od.Quatity,
+                    Price = od.Price,
+                    TotalMoney = od.TotalMoney,
+                    OrderId = od.OrderId,
+                    Description = od.Product.Description,
+                    Images = od.Product.Images,
+                }).ToList();
+
                 ViewBag.orderBooksViews = orderBooksViews;
+                ViewBag.orderDetailsViews = orderDetailsViews;
                 return View(customer);
             }
 
             return View("Home");
         }
-
-        [HttpGet]
-        public IActionResult Logout()
-        {
-            HttpContext.Session.Remove("Member");
-            return RedirectToAction("Index","Home");
-        }
-
-
     }
 }

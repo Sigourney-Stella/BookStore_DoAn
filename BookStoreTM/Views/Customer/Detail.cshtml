@@ -4,6 +4,7 @@
     ViewData["Title"] = "Detail";
     Layout = "~/Views/Shared/_Layout.cshtml";
     var orderBooksViews = ViewBag.orderBooksViews as List<OrderBooksView>;
+    var orderDetailsViews = ViewBag.orderDetailsViews as List<ProductDetailViewModel>;
 }
 
 <main class="main-content">
@@ -50,79 +51,56 @@
                             }
                         </div>
                         <div class="tab-pane fade" id="account-orders" role="tabpanel" aria-labelledby="account-orders-tab">
-                            <div class="myaccount-orders">
-                                <h4 class="small-title">MY ORDERS</h4>
-                                <div class="table-responsive">
-                                    <table class="table table-bordered table-hover">
-                                        <tbody>
-                                            <tr>
-                                                <th>ORDER</th>
-                                                <th>DATE</th>
-                                                <th>STATUS</th>
-                                                <th>TOTAL</th>
-                                                <th></th>
-                                            </tr>
-                                            @foreach (var item in orderBooksViews)
-                                            {
-                                                <tr>
-                                                    <td><a class="account-order-id" href="javascript:void(0)">@item.OrderId</a></td>
-                                                    <td>@item.OrderDate</td>
-                                                    <td>@item.TransactStatus</td>
-                                                   
-                                                    <td>@item.TotalMoney for 2 items</td>
-                                                    <td>
-                                                        <a href="javascript:void(0)" class="btn btn-secondary btn-primary-hover"><span>View</span></a>
-                                                    </td>
-                                                </tr>
-                                            }
-                                            
-                                            <tr>
-                                                <td><a class="account-order-id" href="javascript:void(0)">#5356</a></td>
-                                                <td>Mar 27, 2019</td>
-                                                <td>On Hold</td>
-                                                <td>$162.00 for 2 items</td>
-                                                <td>
-                                                    <a href="javascript:void(0)" class="btn btn-secondary btn-primary-hover"><span>View</span></a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+
+                            @foreach (var order in orderBooksViews)
+                            {
+                                @foreach (var detail in orderDetailsViews.Where(d => d.OrderId == order.OrderId))
+                                {
+                                    <div class="myaccount-orders d-flex">
+                                        <img class="img-product-detail" src="@detail.Images" />
+                                        <div>
+                                            <h5>@detail.ProductName</h5>
+                                            <h5>@detail.Description</h5>
+                                        </div>
+                                    </div>
+                                }
+                            }
                         </div>
                         <div class="tab-pane fade" id="account-details" role="tabpanel" aria-labelledby="account-details-tab">
                             <div class="myaccount-details">
-                                <form action="#" class="myaccount-form">
+                                <form asp-action="Edit" method="post" class="myaccount-form">
                                     <div class="myaccount-form-inner">
+                                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                        <input type="hidden" asp-for="CustomerID" />
                                         <div class="single-input single-input-half">
-                                            <label>First Name*</label>
-                                            <input type="text">
+                                            <label asp-for="Fullname" class="control-label"></label>
+                                            <input asp-for="Fullname" readonly class="form-control" />
+                                            <span asp-validation-for="Fullname" class="text-danger"></span>
                                         </div>
                                         <div class="single-input single-input-half">
-                                            <label>Last Name*</label>
-                                            <input type="text">
+                                            <label asp-for="Email" class="control-label"></label>
+                                            <input asp-for="Email" class="form-control" />
+                                            <span asp-validation-for="Email" class="text-danger"></span>
+                                        </div>
+                                        <div class="single-input single-input-half">
+                                            <label asp-for="Brithday" class="control-label"></label>
+                                            <input asp-for="Brithday" class="form-control" />
+                                            <span asp-validation-for="Brithday" class="text-danger"></span>
+                                        </div>
+                                        <div class="single-input single-input-half">
+                                            <label asp-for="Phone" class="control-label"></label>
+                                            <input asp-for="Phone" class="form-control" />
+                                            <span asp-validation-for="Phone" class="text-danger"></span>
                                         </div>
                                         <div class="single-input">
-                                            <label>Email*</label>
-                                            <input type="email">
+                                            <label asp-for="Address" class="control-label"></label>
+                                            <input asp-for="Address" class="form-control" />
+                                            <span asp-validation-for="Address" class="text-danger"></span>
                                         </div>
-                                        <div class="single-input">
-                                            <label>
-                                                Current Password(leave blank to leave
-                                                unchanged)
-                                            </label>
-                                            <input type="password">
-                                        </div>
-                                        <div class="single-input">
-                                            <label>
-                                                New Password (leave blank to leave
-                                                unchanged)
-                                            </label>
-                                            <input type="password">
-                                        </div>
-                                        <div class="single-input">
-                                            <label>Confirm New Password</label>
-                                            <input type="password">
+                                        <div class="form-group" style="display:none;">
+                                            <label asp-for="Password" class="control-label"></label>
+                                            <input asp-for="Password" class="form-control" />
+                                            <span asp-validation-for="Password" class="text-danger"></span>
                                         </div>
                                         <div class="single-input">
                                             <button class="btn btn-custom-size lg-size btn-secondary btn-primary-hover rounded-0" type="submit">
@@ -131,15 +109,80 @@
                                         </div>
                                     </div>
                                 </form>
+
+                               @*  <form asp-action="Edit" method="post" class="myaccount-form">
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    <input type="hidden" asp-for="CustomerID" />
+                                    <div class="form-group">
+                                        <label asp-for="Fullname" class="control-label"></label>
+                                        <input asp-for="Fullname" class="form-control" />
+                                        <span asp-validation-for="Fullname" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Brithday" class="control-label"></label>
+                                        <input asp-for="Brithday" class="form-control" />
+                                        <span asp-validation-for="Brithday" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Avatar" class="control-label"></label>
+                                        <input asp-for="Avatar" class="form-control" />
+                                        <span asp-validation-for="Avatar" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Address" class="control-label"></label>
+                                        <input asp-for="Address" class="form-control" />
+                                        <span asp-validation-for="Address" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Email" class="control-label"></label>
+                                        <input asp-for="Email" class="form-control" />
+                                        <span asp-validation-for="Email" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Phone" class="control-label"></label>
+                                        <input asp-for="Phone" class="form-control" />
+                                        <span asp-validation-for="Phone" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="CreateDate" class="control-label"></label>
+                                        <input asp-for="CreateDate" class="form-control" />
+                                        <span asp-validation-for="CreateDate" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group" style="display:none;">
+                                        <label asp-for="Password" class="control-label"></label>
+                                        <input asp-for="Password" class="form-control" />
+                                        <span asp-validation-for="Password" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="submit" value="Save" class="btn btn-primary" />
+                                    </div>
+                                </form> *@
                             </div>
                         </div>
-                      
+
                     </div>
-                 
+
                 </div>
             </div>
         </div>
     </div>
-
 </main>
 
+<style>
+    .img-product-detail {
+        height: 150px;
+        width: 150px;
+    }
+
+    .myaccount-orders.d-flex {
+        border-top: 1px solid #E8E8E8;
+        padding: 10px 0;
+        border-bottom: 1px solid #E8E8E8;
+    }
+</style>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

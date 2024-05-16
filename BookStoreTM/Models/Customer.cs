@@ -6,7 +6,6 @@ using Microsoft.EntityFrameworkCore;
 namespace BookStoreTM.Models
 {
     [Table("Customer")]
-    //[Index(nameof(Customer.CodeCustomer), IsUnique = true)]
     public class Customer
     {
         [Key]
@@ -38,6 +37,7 @@ namespace BookStoreTM.Models
         
         //
         public ICollection<OrderBook> OrderBook { get; set; }
+        public ICollection<Favorite> Favorites { get; set; }
 
     }
 }
