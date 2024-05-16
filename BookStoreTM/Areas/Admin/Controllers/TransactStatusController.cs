@@ -27,7 +27,7 @@ namespace BookStoreTM.Areas.Admin.Controllers
         }
 
         // GET: Admin/TransactStatus/Details/5
-        public async Task<IActionResult> Details(int id)
+        public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
             {
@@ -67,7 +67,7 @@ namespace BookStoreTM.Areas.Admin.Controllers
         }
 
         // GET: Admin/TransactStatus/Edit/5
-        public async Task<IActionResult> Edit(string id)
+        public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
             {
@@ -118,7 +118,7 @@ namespace BookStoreTM.Areas.Admin.Controllers
         }
 
         // GET: Admin/TransactStatus/Delete/5
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
             {

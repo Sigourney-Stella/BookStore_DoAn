@@ -1,7 +1,7 @@
 ﻿@model X.PagedList.IPagedList<BookStoreTM.Models.OrderBook>
 @using X.PagedList.Mvc.Core;
-    @{
-        ViewData["Title"] = "Index";
+@{
+    ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
@@ -41,7 +41,6 @@
                 </form>
                 <div>
                     <a href="/admin/product/ThemSanPham" class="btn btn-primary">Thêm mới</a>
-                    <a href="#" class="btn btn-danger" id="BtnDeleteAll">Xóa</a>
                 </div>
 
             </div>
@@ -72,12 +71,15 @@
                                 <td>@item.Customer.Phone</td>
                                 <td>@BookStoreTM.Common.Common.FormatNumber(item.TotalMoney, 0) VND</td>
                                 <td>
-                                    <select name="IdStatus" asp-items="ViewBag.IdStatus">
-                                        </select>
+                                   @item.TransactStatus.Status
                                 </td>
                                 <td>@string.Format("{0:dd/MM/yyy}", item.OrderDate)</td>
                                 <td>
                                     <a asp-action="Detail" asp-route-id="@item.OrderId" class="btn-sm btn-primary">Xem</a>
+                                    <input type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#modal-default_@item.OrderId" value="Cập nhật" />
+                                    @* <button type="" class="btn-sm btn-primary" data-toggle="modal" data-target="#modal-default">
+                            Cập nhật
+                            </button> *@
                                 </td>
                             </tr>
                             i++;
@@ -105,6 +107,65 @@
     </div>
 </section>
 
+@foreach (var item in Model)
+{
+    <form id="updateForm_@item.OrderId" asp-action="UpdateOrderStatus" asp-controller="Orders" method="post">
+        <div class="modal fade" id="modal-default_@item.OrderId">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Cập nhật trạng thái</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" name="OrderId" value="@item.OrderId" />
+                        <select name="IdStatus" asp-items="ViewBag.IdStatus" class="form-control">
+                            <!-- options for status -->
+                        </select>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                        <button type="submit" class="btn-sm btn-primary">Cập nhật</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+    </form>
+}
+
+@* @foreach (var item in Model)
+{
+    <form asp-action="UpdateOrderStatus" asp-controller="Orders" method="post">
+        <div class="modal fade" id="modal-default">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Cập nhật trạng tái</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" name="OrderId" value="@item.OrderId" />
+                        <select name="IdStatus" asp-items="ViewBag.IdStatus" class="form-control">
+                            <!-- options for status -->
+                        </select>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                        <button type="submit" class="btn-sm btn-primary">Cập nhật</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+    </form>
+} *@
 @section scripts {
     <script>
         $(document).ready(function () {

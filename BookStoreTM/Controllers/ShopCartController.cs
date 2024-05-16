@@ -179,38 +179,39 @@ namespace BookStoreTM.Controllers
                     {
                         total += item.Quantity * item.Price;
                     }
-                    order.TotalMoney = total;
-                    orderIdCounter++;
-                    //tạo OrderId
-                    var strOrderId = "DH";
-
-                    //var strOrderId = "DH" + orderIdCounter.ToString("D4"); // D4 để đảm bảo có 4 chữ số
-                    //order.CodeOrder = strOrderId;
-
-                    string times = DateTime.Now.ToString("yyyy-MM-dd.HH-mm-ss.fff");
-                    strOrderId += "." + times;
-                    order.CodeOrder = strOrderId;
-
-                    _db.Add(order);
-                    await _db.SaveChangesAsync();
-
-                    //Lấy id bảng orderbook
-                    var dataOrder = _db.OrderBooks.OrderByDescending(x => x.OrderId).FirstOrDefault();
-                    foreach (var items in carts)
-                    {
-                        OrderDetails orderDetails = new OrderDetails();
-                        orderDetails.Code = dataOrder.CodeOrder;
-                        orderDetails.OrderId = dataOrder.OrderId;
-                        orderDetails.ProductId = items.ProductId;
-                        orderDetails.Quatity = items.Quantity;
-                        orderDetails.Price = items.Price;
-                        orderDetails.TotalMoney = items.TotalPrice;
-
-                        _db.Add(orderDetails);
-                        await _db.SaveChangesAsync();
-                    }
-                    HttpContext.Session.Remove("My-Cart");
                 }
+
+                order.TotalMoney = total;
+                orderIdCounter++;
+                //tạo OrderId
+                var strOrderId = "DH";
+
+                //var strOrderId = "DH" + orderIdCounter.ToString("D4"); // D4 để đảm bảo có 4 chữ số
+                //order.CodeOrder = strOrderId;
+
+                string times = DateTime.Now.ToString("yyyy-MM-dd.HH-mm-ss.fff");
+                strOrderId += "." + times;
+                order.CodeOrder = strOrderId;
+
+                _db.Add(order);
+                await _db.SaveChangesAsync();
+
+                //Lấy id bảng orderbook
+                var dataOrder = _db.OrderBooks.OrderByDescending(x => x.OrderId).FirstOrDefault();
+                foreach (var items in carts)
+                {
+                    OrderDetails orderDetails = new OrderDetails();
+                    orderDetails.Code = dataOrder.CodeOrder;
+                    orderDetails.OrderId = dataOrder.OrderId;
+                    orderDetails.ProductId = items.ProductId;
+                    orderDetails.Quatity = items.Quantity;
+                    orderDetails.Price = items.Price;
+                    orderDetails.TotalMoney = items.TotalPrice; // lấy ra giá tiền cuối ( price hoặc pricesale)
+
+                    _db.Add(orderDetails);
+                    await _db.SaveChangesAsync();
+                }
+                HttpContext.Session.Remove("My-Cart");
             }
             catch (Exception ex)
             {

@@ -38,10 +38,38 @@ namespace BookStoreTM.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Detail(int id)
         {
-            var orderBooksViews = new List<OrderBooksView>();
-            ViewBag.orderBooksViews = orderBooksViews;
             var item = _db.OrderBooks.Find(id);
+
+            var productDetail = _db.OrderDetails.Where(x => x.OrderId == id).Include(p => p.Product).ToList();
+            ViewBag.productDetail = productDetail;
+
             return View(item);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateOrderStatus(int OrderId, int IdStatus)
+        {
+            try
+            {
+                var order = await _db.OrderBooks.FindAsync(OrderId);
+                if (order != null)
+                {
+                    order.TransactStatusID = IdStatus;
+                    _db.Update(order);
+                    await _db.SaveChangesAsync();
+                    TempData["success"] = "Cập nhật trạng thái đơn hàng thành công.";
+                }
+                else
+                {
+                    TempData["error"] = "Không tìm thấy đơn hàng.";
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["error"] = "Có lỗi xảy ra: " + ex.Message;
+            }
+
+            return RedirectToAction("Index");
+        }   
     }
 }

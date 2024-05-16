@@ -84,14 +84,6 @@
                                                 <tr class="cart_item">
                                                     <td class="cart-product-name">
                                                         <a asp-controller="Products" asp-action="Detail" asp-route-id="@item.ProductId">@item.ProductName</a>
-                                                        @* <div class="cart-plus-minus">
-                                                <div class="dec qtybutton"><i class="fa fa-minus"></i></div>
-                                                <input class="cart-plus-minus-box" value="@item.Quantity" type="text">
-                                                <div class="inc qtybutton"><i class="fa fa-plus"></i></div>
-                                                </div> *@
-                                                        @*  <strong class="product-quantity">
-                                                × @item.SoLuong
-                                                </strong> *@
                                                     </td>
                                                     <td class="cart-product-total">
                                                         <span id="totalMoney" data-money="@money">

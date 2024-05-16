@@ -58,6 +58,7 @@
                         <th>Danh mục</th>
                         <th>Số lượng</th>
                         <th>Giá</th>
+                        <th>Giá Khuyến mại</th>
                         <th>Ngày tạo</th>
                         <th>Home</th>
                         <th>Sale</th>
@@ -83,7 +84,8 @@
                                 <td>@item.ProductName</td>
                                 <td>@item.ProductCategory.Name</td>
                                 <td>@item.Quatity</td>
-                                <td>@item.Price</td>
+                                <td>@BookStoreTM.Common.Common.FormatNumber(item.Price, 0) VND</td>
+                                <td>@BookStoreTM.Common.Common.FormatNumber(item.PriceSale, 0) VND</td>
                                 <td>@string.Format("{0:dd/MM/yyy}", item.CreatedDate)</td>
                                 <td class="text-center">
                                     <a href='#' data-id="@item.ProductId" class="btnHome">@Html.Raw(strCheckHome)</a>
@@ -230,7 +232,7 @@
                     data: { id: id },
                     success: function (rs) {
                         if (rs.success) {
-                            if (rs.IsHome) {
+                            if (rs.isHome) {
                                 btn.html("<i class='fa fa-check text-success'></i>");
                             } else {
                                 btn.html("<i class='fas fa-times text-danger'></i>");
@@ -239,29 +241,6 @@
                     }
                 });
             });
-
-
-            // // checkbox tình trạng bật tắt trang chủ
-            // $('body').on('click', '.btnHome', function (e) {
-            //     e.preventDefault();
-            //     var btn = $(this);
-            //     var id = btn.data("id");
-            //     $.ajax({
-            //         url: '/admin/product/IsHome', // chay vào IActionResult IsActicve(int id)
-            //         type: 'POST',
-            //         data: { id: id },
-            //         success: function (rs) {
-            //             if (rs.success) {
-            //                 if (rs.IsHome) {
-            //                     btn.html("<i class='fa fa-check text-success'></i>");
-            //                 } else {
-            //                     btn.html("<i class='fas fa-times text-danger'></i>");
-            //                 }
-            //             }
-            //         }
-            //     });
-            // });
-
         });
     </script>
 }
