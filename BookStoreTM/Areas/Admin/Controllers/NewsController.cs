@@ -39,18 +39,7 @@ namespace BookStoreTM.Areas.Admin.Controllers
             ViewBag.Page = page;
             return View(item);
         }
-        //public IActionResult Index(string name, int page =1)
-        //{
-        //    int limit = 5;
-        //    var items = _db.News.OrderByDescending(x => x.NewsId).ToPagedList(page, limit);
-        //    if (!string.IsNullOrEmpty(name))
-        //    {
-        //        items = _db.News.Where(x => x.Title.Contains(name)).ToPagedList(page, limit);
-        //    }
-        //    ViewBag.keyword = name;
-        //    return View(items);
-        //}
-        //ckeditor
+        
         public IActionResult UploadImage(List<IFormFile> files)
         {
             var filepath = "";

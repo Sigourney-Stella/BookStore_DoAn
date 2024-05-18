@@ -154,6 +154,7 @@ namespace BookStoreTM.Areas.Admin.Controllers
                         model.Images = "/LayoutAdmin/images/products/" + result; // gán tên ảnh cho thuộc tinh Image
                     }
                 }
+                
                 model.UpdatedDate = DateTime.Now;
                 model.Alias = BookStoreTM.Common.Filter.FilterChar(model.ProductName);
 
