@@ -15,6 +15,9 @@ namespace BookStoreTM.Models
         [Column(TypeName = "nvarchar(500)")]
         public string ProductName { get; set; }
 
+        [Column(TypeName = "nvarchar(500)")]
+        public string Author { get; set; }
+        
         [Required]
         [Column(TypeName = "nvarchar(100)")]
         public string Code { get; set; }
@@ -31,6 +34,9 @@ namespace BookStoreTM.Models
 
         [Column(TypeName = "nvarchar(500)")]
         public string Images { get; set; }
+
+        [Range(0, double.MaxValue)]
+        public Decimal OriginalPrice { get; set; }
 
         [Range(0,double.MaxValue)]
         public Decimal Price { get; set; }

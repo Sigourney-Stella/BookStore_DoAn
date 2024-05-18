@@ -241,6 +241,27 @@
                     }
                 });
             });
+
+            // checkbox hiển thị cho sản phẩm sale
+            $('body').on('click', '.btnSale', function (e) {
+                e.preventDefault();
+                var btn = $(this);
+                var id = btn.data("id");
+                $.ajax({
+                    url: '/admin/product/IsSale',
+                    type: 'POST',
+                    data: { id: id },
+                    success: function (rs) {
+                        if (rs.success) {
+                            if (rs.isSale) {
+                                btn.html("<i class='fa fa-check text-success'></i>");
+                            } else {
+                                btn.html("<i class='fas fa-times text-danger'></i>");
+                            }
+                        }
+                    }
+                });
+            });
         });
     </script>
 }

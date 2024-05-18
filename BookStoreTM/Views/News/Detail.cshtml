@@ -1,0 +1,77 @@
+﻿@model BookStoreTM.Models.News
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var newBlog = ViewBag.newBlog as List<News>;
+}
+
+<main class="main-content">
+    <div class="blog-area section-space-y-axis-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="blog-detail-item">
+                        <div class="blog-content text-start pb-0">
+                            <div class="blog-meta text-dim-gray pb-3">
+                                <ul>
+                                    <li class="date"><i class="fa fa-calendar-o me-2"></i>@Model.CreatedDate?.ToString("dd/MM/yyyy")</li>
+                                </ul>
+                            </div>
+                            <h5 class="title mb-4">
+                                <a href="blog-detail-left-sidebar.html">@Model.Title</a>
+                            </h5>
+                            <p class="short-desc mb-4 mb-7">@Html.Raw(Model.Detail)</p>
+                            <h5 class="Normal" style="text-align:right;"><strong>@Model.CreatedBy</strong></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Begin Blog tin tức -->
+<div class="blog-area section-space-y-axis-100">
+    <div class="container">
+        <div class="section-title text-center pb-55">
+            <h2 class="title mb-0">Tin tức liên quan</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="swiper-container blog-slider">
+                    <div class="swiper-wrapper">
+                        @foreach (var item in newBlog)
+                        {
+                            <div class="swiper-slide">
+                                <div class="blog-item">
+                                    <div class="blog-img img-zoom-effect">
+                                        <a href="blog-detail-left-sidebar.html">
+                                            <img class="img-full" src="@item.Image" alt="Blog Image">
+                                        </a>
+                                    </div>
+                                    <div class="blog-content">
+                                        <div class="blog-meta text-dim-gray pb-3">
+                                            <ul>
+                                                <li class="date"><i class="fa fa-calendar-o me-2"></i>@item.CreatedDate?.ToString("dd/MM/yyyy")</li>
+                                            </ul>
+                                        </div>
+                                        <h5 class="title mb-4">
+                                            <a href="blog-detail-left-sidebar.html">@item.Title</a>
+                                        </h5>
+                                        <p class="short-desc mb-5">@item.Description</p>
+                                        <div class="button-wrap">
+                                            <a class="btn btn-custom-size btn-dark btn-lg rounded-0" href="blog-detail-left-sidebar.html">Chi tiết</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Blog Area End Here -->
+

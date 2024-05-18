@@ -17,9 +17,16 @@ namespace BookStoreTM.Controllers
             _logger = logger;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            var products = await _db.Products.Include(c => c.ProductCategory).Where(x => x.IsHome && x.IsActicve).Take(12).ToListAsync();
+            var products = _db.Products.Include(c => c.ProductCategory).Where(x => x.IsHome && x.IsActicve).Take(12).ToList();
+
+            var productSale =  _db.Products.Include(c => c.ProductCategory).Where(x => x.IsHome && x.IsActicve && x.IsSale).Take(12).ToList();
+            ViewBag.productSale = productSale;
+
+            var news = _db.News.Where(x => x.IsActicve).Take(3).ToList();
+            ViewBag.news = news;
+
             return View(products);
         }
         public IActionResult LienHe()

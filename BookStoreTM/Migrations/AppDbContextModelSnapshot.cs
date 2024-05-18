@@ -364,6 +364,9 @@ namespace BookStoreTM.Migrations
                     b.Property<string>("Alias")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Author")
+                        .HasColumnType("nvarchar(500)");
+
                     b.Property<string>("Code")
                         .IsRequired()
                         .HasColumnType("nvarchar(100)");
@@ -397,6 +400,9 @@ namespace BookStoreTM.Migrations
 
                     b.Property<string>("Notes")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("OriginalPrice")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");

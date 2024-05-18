@@ -2,6 +2,7 @@
 using BookStoreTM.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using X.PagedList;
 
 namespace BookStoreTM.Controllers
 {
@@ -15,17 +16,16 @@ namespace BookStoreTM.Controllers
             _db = db;
             _logger = logger;
         }
-        public IActionResult Index(int? id)
+        public IActionResult Index(int? id, string name, int page = 1)
         {
-            var products = _db.Products.Include(p => p.ProductCategory).ToList();
-            var categories = _db.ProductCategories.ToList();
-
-            ViewBag.Categories = categories;
-
-            if (id != null)
+            int limit = 10;
+            var products = _db.Products.Include(p => p.ProductCategory).ToPagedList(page, limit);
+            if (!string.IsNullOrEmpty(name))
             {
-                products = _db.Products.Where(b => b.ProductCategoryId == id.Value).ToList();
+                //tìm kiếm theo tên sách hoặc tên nhà xuất bản
+                products = _db.Products.Where(x => x.ProductName.Contains(name) || x.Author.Contains(name)).ToPagedList(page, limit);
             }
+            ViewBag.keyword = name;
             return View(products);
         }
         public IActionResult Detail(int? id)

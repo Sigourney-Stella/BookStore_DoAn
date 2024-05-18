@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\ImageLayout\\FreeShip.png"
     },
     {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ImageLayout\\KetQuaTimKiem.png",
+      "PackagePath": "staticwebassets\\ImageLayout\\KetQuaTimKiem.png"
+    },
+    {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ImageLayout\\Payment.png",
       "PackagePath": "staticwebassets\\ImageLayout\\Payment.png"
     },
@@ -77,12 +81,24 @@
       "PackagePath": "staticwebassets\\ImagesBook\\logo.jpg"
     },
     {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ImagesBook\\logo.png",
+      "PackagePath": "staticwebassets\\ImagesBook\\logo.png"
+    },
+    {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ImagesBook\\logo1.jpg",
       "PackagePath": "staticwebassets\\ImagesBook\\logo1.jpg"
     },
     {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ImagesBook\\logo1.png",
+      "PackagePath": "staticwebassets\\ImagesBook\\logo1.png"
+    },
+    {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ImagesBook\\logo2.jpg",
       "PackagePath": "staticwebassets\\ImagesBook\\logo2.jpg"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\ImagesBook\\logobook.jpg",
+      "PackagePath": "staticwebassets\\ImagesBook\\logobook.jpg"
     },
     {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\dist\\css\\adminlte.css",
@@ -409,8 +425,20 @@
       "PackagePath": "staticwebassets\\LayoutAdmin\\images\\tintuc\\Sousou-No-Frieren1.jpg"
     },
     {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\Tintuc'Dodoc'-noiniemnguoixaque.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\images\\tintuc\\Tintuc'Dodoc'-noiniemnguoixaque.jpg"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\Tintuc'Tiengthetcamlang'-sophannguoiNhatthoihauchien.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\images\\tintuc\\Tintuc'Tiengthetcamlang'-sophannguoiNhatthoihauchien.jpg"
+    },
+    {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\Tintuc10sachhay.jpg",
       "PackagePath": "staticwebassets\\LayoutAdmin\\images\\tintuc\\Tintuc10sachhay.jpg"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\TintucBosachlichsukinhdienchothieunien.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\images\\tintuc\\TintucBosachlichsukinhdienchothieunien.jpg"
     },
     {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\TintucRamattacpham.jpg",
@@ -421,8 +449,20 @@
       "PackagePath": "staticwebassets\\LayoutAdmin\\images\\tintuc\\Tintucsachtapthieunhi.jpg"
     },
     {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\book3.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\images\\tintuc\\book3.jpg"
+    },
+    {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\book6.jpg",
       "PackagePath": "staticwebassets\\LayoutAdmin\\images\\tintuc\\book6.jpg"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\book8.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\images\\tintuc\\book8.jpg"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\tintuc\\book9.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\images\\tintuc\\book9.jpg"
     },
     {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\plugins\\bootstrap-colorpicker\\css\\bootstrap-colorpicker.css",
@@ -12291,6 +12331,10 @@
     {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\js\\autoNumeric-1.9.45.js",
       "PackagePath": "staticwebassets\\js\\autoNumeric-1.9.45.js"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\js\\fixImageSize.js",
+      "PackagePath": "staticwebassets\\js\\fixImageSize.js"
     },
     {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\js\\jsShopCart.js",

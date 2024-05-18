@@ -55,9 +55,8 @@ namespace BookStoreTM.Controllers
             }
             else
             {
-
-                    // Khách hàng chưa đăng nhập, chuyển hướng đến trang đăng nhập
-                    return RedirectToAction("Login", "Customer", new { url = Url.Action("Add", new { productId }) });
+                // Khách hàng chưa đăng nhập, chuyển hướng đến trang đăng nhập
+                return RedirectToAction("Login", "Customer", new { url = Url.Action("Add", new { productId }) });
             }
             var customers = JsonConvert.DeserializeObject<Customer>(HttpContext.Session.GetString("Member"));
             bool alreadyExists = _db.Favorites.Any(f => f.ProductId == productId && f.CustomerID == customers.CustomerID);

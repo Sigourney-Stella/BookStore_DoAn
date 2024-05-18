@@ -20,7 +20,7 @@ namespace BookStoreTM.Areas.Admin.Controllers
         }
         public IActionResult Index(string name, int page = 1)
         {
-            int limit = 10;
+            int limit = 5;
             IPagedList<OrderBook> orders = _db.OrderBooks.Include(p => p.Customer).Include(p => p.TransactStatus).OrderByDescending(p => p.OrderId).ToPagedList(page, limit);
             if (!string.IsNullOrEmpty(name))
             {

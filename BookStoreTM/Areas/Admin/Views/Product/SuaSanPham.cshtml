@@ -89,7 +89,7 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-4">
+                                    <div class="col-3">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Số lượng</label>
                                             @Html.TextBoxFor(x => x.Quatity, new { @class = "form-control", @Value = "1" })
@@ -97,22 +97,30 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-4">
+                                    <div class="col-3">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Giá</label>
-                                            <input type="text" name="inputPrice" value="0" id="inputPrice" class="form-control auto" data-a-dec="," data-a-sep=".">
+                                            <input type="text" name="inputPrice" value="@BookStoreTM.Common.Common.FormatNumber(Model.Price, 0)" id="inputPrice" class="form-control auto" data-a-dec="," data-a-sep=".">
                                             @Html.HiddenFor(x => x.Price, new { @class = "", @placeholder = "Giá" })
                                             @Html.ValidationMessageFor(x => x.Price, null, new { @class = "text-danger" })
                                         </div>
                                     </div>
 
-
-                                    <div class="col-4">
+                                    <div class="col-3">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Giá Khuyến mãi</label>
-                                            <input type="text" name="inputPriceSale" value="0" id="inputPriceSale" class="form-control auto" data-a-dec="," data-a-sep=".">
-                                            @Html.HiddenFor(x => x.PriceSale, new { @class = "", @placeholder = "Giá" })
+                                            <input type="text" name="inputPriceSale" value="@BookStoreTM.Common.Common.FormatNumber(Model.PriceSale, 0)" id="inputPriceSale" class="form-control auto" data-a-dec="," data-a-sep=".">
+                                            @Html.HiddenFor(x => x.PriceSale, new { @class = "", @placeholder = "Giá Khuyến mãi" })
                                             @Html.ValidationMessageFor(x => x.PriceSale, null, new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-3">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Giá Nhập vào</label>
+                                            <input type="text" name="inputOriginalPrice" value="@BookStoreTM.Common.Common.FormatNumber(Model.OriginalPrice, 0)" id="inputPriceSale" class="form-control auto" data-a-dec="," data-a-sep=".">
+                                            @Html.HiddenFor(x => x.OriginalPrice, new { @class = "", @placeholder = "Giá Nhập vào" })
+                                            @Html.ValidationMessageFor(x => x.OriginalPrice, null, new { @class = "text-danger" })
                                         </div>
                                     </div>
                                 </div>
@@ -121,8 +129,9 @@
                                     <div class="col-3">
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox">
-                                                @Html.CheckBoxFor(x => x.IsHot, new { @class = "custom-control-input", @id = "customCheckbox2", @checked = "checked" })
-                                                <label for="customCheckbox2" class="custom-control-label">Hiển thị</label>
+                                                <label for="exampleInputEmail1">Hiển thị</label>
+                                                @Html.CheckBoxFor(x => x.IsActicve)
+                                                @Html.ValidationMessageFor(x => x.IsActicve, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
                                     </div>
@@ -130,18 +139,19 @@
                                     <div class="col-3">
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox">
-                                                @Html.CheckBoxFor(x => x.IsHot, new { @class = "custom-control-input", @id = "IsHotCheckbox2" })
-                                                <label for="IsHotCheckbox2" class="custom-control-label">Hot</label>
+                                                <label for="exampleInputEmail1">Home</label>
+                                                @Html.CheckBoxFor(x => x.IsHome)
+                                                @Html.ValidationMessageFor(x => x.IsHome, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
                                     </div>
 
-
                                     <div class="col-3">
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox">
-                                                @Html.CheckBoxFor(x => x.IsSale, new { @class = "custom-control-input", @id = "IsSaleCheckbox" })
-                                                <label for="IsSaleCheckbox" class="custom-control-label">Khuyến mãi</label>
+                                                <label for="exampleInputEmail1">Sale</label>
+                                                @Html.CheckBoxFor(x => x.IsSale)
+                                                @Html.ValidationMessageFor(x => x.IsSale, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
                                     </div>
@@ -149,103 +159,113 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <a href="/admin/product" class="btn btn-danger">Quay lại</a>
-                        @* <button type="submit" class="btn btn-success">Thêm mới</button> *@
-                        <input type="submit" value="Lưu" class="btn btn-primary" />
-                    </div>
+                </div>
+                <div class="form-group">
+                    <a href="/admin/product" class="btn btn-danger">Quay lại</a>
+                    <input type="submit" value="Lưu" class="btn btn-primary" />
                 </div>
             }
         </div>
     </div>
 </section>
-
-<script>
-    class MyUploadAdapter {
-        constructor(loader) {
-            this.loader = loader;
-        }
-
-        upload() {
-            return this.loader.file
-                .then(file => new Promise((resolve, reject) => {
-                    this._initRequest();
-                    this._initListeners(resolve, reject, file);
-                    this._sendRequest(file);
-                }));
-        }
-        // Aborts the upload process.
-        abort() {
-            if (this.xhr) {
-                this.xhr.abort();
-            }
-        }
-
-        // Initializes the XMLHttpRequest object using the URL passed to the constructor.
-        _initRequest() {
-            const xhr = this.xhr = new XMLHttpRequest();
-
-            xhr.open('POST', '@Url.Action("UploadImage", "Product")', true);
-            xhr.responseType = 'json';
-        }
-
-        // Initializes XMLHttpRequest listeners.
-        _initListeners(resolve, reject, file) {
-            const xhr = this.xhr;
-            const loader = this.loader;
-            const genericErrorText = `Couldn't upload file: ${file.name}.`;
-
-            xhr.addEventListener('error', () => reject(genericErrorText));
-            xhr.addEventListener('abort', () => reject());
-            xhr.addEventListener('load', () => {
-                const response = xhr.response;
-
-                if (!response || response.error) {
-                    return reject(response && response.error ? response.error.message : genericErrorText);
-                }
-
-                resolve({
-                    default: response.url
-                });
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('#inputPrice').on('input', function () {
+                var price = $(this).val();
+                $('[name="Price"]').val(price);
             });
+            $('#inputPriceSale').on('input', function () {
+                var priceSale = $(this).val();
+                $('[name="PriceSale"]').val(priceSale);
+            });
+        });
 
-            if (xhr.upload) {
-                xhr.upload.addEventListener('progress', evt => {
-                    if (evt.lengthComputable) {
-                        loader.uploadTotal = evt.total;
-                        loader.uploaded = evt.loaded;
+        class MyUploadAdapter {
+            constructor(loader) {
+                this.loader = loader;
+            }
+
+            upload() {
+                return this.loader.file
+                    .then(file => new Promise((resolve, reject) => {
+                        this._initRequest();
+                        this._initListeners(resolve, reject, file);
+                        this._sendRequest(file);
+                    }));
+            }
+            // Aborts the upload process.
+            abort() {
+                if (this.xhr) {
+                    this.xhr.abort();
+                }
+            }
+
+            // Initializes the XMLHttpRequest object using the URL passed to the constructor.
+            _initRequest() {
+                const xhr = this.xhr = new XMLHttpRequest();
+
+                xhr.open('POST', '@Url.Action("UploadImage", "Product")', true);
+                xhr.responseType = 'json';
+            }
+
+            // Initializes XMLHttpRequest listeners.
+            _initListeners(resolve, reject, file) {
+                const xhr = this.xhr;
+                const loader = this.loader;
+                const genericErrorText = `Couldn't upload file: ${file.name}.`;
+
+                xhr.addEventListener('error', () => reject(genericErrorText));
+                xhr.addEventListener('abort', () => reject());
+                xhr.addEventListener('load', () => {
+                    const response = xhr.response;
+
+                    if (!response || response.error) {
+                        return reject(response && response.error ? response.error.message : genericErrorText);
                     }
+
+                    resolve({
+                        default: response.url
+                    });
                 });
+
+                if (xhr.upload) {
+                    xhr.upload.addEventListener('progress', evt => {
+                        if (evt.lengthComputable) {
+                            loader.uploadTotal = evt.total;
+                            loader.uploaded = evt.loaded;
+                        }
+                    });
+                }
+            }
+
+            _sendRequest(file) {
+                // Prepare the form data.
+                const data = new FormData();
+
+                data.append('upload', file);
+
+                // Send the request.
+                this.xhr.send(data);
             }
         }
 
-        _sendRequest(file) {
-            // Prepare the form data.
-            const data = new FormData();
-
-            data.append('upload', file);
-
-            // Send the request.
-            this.xhr.send(data);
+        function MyCustomUploadAdapterPlugin(editor) {
+            editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
+                // Configure the URL to the upload script in your backend here!
+                return new MyUploadAdapter(loader);
+            };
         }
-    }
 
-    function MyCustomUploadAdapterPlugin(editor) {
-        editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
-            // Configure the URL to the upload script in your backend here!
-            return new MyUploadAdapter(loader);
-        };
-    }
-
-    ClassicEditor
-        .create(document.querySelector('#inputDetai'), {
-            extraPlugins: [MyCustomUploadAdapterPlugin],
-        })
-        .then(editor => {
-            window.editor = editor;
-        })
-        .catch(error => {
-            console.error(error.stack);
-        });
-</script>
+        ClassicEditor
+            .create(document.querySelector('#inputDetai'), {
+                extraPlugins: [MyCustomUploadAdapterPlugin],
+            })
+            .then(editor => {
+                window.editor = editor;
+            })
+            .catch(error => {
+                console.error(error.stack);
+            });
+    </script>
+}

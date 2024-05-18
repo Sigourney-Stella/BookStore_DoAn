@@ -224,5 +224,18 @@ namespace BookStoreTM.Areas.Admin.Controllers
             }
             return Json(new { success = false });
         }
+        public IActionResult IsSale(int id)
+        {
+            var item = _db.Products.Find(id);
+            if (item != null)
+            {
+                item.IsSale = !item.IsSale;
+                var entry = _db.Entry<Product>(item);
+                entry.State = EntityState.Modified;
+                _db.SaveChanges();
+                return Json(new { success = true, isSale = item.IsSale });
+            }
+            return Json(new { success = false });
+        }
     }
 }

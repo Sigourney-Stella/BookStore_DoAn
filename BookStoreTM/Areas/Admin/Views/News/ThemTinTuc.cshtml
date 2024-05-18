@@ -57,9 +57,11 @@
                         </div>
 
                         <div class="form-group">
-                            <input id="link" type="text" />
-                            <button type="button" onclick="upload();">Upload hình ảnh</button>
+                            <label for="exampleInputEmail1">Người tạo bài viết </label>
+                            @Html.TextBoxFor(x => x.CreatedBy, new { @class = "form-control", @plachilder = "Tên người tạo" })
+                            @Html.ValidationMessageFor(x => x.CreatedBy, null, new { @class = "text-danger" })
                         </div>
+
                         <div class="form-group">
                             <label for="exampleInputEmail1">Mô tả</label>
                             @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
@@ -78,11 +80,6 @@
                             @Html.ValidationMessageFor(x => x.IsActicve, "", new { @class = "text-danger" })
                         </div>
 
-                       @*  <div class="form-group">
-                            <label for="exampleInputEmail1">Danh mục</label>
-                            @Html.DropDownListFor(x => x.CategoryId, ViewBag.CategoryId as SelectList, "-Chọn danh mục hiển thị-", new { @class = "form-control", @placeholder = "Mã danh mục" })
-                            @Html.ValidationMessageFor(x => x.CategoryId, null, new { @class = "text-danger" })
-                        </div> *@
                         <div class="form-group">
                             <a href="/admin/news" class="btn btn-danger">Quay lại</a>
                             <input type="submit" value="Thêm mới" class="btn btn-primary" />
@@ -104,20 +101,6 @@
         };
         finder.popup();
     }
-    // function upload(field) {
-
-    //     var finder = new CKFinder();
-
-    //     finder.selectActionFunction = function (fileUrl) {
-    //         document.getElementById(field).value = fileUrl;
-    //        // $('#link').val(fileUrl);
-
-    //     }
-
-    //     finder.popup();
-
-    // }
-
 
     class MyUploadAdapter {
         constructor(loader) {
@@ -207,19 +190,5 @@
         });
 </script>
 
-@* @section Scripts {
-    <script src="~/ckeditor/ckeditor.js"></script>
-    <script>
-        $(document).ready(function()
-        {
-            CKEDITOR.replace('Detail', {
-                height:300,
-                width:600,
-                filebrowserUploadUrl: '/news/UploadImage',
-                filebrowserUploadUrl: '/news/UploadExplorer',
 
-            });
-        )}
-    </script>
-} *@
 

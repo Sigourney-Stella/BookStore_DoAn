@@ -96,7 +96,7 @@
                                         </div>
 
                                         <div class="row">
-                                            <div class="col-4">
+                                            <div class="col-3">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Số lượng</label>
                                                     @Html.TextBoxFor(x => x.Quatity, new { @class = "form-control", @Value = "1" })
@@ -104,7 +104,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="col-4">
+                                            <div class="col-3">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Giá</label>
                                                     <input type="text" name="inputPrice" value="0" id="inputPrice" class="form-control auto" data-a-dec="," data-a-sep=".">
@@ -113,13 +113,21 @@
                                                 </div>
                                             </div>
 
-                                       
-                                            <div class="col-4">
+                                            <div class="col-3">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Giá Khuyến mãi</label>
                                                     <input type="text" name="inputPriceSale" value="0" id="inputPriceSale" class="form-control auto" data-a-dec="," data-a-sep=".">
-                                                    @Html.HiddenFor(x => x.PriceSale, new { @class = "", @placeholder = "Giá" })
+                                                    @Html.HiddenFor(x => x.PriceSale, new { @class = "", @placeholder = "Giá Khuyến mãi" })
                                                     @Html.ValidationMessageFor(x => x.PriceSale, null, new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="col-3">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Giá Nhập vào</label>
+                                                    <input type="text" name="inputOriginalPrice" value="0" id="inputOriginalPrice" class="form-control auto" data-a-dec="," data-a-sep=".">
+                                                    @Html.HiddenFor(x => x.OriginalPrice, new { @class = "", @placeholder = "Giá Nhập vào" })
+                                                    @Html.ValidationMessageFor(x => x.OriginalPrice, null, new { @class = "text-danger" })
                                                 </div>
                                             </div>
                                         </div>
@@ -128,8 +136,9 @@
                                             <div class="col-3">
                                                 <div class="form-group">
                                                     <div class="custom-control custom-checkbox">
-                                                        @Html.CheckBoxFor(x => x.IsHot, new { @class = "custom-control-input", @id = "customCheckbox2", @checked = "checked" })
-                                                        <label for="customCheckbox2" class="custom-control-label">Hiển thị</label>
+                                                        <label for="exampleInputEmail1">Hiển thị</label>
+                                                        @Html.CheckBoxFor(x => x.IsActicve)
+                                                        @Html.ValidationMessageFor(x => x.IsActicve, "", new { @class = "text-danger" })
                                                     </div>
                                                 </div>
                                             </div>
@@ -137,8 +146,9 @@
                                             <div class="col-3">
                                                 <div class="form-group">
                                                     <div class="custom-control custom-checkbox">
-                                                        @Html.CheckBoxFor(x => x.IsHot, new { @class = "custom-control-input", @id = "IsHotCheckbox2" })
-                                                        <label for="IsHotCheckbox2" class="custom-control-label">Hot</label>
+                                                        <label for="exampleInputEmail1">Home</label>
+                                                        @Html.CheckBoxFor(x => x.IsHome)
+                                                        @Html.ValidationMessageFor(x => x.IsHome, "", new { @class = "text-danger" })
                                                     </div>
                                                 </div>
                                             </div>
@@ -146,8 +156,9 @@
                                             <div class="col-3">
                                                 <div class="form-group">
                                                     <div class="custom-control custom-checkbox">
-                                                        @Html.CheckBoxFor(x => x.IsSale, new { @class = "custom-control-input", @id = "IsSaleCheckbox" })
-                                                        <label for="IsSaleCheckbox" class="custom-control-label">Khuyến mãi</label>
+                                                        <label for="exampleInputEmail1">Sale</label>
+                                                        @Html.CheckBoxFor(x => x.IsSale)
+                                                        @Html.ValidationMessageFor(x => x.IsSale, "", new { @class = "text-danger" })
                                                     </div>
                                                 </div>
                                             </div>
@@ -155,12 +166,10 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="form-group">
-                                <a href="/admin/product" class="btn btn-danger">Quay lại</a>
-                                @* <button type="submit" class="btn btn-success">Thêm mới</button> *@
-                                <input type="submit" value="Thêm mới" class="btn btn-primary" />
-                            </div>
+                        </div>
+                        <div class="form-group">
+                            <a href="/admin/product" class="btn btn-danger">Quay lại</a>
+                            <input type="submit" value="Thêm mới" class="btn btn-primary" />
                         </div>
                     }
                 </div>
@@ -180,6 +189,10 @@
             $('#inputPriceSale').on('input', function () {
                 var priceSale = $(this).val();
                 $('[name="PriceSale"]').val(priceSale);
+            });
+            $('#inputOriginalPrice').on('input', function () {
+                var originalPrice = $(this).val();
+                $('[name="OriginalPrice"]').val(originalPrice);
             });
             $('body').on('click', '.btnXoaAnh', function () {
                 var conf = confirm('Bạn có muốn xóa ảnh này không?');
