@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using X.PagedList;
 using CKFinder.Settings;
 using BookStoreTM.Common;
+using System.Net.Http.Headers;
 
 namespace BookStoreTM.Areas.Admin.Controllers
 {
@@ -39,7 +40,7 @@ namespace BookStoreTM.Areas.Admin.Controllers
 
             ViewBag.CategoryId = new SelectList(Categories, "ProductCategoryId", "Name", categoryId);
 
-            if (categoryId >0)
+            if (categoryId > 0)
             {
                 products = products.Where(x => x.ProductCategoryId == categoryId).OrderByDescending(p => p.ProductId).ToPagedList(pageIndex, pageSize);
             }
@@ -89,24 +90,33 @@ namespace BookStoreTM.Areas.Admin.Controllers
                 if (ModelState.IsValid)
                 {
                     var files = HttpContext.Request.Form.Files;
-                    if (files.Count() > 0 && files[0].Length > 0) // kiểm tra xem tập có đc gửi từ file lên không 
+                    if (files.Count > 0)
                     {
-                        var file = files[0];
-                        var FileName = file.FileName;
-                        string[] tokens = FileName.Split('.');
-                        var nameImg = "SanPham" + ConvertVietNamToEnglish.LocDau(model.ProductName) + "." + tokens[tokens.Length - 1];
-                        string result = nameImg.Replace(" ", "");
-                        // upload ảnh vào thư mục wwwroot\\images\\category
-                        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\LayoutAdmin\\images\\products", result);
-                        using (var stream = new FileStream(path, FileMode.Create))
+                        foreach (var file in files)
                         {
-                            file.CopyTo(stream);
-                            model.Images = "/LayoutAdmin/images/products/" + result; // gán tên ảnh cho thuộc tinh Image
+                            if (file.Length > 0)
+                            {
+                                var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+                                var nameImg = "SanPham" + ConvertVietNamToEnglish.LocDau(model.ProductName) + "." + fileName.Split('.').Last();
+                                string result = nameImg.Replace(" ", "");
+                                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\LayoutAdmin\\images\\products", result);
+                                using (var stream = new FileStream(path, FileMode.Create))
+                                {
+                                    file.CopyTo(stream);
+                                }
+                                var productImage = new ProductImage
+                                {
+                                    Url = "/LayoutAdmin/images/products/" + result,
+                                    ProductId = model.ProductId
+                                };
+                                _db.ProductImages.Add(productImage);
+                            }
                         }
                     }
+                    // Lưu thông tin sản phẩm vào bảng Product
                     model.CreatedDate = DateTime.Now;
                     if (string.IsNullOrEmpty(model.Alias))
-                    model.Alias = BookStoreTM.Common.Filter.FilterChar(model.ProductName);
+                        model.Alias = BookStoreTM.Common.Filter.FilterChar(model.ProductName);
                     _db.Add(model);
                     _db.SaveChanges();
                     return RedirectToAction(nameof(Index));
@@ -114,15 +124,109 @@ namespace BookStoreTM.Areas.Admin.Controllers
             }
             catch (Exception ex)
             {
-                ViewBag.error = ex.Message.ToString(); 
-                ViewBag.Publisher = new SelectList(_db.Publishers.ToList(), "PublisherId", "PublisherName");
-                ViewBag.ProductCategory = new SelectList(_db.ProductCategories.ToList(), "ProductCategoryId", "Name");
-                return View(model);
+                ViewBag.error = ex.Message.ToString();
             }
             ViewBag.Publisher = new SelectList(_db.Publishers.ToList(), "PublisherId", "PublisherName");
             ViewBag.ProductCategory = new SelectList(_db.ProductCategories.ToList(), "ProductCategoryId", "Name");
             return View(model);
         }
+
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public IActionResult ThemSanPham(Product model)
+        //{
+        //    try
+        //    {
+        //        if (ModelState.IsValid)
+        //        {
+        //            var files = HttpContext.Request.Form.Files;
+        //            if (files.Count() > 0 && files[0].Length > 0) // kiểm tra xem tập có đc gửi từ file lên không 
+        //            {
+        //                var file = files[0];
+        //                var FileName = file.FileName;
+        //                string[] tokens = FileName.Split('.');
+        //                var nameImg = "SanPham" + ConvertVietNamToEnglish.LocDau(model.ProductName) + "." + tokens[tokens.Length - 1];
+        //                string result = nameImg.Replace(" ", "");
+        //                // upload ảnh vào thư mục wwwroot\\images\\category
+        //                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\LayoutAdmin\\images\\products", result);
+        //                using (var stream = new FileStream(path, FileMode.Create))
+        //                {
+        //                    file.CopyTo(stream);
+        //                    model.Images = "/LayoutAdmin/images/products/" + result; // gán tên ảnh cho thuộc tinh Image
+        //                }
+        //                // Tạo một đối tượng ProductImage mới và lưu thông tin hình ảnh vào đó
+        //                var productImage = new ProductImage
+        //                {
+        //                    Url = "/LayoutAdmin/images/products/" + result,
+        //                    // Gán khóa ngoại của ProductImage với Product
+        //                    ProductImgId = model.ProductId
+        //                };
+        //                // Thêm đối tượng ProductImage mới vào DbContext và lưu thay đổi
+        //                _db.ProductImages.Add(productImage);
+        //                _db.SaveChanges();
+        //            }
+        //            model.CreatedDate = DateTime.Now;
+        //            if (string.IsNullOrEmpty(model.Alias))
+        //                model.Alias = BookStoreTM.Common.Filter.FilterChar(model.ProductName);
+        //            _db.Add(model);
+        //            _db.SaveChanges();
+        //            return RedirectToAction(nameof(Index));
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        ViewBag.error = ex.Message.ToString();
+        //    }
+        //    ViewBag.Publisher = new SelectList(_db.Publishers.ToList(), "PublisherId", "PublisherName");
+        //    ViewBag.ProductCategory = new SelectList(_db.ProductCategories.ToList(), "ProductCategoryId", "Name");
+        //    return View(model);
+        //}
+
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public IActionResult ThemSanPham(Product model)
+        //{
+        //    try
+        //    {
+        //        if (ModelState.IsValid)
+        //        {
+        //            var files = HttpContext.Request.Form.Files;
+        //            if (files.Count() > 0 && files[0].Length > 0) // kiểm tra xem tập có đc gửi từ file lên không 
+        //            {
+        //                var file = files[0];
+        //                var FileName = file.FileName;
+        //                string[] tokens = FileName.Split('.');
+        //                var nameImg = "SanPham" + ConvertVietNamToEnglish.LocDau(model.ProductName) + "." + tokens[tokens.Length - 1];
+        //                string result = nameImg.Replace(" ", "");
+        //                // upload ảnh vào thư mục wwwroot\\images\\category
+        //                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\LayoutAdmin\\images\\products", result);
+        //                using (var stream = new FileStream(path, FileMode.Create))
+        //                {
+        //                    file.CopyTo(stream);
+        //                    model.Images = "/LayoutAdmin/images/products/" + result; // gán tên ảnh cho thuộc tinh Image
+        //                }
+        //            }
+        //            model.CreatedDate = DateTime.Now;
+        //            if (string.IsNullOrEmpty(model.Alias))
+        //            model.Alias = BookStoreTM.Common.Filter.FilterChar(model.ProductName);
+        //            _db.Add(model);
+        //            _db.SaveChanges();
+        //            return RedirectToAction(nameof(Index));
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        ViewBag.error = ex.Message.ToString(); 
+        //        ViewBag.Publisher = new SelectList(_db.Publishers.ToList(), "PublisherId", "PublisherName");
+        //        ViewBag.ProductCategory = new SelectList(_db.ProductCategories.ToList(), "ProductCategoryId", "Name");
+        //        return View(model);
+        //    }
+        //    ViewBag.Publisher = new SelectList(_db.Publishers.ToList(), "PublisherId", "PublisherName");
+        //    ViewBag.ProductCategory = new SelectList(_db.ProductCategories.ToList(), "ProductCategoryId", "Name");
+        //    return View(model);
+        //}
 
         [HttpGet]
         public IActionResult SuaSanPham(int model)
@@ -154,7 +258,7 @@ namespace BookStoreTM.Areas.Admin.Controllers
                         model.Images = "/LayoutAdmin/images/products/" + result; // gán tên ảnh cho thuộc tinh Image
                     }
                 }
-                
+
                 model.UpdatedDate = DateTime.Now;
                 model.Alias = BookStoreTM.Common.Filter.FilterChar(model.ProductName);
 

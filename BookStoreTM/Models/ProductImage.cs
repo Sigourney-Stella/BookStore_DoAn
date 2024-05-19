@@ -18,7 +18,8 @@ namespace BookStoreTM.Models
 
         public bool IsDefault { get; set; }
         //
-        public ICollection<Product> Product { get; set; }
+        public int ProductId { get; set; }
+        public Product Product { get; set; }
 
     }
 }

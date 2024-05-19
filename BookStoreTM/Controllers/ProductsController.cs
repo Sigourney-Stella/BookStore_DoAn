@@ -18,7 +18,7 @@ namespace BookStoreTM.Controllers
         }
         public IActionResult Index(int? id, string name, int page = 1)
         {
-            int limit = 10;
+            int limit = 9;
             var products = _db.Products.Include(p => p.ProductCategory).ToPagedList(page, limit);
             if (!string.IsNullOrEmpty(name))
             {
@@ -35,19 +35,24 @@ namespace BookStoreTM.Controllers
             return View(item);
         }
 
-        public ActionResult ProductCategory(string alias, int id)
+        public ActionResult ProductCategory(string alias, int id, string name, int page = 1)
         {
-            var items = _db.Products.ToList();
+            int limit = 9;
+            var items = _db.Products.ToPagedList(page, limit);
             if (id > 0)
             {
-                items = items.Where(x => x.ProductCategoryId == id).ToList();
+                items = items.Where(x => x.ProductCategoryId == id).ToPagedList(page, limit);
             }
             var cate = _db.ProductCategories.Find(id);
             if (cate != null)
             {
                 ViewBag.CateName = cate.Name;
             }
-
+            if (!string.IsNullOrEmpty(name))
+            {
+                //tìm kiếm theo tên sách hoặc tên nhà xuất bản
+                items = _db.Products.Where(x => x.ProductName.Contains(name) || x.Author.Contains(name)).ToPagedList(page, limit);
+            }
             ViewBag.CateId = id;
             return View(items);
         }

@@ -63,14 +63,13 @@ namespace BookStoreTM.Models
         // khoá ngoại
         public int ProductCategoryId { get; set; }
         public int PublisherId { get; set; }
-        public int ProductImgId { get; set; }
         //
         public ProductCategory ProductCategory { get; set; }
         public Publisher Publisher { get; set; }
-        public ProductImage ProductImage { get; set; }
         //
         public ICollection<OrderDetails> OrderDetails { get; set; }
         public ICollection<Favorite> Favorites { get; set; }
+        public ICollection<ProductImage> ProductImages { get; set; }
 
     }
 }
