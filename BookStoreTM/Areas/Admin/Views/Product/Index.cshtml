@@ -56,10 +56,8 @@
                         <th>Hình ảnh</th>
                         <th>Tên sản phẩm</th>
                         <th>Danh mục</th>
-                        <th>Số lượng</th>
                         <th>Giá</th>
                         <th>Giá Khuyến mại</th>
-                        <th>Ngày tạo</th>
                         <th>Home</th>
                         <th>Sale</th>
                         <th>Hiển thị</th>
@@ -79,14 +77,15 @@
                             <tr id="trow_@item.ProductId">
                                 <td>@i</td>
                                 <td>
-                                    <img src="@item.Images" style="height:64px;width:64px" />
+                                    <a asp-action="Create" asp-controller="ProductImages" asp-route-id="@item.ProductId">
+                                        <img src="@item.Images" style="height:64px;width:64px" />
+                                    </a>
+
                                 </td>
                                 <td>@item.ProductName</td>
                                 <td>@item.ProductCategory.Name</td>
-                                <td>@item.Quatity</td>
                                 <td>@BookStoreTM.Common.Common.FormatNumber(item.Price, 0) VND</td>
                                 <td>@BookStoreTM.Common.Common.FormatNumber(item.PriceSale, 0) VND</td>
-                                <td>@string.Format("{0:dd/MM/yyy}", item.CreatedDate)</td>
                                 <td class="text-center">
                                     <a href='#' data-id="@item.ProductId" class="btnHome">@Html.Raw(strCheckHome)</a>
                                 </td>
@@ -98,7 +97,6 @@
                                 </td>
                                 <td>
                                     <a asp-action="SuaSanPham" asp-route-model="@item.ProductId" class="btn-sm btn-primary">Sửa</a>
-                                    @* <a href="#" data-id="@item.NewsId" class="btn-sm btn-danger btnDelete">Xóa</a> *@
                                 </td>
                                 <td><input type="checkbox" class="cbkItem" value="@item.ProductId" /></td>
                             </tr>
@@ -126,6 +124,37 @@
         </div>
     </div>
 </section>
+
+@foreach (var item in Model)
+{
+    <form id="updateForm_@item.ProductId" asp-action="Create" asp-controller="ProductImages" enctype="multipart/form-data" method="post">
+        <div class="modal fade" id="modal-default_@item.ProductId">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    @* <form asp-action="Create" enctype="multipart/form-data" method="post"> *@
+                        <div class="modal-header">
+                            <h4 class="modal-title">Thêm hình ảnh</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <input type="hidden" asp-for="@item.ProductId" />
+                            <div class="form-group">
+                                @* <label asp-for="ProductImages" class="control-label"></label> *@
+                                <input naem="ProductImages" id="ProductImages" class="form-control" type="file" multiple />
+                            </div>
+                        </div>
+                        <div class="modal-footer justify-content-between">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                            <button type="submit" class="btn-sm btn-primary">Tải lên</button>
+                        </div>
+                    @* </form> *@
+                </div>
+            </div>
+        </div>
+    </form>
+}
 
 @section scripts {
     <script>

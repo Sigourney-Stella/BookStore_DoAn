@@ -397,6 +397,10 @@
       "PackagePath": "staticwebassets\\LayoutAdmin\\images\\products\\SanPhamChipheo.jpg"
     },
     {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\products\\SanPhamChotoimotvedituoitho.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\images\\products\\SanPhamChotoimotvedituoitho.jpg"
+    },
+    {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\LayoutAdmin\\images\\products\\SanPhamCotichcuaba.jpg",
       "PackagePath": "staticwebassets\\LayoutAdmin\\images\\products\\SanPhamCotichcuaba.jpg"
     },
@@ -12313,12 +12317,48 @@
       "PackagePath": "staticwebassets\\images\\P67934.jpg"
     },
     {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\images\\Sach1.jpg",
+      "PackagePath": "staticwebassets\\images\\Sach1.jpg"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\images\\Sach2.jpg",
+      "PackagePath": "staticwebassets\\images\\Sach2.jpg"
+    },
+    {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\images\\Violet_Evergarden.jpg",
       "PackagePath": "staticwebassets\\images\\Violet_Evergarden.jpg"
     },
     {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\images\\ava1.jpeg",
       "PackagePath": "staticwebassets\\images\\ava1.jpeg"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\images\\book1.jpg",
+      "PackagePath": "staticwebassets\\images\\book1.jpg"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\images\\book2.jpg",
+      "PackagePath": "staticwebassets\\images\\book2.jpg"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\images\\book3.jpg",
+      "PackagePath": "staticwebassets\\images\\book3.jpg"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\images\\book4.jpg",
+      "PackagePath": "staticwebassets\\images\\book4.jpg"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\images\\book5.jpg",
+      "PackagePath": "staticwebassets\\images\\book5.jpg"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\images\\book6.jpg",
+      "PackagePath": "staticwebassets\\images\\book6.jpg"
+    },
+    {
+      "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\images\\book7.jpg",
+      "PackagePath": "staticwebassets\\images\\book7.jpg"
     },
     {
       "Id": "E:\\DoAn\\code\\BookStoreTM\\BookStoreTM\\wwwroot\\images\\vio1.jpg",

@@ -52,7 +52,6 @@
                                     @Html.TextBoxFor(x => x.Code, new { @class = "form-control", @placeholder = "Mã sản phẩm", @readonly = "readonly" })
                                     @Html.ValidationMessageFor(x => x.Code, null, new { @class = "text-danger" })
                                 </div>
-
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Tên sản phẩm</label>
                                     @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control", @placeholder = "Tên sản phẩm" })
@@ -60,30 +59,15 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Tên tác giả</label>
-                                    @Html.TextBoxFor(x => x.Author, new { @class = "form-control", @placeholder = "Tên tác giả" })
-                                    @Html.ValidationMessageFor(x => x.Author, null, new { @class = "text-danger" })
-                                </div>
-
-                                <div class="form-group">
-                                    <label asp-for="Images" class="control-label"></label>
-                                    <img src="@Model.Images" style="width: 4rem" />
-                                    <input asp-for="Images" type="file" class="form-control" />
-                                    <span asp-validation-for="Images" class="text-danger"></span>
-                                </div>
-
-                                @* <div class="form-group">
                                     <label for="exampleInputFile">Hình ảnh</label>
                                     <div class="input-group">
                                         <div class="custom-file">
                                             <input asp-for="Images" type="file" class="form-control" />
                                         </div>
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">Upload</span>
+                                        </div>
                                     </div>
-                                </div> *@
-
-                                <div class="form-group">
-                                    <label for="createdDate">Ngày tạo</label>
-                                    @Html.TextBoxFor(x => x.CreatedDate, new { @class = "form-control", @readonly = "readonly" })
                                 </div>
 
                                 <div class="form-group">
@@ -105,8 +89,8 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label asp-for="Detail" class="control-label">Chi Tiết </label>
-                                    <textarea asp-for="Detail" id="inputDetai" class="form-control"></textarea>
+                                    <label asp-for="Notes" class="control-label">Chi Tiết </label>
+                                    <textarea asp-for="Notes" id="inputDetai" class="form-control"></textarea>
                                 </div>
 
                                 <div class="row">
