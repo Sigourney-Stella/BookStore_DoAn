@@ -49,8 +49,6 @@ namespace BookStoreTM.Controllers
                 ModelState.AddModelError("", "Email hoặc mật khẩu khôg đúng! Vui lòng nhập lại");
                 return View(model);
             }
-            //ViewData["errorLogin"] = "Lỗi đăng nhập";
-            return RedirectToAction("Login");
         }
         public IActionResult Registy()
         {
@@ -75,8 +73,6 @@ namespace BookStoreTM.Controllers
                 }
                 else
                 {
-                    //TempData["errorRegisty"] = "Email đã được sử dụng! Vui lòng sử dụng email khác";
-                    //return View();
                     ModelState.AddModelError("Email", "Email đã được sử dụng! Vui lòng sử dụng email khác");
                     return View(model);
                 }
@@ -125,7 +121,6 @@ namespace BookStoreTM.Controllers
         }
 
         //xem thông tin đơn tài khoản
-
         public IActionResult Detail()
         {
             var customer = JsonConvert.DeserializeObject<Customer>(HttpContext.Session.GetString("Member"));
@@ -157,7 +152,7 @@ namespace BookStoreTM.Controllers
                     };
                     orderBooksViews.Add(orderBooksView);
                 }
-
+                var products = _context.Products.Include(x => x.ProductCategory).ToList();
                 var orderDetails = _context.OrderDetails
                                            .Where(od => orderBooks.Select(ob => ob.OrderId).Contains(od.OrderId))
                                            .Include(od => od.Product)
@@ -167,9 +162,10 @@ namespace BookStoreTM.Controllers
                 {
                     OrderDetailsId = od.OrderDetailsId,
                     ProductName = od.Product.ProductName,
+                    CatName = od.Product.ProductCategory.Name,
                     Quantity = od.Quatity,
                     Price = od.Price,
-                    TotalMoney = od.TotalMoney,
+                    TotalMoney = od.TotalMoney,// giá tiền lấy cuối cùng
                     OrderId = od.OrderId,
                     Description = od.Product.Description,
                     Images = od.Product.Images,

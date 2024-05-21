@@ -17,12 +17,12 @@
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="mb-3">
                                 <label for="UserName" class="form-label">Họ và tên</label>
-                                <input asp-for="Fullname" class="form-control" />
+                                <input asp-for="Fullname" class="form-control" required />
                                 <span asp-validation-for="Fullname" class=" text-danger"></span>
                             </div>
                             <div class="mb-3">
                                 <label for="UserName" class="form-label">Email</label>
-                                <input asp-for="Email" class="form-control" />
+                                <input asp-for="Email" class="form-control" required />
                                 <span asp-validation-for="Email" class=" text-danger"></span>
                             </div>
                             <div class="mb-3">

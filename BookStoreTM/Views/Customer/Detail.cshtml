@@ -10,11 +10,11 @@
 <main class="main-content">
     <div class="account-page-area section-space-y-axis-100">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <h2>Tài khoản</h2>
-                </div>
+            @* <div class="row">
+            <div class="col-lg-3">
+            <h2>Tài khoản</h2>
             </div>
+            </div> *@
             <div class="row">
                 <div class="col-lg-3">
                     <ul class="nav myaccount-tab-trigger" id="account-page-tab" role="tablist">
@@ -57,11 +57,40 @@
                                 {
                                     @foreach (var detail in orderDetailsViews.Where(d => d.OrderId == order.OrderId))
                                     {
-                                        <div class="myaccount-orders d-flex">
-                                            <img class="img-product-detail" src="@detail.Images" />
-                                            <div>
-                                                <h5>@detail.ProductName</h5>
-                                                <h5>@detail.Description</h5>
+                                        <div class="myaccount-orders d-flex row">
+                                            <div class="col-md-2">
+                                                <img class="img-product-detail" src="@detail.Images" />
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p class="prduct-name">@detail.ProductName</p>
+                                                <p class="prduct-cate">Phân loại: @detail.CatName</p>
+                                                <p class="prduct-cate">Số lượng: @detail.Quantity</p>
+                                                <div class="price-box pb-1">
+                                                    @if (detail.TotalMoney > 0)
+                                                    {
+                                                        <span class="old-price" style="color: #757575;">
+                                                            @BookStoreTM.Common.Common.FormatNumber(detail.Price, 0) VND
+                                                        </span>
+                                                        
+                                                        <span class="new-price text-danger">
+                                                            @BookStoreTM.Common.Common.FormatNumber(detail.TotalMoney, 0) VND
+                                                        </span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="new-price">
+                                                            @BookStoreTM.Common.Common.FormatNumber(detail.Price, 0) VND
+                                                        </span>
+                                                    }
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 mt-4">
+                                                <div>
+                                                    <p class="totalPrice">Thành tiền: <span class="new-price text-danger"> @BookStoreTM.Common.Common.FormatNumber(order.TotalMoney, 0) VND </span></p>
+                                                </div>
+                                                <div class="button-wrap mt-4">
+                                                    <button type="submit" value="submit" class="btn btn btn-custom-size btn-primary btn-secondary-hover rounded-0" name="submit">Trả hàng</button>
+                                                </div>
                                             </div>
                                         </div>
                                     }
@@ -71,7 +100,6 @@
                             {
                                 <div>Bạn chưa có đơn hàng nào</div>
                             }
-
                         </div>
                         <div class="tab-pane fade" id="account-details" role="tabpanel" aria-labelledby="account-details-tab">
                             <div class="myaccount-details">
@@ -80,38 +108,38 @@
                                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                                         <input type="hidden" asp-for="CustomerID" />
                                         <div class="single-input single-input-half">
-                                            <label asp-for="Fullname" class="control-label"></label>
+                                            <label asp-for="Fullname" class="control-label">Họ và tên</label>
                                             <input asp-for="Fullname" class="form-control" />
                                             <span asp-validation-for="Fullname" class="text-danger"></span>
                                         </div>
                                         <div class="single-input single-input-half">
-                                            <label asp-for="Email" class="control-label"></label>
+                                            <label asp-for="Email" class="control-label">Email</label>
                                             <input asp-for="Email" readonly class="form-control" />
                                             <span asp-validation-for="Email" class="text-danger"></span>
                                         </div>
                                         <div class="single-input single-input-half">
-                                            <label asp-for="Brithday" class="control-label"></label>
+                                            <label asp-for="Brithday" class="control-label">Ngày sinh</label>
                                             <input asp-for="Brithday" class="form-control" />
                                             <span asp-validation-for="Brithday" class="text-danger"></span>
                                         </div>
                                         <div class="single-input single-input-half">
-                                            <label asp-for="Phone" class="control-label"></label>
+                                            <label asp-for="Phone" class="control-label">Số điện thoại</label>
                                             <input asp-for="Phone" class="form-control" />
                                             <span asp-validation-for="Phone" class="text-danger"></span>
                                         </div>
                                         <div class="single-input">
-                                            <label asp-for="Address" class="control-label"></label>
+                                            <label asp-for="Address" class="control-label">Địa chỉ</label>
                                             <input asp-for="Address" class="form-control" />
                                             <span asp-validation-for="Address" class="text-danger"></span>
                                         </div>
                                         <div class="form-group" style="display:none;">
-                                            <label asp-for="Password" class="control-label"></label>
+                                            <label asp-for="Password" class="control-label">Mật khẩu</label>
                                             <input asp-for="Password" class="form-control" />
                                             <span asp-validation-for="Password" class="text-danger"></span>
                                         </div>
                                         <div class="single-input">
                                             <button class="btn btn-custom-size lg-size btn-secondary btn-primary-hover rounded-0" type="submit">
-                                                <span>SAVE CHANGES</span>
+                                                <span>Lưu</span>
                                             </button>
                                         </div>
                                     </div>
@@ -127,7 +155,7 @@
 
 <style>
     .img-product-detail {
-        height: 150px;
+        height: 100px;
         width: 150px;
     }
 
@@ -140,8 +168,33 @@
     }
 
     .section-space-y-axis-100 {
-        background: #f5f5f5;
+        /* background: #f5f5f5; */
+        padding-top: 4rem;
     }
+
+    p, p.prduct-name {
+        margin-bottom: 0px;
+        font-size: 18px;
+    }
+
+    p.prduct-cate {
+        font-size: 15px;
+            color: #757575;
+    }
+
+    .col-md-4    {
+        padding: 0px;
+        text-align: right;
+    }
+
+    .old-price{
+        margin: 0 4px 0 0;
+    }
+
+    p.totalPrice {
+        font-size: 17px;
+    }
+
 </style>
 @section Scripts {
     @{

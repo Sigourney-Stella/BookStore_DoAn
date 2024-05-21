@@ -23,14 +23,11 @@
                 <!-- small box -->
                 <div class="small-box bg-info">
                     <div class="inner">
-                        <h3>150</h3>
+                        <h3>@ViewBag.soLuongHD</h3>
 
-                        <p>New Orders</p>
+                        <p>Tổng số hoá đơn</p>
                     </div>
-                    <div class="icon">
-                        <i class="ion ion-bag"></i>
-                    </div>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="#" class="small-box-footer">Chi tiết <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
@@ -106,105 +103,63 @@
 @section scripts {
     <script src="~/layoutadmin/plugins/moment/moment.min.js"></script>
     <script src="~/layoutadmin/plugins/chart.js/Chart.min.js"></script>
+
     <script>
-        // $(function () {
-        //     /* ChartJS
-        //      * -------
-        //      * Here we will create a few charts using ChartJS
-        //      */
-
-        //     var arrDoanhThu = [];
-        //     var arrLoiNhuan = [];
-        //     var arrDate = [];
-        //     $.ajax({
-        //         url: '/HomeAdmin/GetThongKe',
-        //         type: 'GET',
-        //         data: { },
-        //         success: function (rs) {
-
-        //             $.each(rs.Data, function (i, item) {
-        //                 var strDate = moment(item.Date).format('DD/MM/yyyy');
-        //                 arrDate.push(strDate);
-        //                 arrDoanhThu.push(item.DoanhThu);
-        //                 arrLoiNhuan.push(item.LoiNhuan);
-        //             });
-        //             var areaChartData = {
-        //                 labels: arrDate,
-        //                 datasets: [
-        //                     {
-        //                         label: 'Lợi nhuận',
-        //                         backgroundColor: 'rgba(60,141,188,0.9)',
-        //                         borderColor: 'rgba(60,141,188,0.8)',
-        //                         pointRadius: false,
-        //                         pointColor: '#3b8bba',
-        //                         pointStrokeColor: 'rgba(60,141,188,1)',
-        //                         pointHighlightFill: '#fff',
-        //                         pointHighlightStroke: 'rgba(60,141,188,1)',
-        //                         data: arrLoiNhuan
-        //                     },
-        //                     {
-        //                         label: 'Danh thu',
-        //                         backgroundColor: 'rgba(210, 214, 222, 1)',
-        //                         borderColor: 'rgba(210, 214, 222, 1)',
-        //                         pointRadius: false,
-        //                         pointColor: 'rgba(210, 214, 222, 1)',
-        //                         pointStrokeColor: '#c1c7d1',
-        //                         pointHighlightFill: '#fff',
-        //                         pointHighlightStroke: 'rgba(220,220,220,1)',
-        //                         data: arrDoanhThu
-        //                     },
-        //                 ]
-        //             }
-        //             //-------------
-        //             //- BAR CHART -
-        //             //-------------
-        //             var barChartCanvas = $('#barChart').get(0).getContext('2d')
-        //             var barChartData = $.extend(true, {}, areaChartData)
-        //             var temp0 = areaChartData.datasets[0]
-        //             var temp1 = areaChartData.datasets[1]
-        //             barChartData.datasets[0] = temp1
-        //             barChartData.datasets[1] = temp0
-
-        //             var barChartOptions = {
-        //                 responsive: true,
-        //                 maintainAspectRatio: false,
-        //                 datasetFill: false
-        //             }
-
-        //             new Chart(barChartCanvas, {
-        //                 type: 'bar',
-        //                 data: barChartData,
-        //                 options: barChartOptions
-        //             });
-        //             load_data(rs.Data);
-        //         }
-        //     });
-
-
-        // })
-
-        // function load_data(data) {
-        //     var strHtml = "";
-        //     $.each(data, function (i, item) {
-        //         var strDate = moment(item.Date).format('DD/MM/yyyy');
-        //         strHtml += "<tr>";
-        //         strHtml += "<td>" + (i + 1) + "</td>";
-        //         strHtml += "<td>" + strDate + "</td>";
-        //         strHtml += "<td>" + item.DoanhThu + "</td>";
-        //         strHtml += "<td>" + item.LoiNhuan + "</td>";
-        //         strHtml += "</tr>";
-        //     });
-        //     $('#load_data').html(strHtml);
-        // }
-
-        //============================
-
         $(function () {
-            /* ChartJS
-             * -------
-             * Here we will create a few charts using ChartJS
-             */
-            
+            var areaChartData = {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                datasets: [
+                    {
+                        label: 'Digital Goods',
+                        backgroundColor: 'rgba(60,141,188,0.9)',
+                        borderColor: 'rgba(60,141,188,0.8)',
+                        pointRadius: false,
+                        pointColor: '#3b8bba',
+                        pointStrokeColor: 'rgba(60,141,188,1)',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(60,141,188,1)',
+                        data: [28, 48, 40, 19, 86, 27, 90]
+                    },
+                    {
+                        label: 'Electronics',
+                        backgroundColor: 'rgba(210, 214, 222, 1)',
+                        borderColor: 'rgba(210, 214, 222, 1)',
+                        pointRadius: false,
+                        pointColor: 'rgba(210, 214, 222, 1)',
+                        pointStrokeColor: '#c1c7d1',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(220,220,220,1)',
+                        data: [65, 59, 80, 81, 56, 55, 40]
+                    },
+                ]
+            }
+
+            //-------------
+            //- BAR CHART -
+            //-------------
+            var barChartCanvas = $('#barChart').get(0).getContext('2d')
+            var barChartData = $.extend(true, {}, areaChartData)
+            var temp0 = areaChartData.datasets[0]
+            var temp1 = areaChartData.datasets[1]
+            barChartData.datasets[0] = temp1
+            barChartData.datasets[1] = temp0
+
+            var barChartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                datasetFill: false
+            }
+
+            new Chart(barChartCanvas, {
+                type: 'bar',
+                data: barChartData,
+                options: barChartOptions
+            })
+    });
+    </script>
+
+    <script>
+        $(function () {
             var arrDoanhThu = [];
             var arrLoiNhuan = [];
             var arrDate = [];
@@ -246,7 +201,6 @@
                             },
                         ]
                     }
-
                     //-------------
                     //- BAR CHART -
                     //-------------
@@ -270,100 +224,7 @@
                     })
                 }
             });
-
-
         })
     </script>
-    @*  <script>
-        $(function () {
-            /* ChartJS
-             * -------
-             * Here we will create a few charts using ChartJS
-             */
-
-            var arrDoanhThu = [];
-            var arrLoiNhuan = [];
-            var arrDate = [];
-            $.ajax({
-                url: '/HomeAdmin/GetStatistical',
-                type: 'GET',
-                data: { fromDate: '', toDate: '' },
-                success: function (rs) {
-
-                    $.each(rs.Data, function (i, item) {
-                        var strDate = moment(item.Date).format('DD/MM/yyyy');
-                        arrDate.push(strDate);
-                        arrDoanhThu.push(item.DoanhThu);
-                        arrLoiNhuan.push(item.LoiNhuan);
-                    });
-                    var areaChartData = {
-                        labels: arrDate,
-                        datasets: [
-                            {
-                                label: 'Lợi nhuận',
-                                backgroundColor: 'rgba(60,141,188,0.9)',
-                                borderColor: 'rgba(60,141,188,0.8)',
-                                pointRadius: false,
-                                pointColor: '#3b8bba',
-                                pointStrokeColor: 'rgba(60,141,188,1)',
-                                pointHighlightFill: '#fff',
-                                pointHighlightStroke: 'rgba(60,141,188,1)',
-                                data: arrLoiNhuan
-                            },
-                            {
-                                label: 'Danh thu',
-                                backgroundColor: 'rgba(210, 214, 222, 1)',
-                                borderColor: 'rgba(210, 214, 222, 1)',
-                                pointRadius: false,
-                                pointColor: 'rgba(210, 214, 222, 1)',
-                                pointStrokeColor: '#c1c7d1',
-                                pointHighlightFill: '#fff',
-                                pointHighlightStroke: 'rgba(220,220,220,1)',
-                                data: arrDoanhThu
-                            },
-                        ]
-                    }
-                    //-------------
-                    //- BAR CHART -
-                    //-------------
-                    var barChartCanvas = $('#barChart').get(0).getContext('2d')
-                    var barChartData = $.extend(true, {}, areaChartData)
-                    var temp0 = areaChartData.datasets[0]
-                    var temp1 = areaChartData.datasets[1]
-                    barChartData.datasets[0] = temp1
-                    barChartData.datasets[1] = temp0
-
-                    var barChartOptions = {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        datasetFill: false
-                    }
-
-                    new Chart(barChartCanvas, {
-                        type: 'bar',
-                        data: barChartData,
-                        options: barChartOptions
-                    });
-                    load_data(rs.Data);
-                }
-            });
-
-
-        })
-
-        function load_data(data) {
-            var strHtml = "";
-            $.each(data, function (i, item) {
-                var strDate = moment(item.Date).format('DD/MM/yyyy');
-                strHtml += "<tr>";
-                strHtml += "<td>" + (i + 1) + "</td>";
-                strHtml += "<td>" + strDate + "</td>";
-                strHtml += "<td>" + item.DoanhThu + "</td>";
-                strHtml += "<td>" + item.LoiNhuan + "</td>";
-                strHtml += "</tr>";
-            });
-            $('#load_data').html(strHtml);
-        }
-    </script> *@
 }
 
