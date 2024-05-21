@@ -60,23 +60,27 @@
                                                 </td>
                                                 <td class="product-name"><a asp-controller="Products" asp-action="Detail" asp-route-id="@item.ProductId">@item.ProductName</a></td>
                                                 <td class="product-price">
-                                                    @if (item.PriceSale > 0)
-                                                    {
-                                                        <span data-price="@item.PriceSale" class="new-price">
-                                                            @BookStoreTM.Common.Common.FormatNumber(item.PriceSale, 0) VND
-                                                        </span>
-                                                        <br />
-                                                        <span data-price="@item.Price" class="old-price text-primary">
-                                                            @BookStoreTM.Common.Common.FormatNumber(item.Price, 0) VND
-                                                        </span>
-                                                    }
+                                                    <div class="price-box pb-1">
 
-                                                    else
-                                                    {
-                                                        <span data-price="@item.Price" class="new-price text-primary">
-                                                            @BookStoreTM.Common.Common.FormatNumber(item.Price, 0) VND
-                                                        </span>
-                                                    }
+
+                                                        @if (item.PriceSale > 0)
+                                                        {
+                                                            <span data-price="@item.PriceSale" class="new-price">
+                                                                @BookStoreTM.Common.Common.FormatNumber(item.PriceSale, 0) VND
+                                                            </span>
+                                                            <br />
+                                                            <span data-price="@item.Price" class="old-price text-primary">
+                                                                @BookStoreTM.Common.Common.FormatNumber(item.Price, 0) VND
+                                                            </span>
+                                                        }
+
+                                                        else
+                                                        {
+                                                            <span data-price="@item.Price" class="new-price text-primary">
+                                                                @BookStoreTM.Common.Common.FormatNumber(item.Price, 0) VND
+                                                            </span>
+                                                        }
+                                                    </div>
                                                 </td>
                                                 <td class="quantity">
                                                     <div class="cart-plus-minus">
@@ -87,7 +91,9 @@
                                                 </td>
                                                 <td class="product-subtotal">
                                                     <p data-money="@money" class="total-money">
-                                                        <span id="money">@string.Format("{0:#,##0}", @money)</span> VND
+                                                        <span id="money">
+                                                            @BookStoreTM.Common.Common.FormatNumber(@money, 0)
+                                                            </span> VND
                                                     </p>
                                                 </td>
                                                 <td class="product_remove btn-action">
@@ -126,7 +132,7 @@
                                         <li>Số sản phẩm <span>@ViewBag.Count</span></li>
                                         <li>
                                             Tổng thanh toán <span id="totalMoney">
-                                                @string.Format("{0:#,##0}", ViewBag.Total)VND
+                                                @BookStoreTM.Common.Common.FormatNumber(ViewBag.Total, 0) VND
                                             </span>
                                         </li>
                                     </ul>

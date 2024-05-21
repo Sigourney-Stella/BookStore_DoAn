@@ -35,21 +35,7 @@ namespace BookStoreTM.Controllers
             }
             base.OnActionExecuting(context);
         }
-
         public IActionResult Index()
-        {
-            decimal total = 0;
-            var count = 0;
-            foreach (var item in carts)
-            {
-                total += item.Quantity * item.PriceSale;
-                count++;
-            }
-            ViewBag.Total = total;
-            ViewBag.Count = count;
-            return View(carts);
-        }
-        public IActionResult CheckOut()
         {
             decimal total = 0;
             var count = 0;
@@ -208,6 +194,8 @@ namespace BookStoreTM.Controllers
                     orderDetails.Price = items.Price;
                     orderDetails.TotalMoney = items.TotalPrice; // lấy ra giá tiền cuối ( price hoặc pricesale)
 
+                    var quatityPro = _db.Products.Where(x => x.ProductId == items.ProductId).FirstOrDefault().Quatity;
+                    _db.Products.Where(x => x.ProductId == items.ProductId).FirstOrDefault().Quatity = quatityPro - items.Quantity;
                     _db.Add(orderDetails);
                     await _db.SaveChangesAsync();
                 }

@@ -1,6 +1,7 @@
 ﻿using BookStoreTM.Models;
 using BookStoreTM.Models.EF;
 using BookStoreTM.Models.Entities;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
@@ -30,8 +31,8 @@ namespace BookStoreTM.Controllers
         public IActionResult Login(Customer model, string urlAction)
         {
             var pass = Utilitties.Utils.GetSHA26Hash(model.Password);
-            var data = _context.Customers.Where(x => x.IsActive == true).Where(x => x.Fullname.Equals(model.Fullname) ||
-                x.Email.Equals(model.Email)).FirstOrDefault(x => x.Password.Equals(pass));
+            var data = _context.Customers.Where(x => x.IsActive == true).Where(x => x.Email.Equals(model.Email))
+                .FirstOrDefault(x => x.Password.Equals(pass));
             var dataLogin = data.ToJson();
             if (data != null)
             {
@@ -43,30 +44,47 @@ namespace BookStoreTM.Controllers
                 }
                 return RedirectToAction("Index", "Home");
             }
-            TempData["errorLogin"] = "Lỗi đăng nhập";
-            return RedirectToAction("Index");
+            else
+            {
+                ModelState.AddModelError("", "Email hoặc mật khẩu khôg đúng! Vui lòng nhập lại");
+                return View(model);
+            }
+            //ViewData["errorLogin"] = "Lỗi đăng nhập";
+            return RedirectToAction("Login");
         }
         public IActionResult Registy()
         {
-            return View();
+            Customer model = new Customer();
+            return View(model);
         }
         [HttpPost]
         public IActionResult Registy(Customer model)
         {
             try
             {
-                var pass = Utilitties.Utils.GetSHA26Hash(model.Password);
-                model.Password = pass;
-                model.CreateDate = DateTime.Now;
-                model.IsActive = true;
-                _context.Add(model);
-                _context.SaveChanges();
-                return RedirectToAction("Login", "Customer");
+                var taiKhoan = _context.Customers.Where(x => x.Email == model.Email).FirstOrDefault();
+                if(taiKhoan == null)
+                {
+                    var pass = Utilitties.Utils.GetSHA26Hash(model.Password);
+                    model.Password = pass;
+                    model.CreateDate = DateTime.Now;
+                    model.IsActive = true;
+                    _context.Add(model);
+                    _context.SaveChanges();
+                    return RedirectToAction("Login", "Customer");
+                }
+                else
+                {
+                    //TempData["errorRegisty"] = "Email đã được sử dụng! Vui lòng sử dụng email khác";
+                    //return View();
+                    ModelState.AddModelError("Email", "Email đã được sử dụng! Vui lòng sử dụng email khác");
+                    return View(model);
+                }
+                
             }
             catch (Exception ex)
             {
-                TempData["errorRegisty"] = "Lỗi đăng ký" + ex.Message;
-                return RedirectToAction("Index");
+                return RedirectToAction("Registy");
             }
         }
         [HttpGet]
@@ -96,6 +114,11 @@ namespace BookStoreTM.Controllers
                 customer.Avatar = model.Avatar;
 
                 _context.SaveChanges();
+
+                //Lưu lại thông tin vào session
+                var updatedCustomer = JsonConvert.SerializeObject(customer);
+                HttpContext.Session.SetString("Member", updatedCustomer);
+               
                 return RedirectToAction("Detail");
             }
             return View("Detail", model);

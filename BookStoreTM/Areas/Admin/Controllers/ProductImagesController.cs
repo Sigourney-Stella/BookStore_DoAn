@@ -27,8 +27,9 @@ namespace BookStoreTM.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Create(int id)
         {
+            var appDbContext = _db.ProductImages.Include(p => p.Product).Where(x=>x.ProductId == id).ToList();
             ViewBag.Id = id;
-            return View();
+            return View(appDbContext);
         }
 
         [HttpPost]
@@ -63,6 +64,26 @@ namespace BookStoreTM.Areas.Admin.Controllers
                 await _db.SaveChangesAsync();
             }
             return RedirectToAction("Index", "Product");
+        }
+
+        [HttpPost]
+        public ActionResult DeleteAll(string ids)
+        {
+            if (!string.IsNullOrEmpty(ids))
+            {
+                var items = ids.Split(',');
+                if (items != null && items.Any())
+                {
+                    foreach (var item in items)
+                    {
+                        var obj = _db.ProductImages.Find(Convert.ToInt32(item));
+                        _db.ProductImages.Remove(obj);
+                        _db.SaveChanges();
+                    }
+                }
+                return Json(new { success = true });
+            }
+            return Json(new { success = false });
         }
         //public IActionResult Index(int id)
         //{

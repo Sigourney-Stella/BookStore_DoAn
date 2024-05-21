@@ -28,5 +28,16 @@ namespace BookStoreTM.Models.Entities
         public DbSet<Customer> Customers { get; set; }
         public DbSet<ReceiptDetails> ReceiptDetails { get; set; }
         public DbSet<Favorite> Favorites { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Customer>()
+                .HasIndex(c => new { c.Fullname, c.Email })
+                .IsUnique();
+
+            modelBuilder.Entity<Product>()
+                .HasIndex(p => p.Code)
+                .IsUnique();
+        }
     }
 }

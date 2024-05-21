@@ -154,5 +154,25 @@ namespace BookStoreTM.Areas.Admin.Controllers
         {
             return _context.TransactStatus.Any(e => e.TransactStatusID == id);
         }
+
+        [HttpPost]
+        public ActionResult DeleteAll(string ids)
+        {
+            if (!string.IsNullOrEmpty(ids))
+            {
+                var items = ids.Split(',');
+                if (items != null && items.Any())
+                {
+                    foreach (var item in items)
+                    {
+                        var obj = _context.TransactStatus.Find(Convert.ToInt32(item));
+                        _context.TransactStatus.Remove(obj);
+                        _context.SaveChanges();
+                    }
+                }
+                return Json(new { success = true });
+            }
+            return Json(new { success = false });
+        }
     }
 }

@@ -122,7 +122,7 @@ namespace BookStoreTM.Migrations
                     b.Property<string>("Avatar")
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<DateTime>("Brithday")
+                    b.Property<DateTime?>("Brithday")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("CreateDate")
@@ -148,6 +148,10 @@ namespace BookStoreTM.Migrations
                         .HasColumnType("varchar(64)");
 
                     b.HasKey("CustomerID");
+
+                    b.HasIndex("Fullname", "Email")
+                        .IsUnique()
+                        .HasFilter("[Fullname] IS NOT NULL AND [Email] IS NOT NULL");
 
                     b.ToTable("Customer");
                 });
@@ -440,6 +444,9 @@ namespace BookStoreTM.Migrations
                         .HasColumnType("datetime");
 
                     b.HasKey("ProductId");
+
+                    b.HasIndex("Code")
+                        .IsUnique();
 
                     b.HasIndex("ProductCategoryId");
 

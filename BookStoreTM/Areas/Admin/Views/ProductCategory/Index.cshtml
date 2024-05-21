@@ -48,7 +48,7 @@
                         <th style="width: 56px;">stt</th>
                         <th>Tên danh mục</th>
                         <th>Ngày tạo</th>
-                        <th style="width: 80px;"></th>
+                        <th style="width: 80px;">Sửa</th>
                         <th style="width: 80px;"><input type="checkbox" id="SelectAll" /></th>
                     </tr>
                 </thead>
@@ -170,51 +170,3 @@
         });
     </script>
 }
-
-
-@* <div class="row">
-    <div class="col-12">
-        <div class="card">
-            <div class="card-header">
-                <h3 class="card-title">Danh mục sản phẩm</h3>
-
-                <div class="card-tools">
-                    <div class="input-group input-group-sm" style="width: 100px;">
-                        <div class="input-group-append">
-                            <a href="/admin/productcategory/ThemDMSanPham" class="btn-sm btn-primary">Thêm mới</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /.card-header -->
-            <div class="card-body table-responsive p-0">
-                <table class="table table-hover text-nowrap">
-                    <thead>
-                        <tr>
-                            <th>STT</th>
-                            <th>Tên danh mục</th>
-                            <th>Ngày tạo</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model)
-                        {
-                            <tr>
-                                <td>@item.Id</td>
-                                <td>@item.Name</td>
-                                <td>@item.CreatedDate</td>
-                                <td>
-                                    <a asp-action="SuaDMSanPham" asp-route-MaSanPham="@item.Id" class="btn-sm btn-primary">Sửa</a>
-                                    <a asp-action="XoaDMSanPham" asp-route-maLoai="@item.Id" class="btn-sm btn-danger btnDelete">Xóa</a>
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
-            <!-- /.card-body -->
-        </div>
-        <!-- /.card -->
-    </div>
-</div> *@

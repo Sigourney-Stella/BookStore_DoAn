@@ -14,7 +14,7 @@ namespace BookStoreTM.Models
 
         [Column(TypeName = "nvarchar(100)")]
         public String Fullname { get; set; }
-        public DateTime Brithday { get; set; }
+        public DateTime? Brithday { get; set; }
 
         [Column(TypeName = "nvarchar(500)")]
         public string Avatar { get; set; }

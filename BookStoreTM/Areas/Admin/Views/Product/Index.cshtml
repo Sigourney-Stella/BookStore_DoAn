@@ -125,37 +125,6 @@
     </div>
 </section>
 
-@foreach (var item in Model)
-{
-    <form id="updateForm_@item.ProductId" asp-action="Create" asp-controller="ProductImages" enctype="multipart/form-data" method="post">
-        <div class="modal fade" id="modal-default_@item.ProductId">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    @* <form asp-action="Create" enctype="multipart/form-data" method="post"> *@
-                        <div class="modal-header">
-                            <h4 class="modal-title">Thêm hình ảnh</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <input type="hidden" asp-for="@item.ProductId" />
-                            <div class="form-group">
-                                @* <label asp-for="ProductImages" class="control-label"></label> *@
-                                <input naem="ProductImages" id="ProductImages" class="form-control" type="file" multiple />
-                            </div>
-                        </div>
-                        <div class="modal-footer justify-content-between">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
-                            <button type="submit" class="btn-sm btn-primary">Tải lên</button>
-                        </div>
-                    @* </form> *@
-                </div>
-            </div>
-        </div>
-    </form>
-}
-
 @section scripts {
     <script>
         $(document).ready(function () {
