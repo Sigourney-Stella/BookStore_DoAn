@@ -49,13 +49,25 @@ namespace BookStoreTM.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> UpdateOrderStatus(int OrderId, int IdStatus)
+        public async Task<IActionResult> UpdateOrderStatus(int orderId, int IdStatus)
         {
             try
             {
-                var order = await _db.OrderBooks.FindAsync(OrderId);
+                var order = await _db.OrderBooks.FindAsync(orderId);
                 if (order != null)
                 {
+                    if(IdStatus == 3) // nếu là trạng thái 
+                    {
+                        var orderDetail = _db.OrderDetails.Where(x => x.OrderId == orderId).ToList();
+                        foreach(var detail in orderDetail)
+                        {
+                            var product = _db.Products.Find(detail.ProductId);
+                            if (product != null)
+                            {
+                                product.Quatity += detail.Quatity;
+                            }
+                        }
+                    }
                     order.TransactStatusID = IdStatus;
                     _db.Update(order);
                     await _db.SaveChangesAsync();

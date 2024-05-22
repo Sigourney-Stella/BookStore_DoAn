@@ -33,7 +33,7 @@ namespace BookStoreTM.Controllers
         {
             var products = _db.Products.Include(p => p.ProductCategory).Include(b=>b.Publisher).ToList();
 
-            var productImg = _db.ProductImages.Include(p => p.Product).ToList();
+            var productImg = _db.ProductImages.Include(p => p.Product).Where(x=>x.ProductId == id).ToList();
             ViewBag.productImg = productImg;
 
             var item = _db.Products.Find(id);

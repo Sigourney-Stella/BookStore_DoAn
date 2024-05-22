@@ -17,8 +17,15 @@ namespace BookStoreTM.Areas.Admin.Controllers
         }
         public IActionResult Index()
         {
-            //var soLuongHD = _db.OrderBooks.Count();
-            //ViewBag.soLuongHD = soLuongHD;
+            var soLuongHD = _db.OrderBooks.Count();
+            ViewBag.soLuongHD = soLuongHD;
+            var soLuongSP = _db.Products.Count();
+            ViewBag.soLuongSP = soLuongSP;
+            var soLuongDonHT = _db.OrderBooks.Where(x=>x.TransactStatusID == 2).Count();
+            ViewBag.soLuongDonHT = soLuongDonHT;
+            var soLuongDonHuy = _db.OrderBooks.Where(x => x.TransactStatusID == 3).Count();
+            ViewBag.soLuongDonHuy = soLuongDonHuy;
+
             return View();
         }
         [HttpGet]
