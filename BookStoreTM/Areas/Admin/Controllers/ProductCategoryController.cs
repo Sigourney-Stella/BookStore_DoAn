@@ -3,11 +3,13 @@ using BookStoreTM.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 using X.PagedList;
 
 namespace BookStoreTM.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class ProductCategoryController : Controller
     {
         private readonly AppDbContext _db;

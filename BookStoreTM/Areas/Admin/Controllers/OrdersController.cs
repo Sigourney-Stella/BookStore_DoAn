@@ -6,10 +6,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Drawing.Printing;
 using X.PagedList;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BookStoreTM.Areas.Admin.Controllers
 {
     [Area("admin")]
+    [Authorize]
     public class OrdersController : Controller
     {
         private readonly AppDbContext _db;

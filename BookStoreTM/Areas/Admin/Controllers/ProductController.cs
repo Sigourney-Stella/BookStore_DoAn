@@ -5,11 +5,13 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using X.PagedList;
 using CKFinder.Settings;
+using Microsoft.AspNetCore.Authorization;
 using BookStoreTM.Common;
 
 namespace BookStoreTM.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class ProductController : Controller
     {
         private readonly AppDbContext _db;

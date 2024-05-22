@@ -1,4 +1,5 @@
 ﻿using BookStoreTM.Models;
+using BookStoreTM.Models.EF;
 using BookStoreTM.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -31,6 +32,10 @@ namespace BookStoreTM.Controllers
         public IActionResult Detail(int? id)
         {
             var products = _db.Products.Include(p => p.ProductCategory).Include(b=>b.Publisher).ToList();
+
+            var productImg = _db.ProductImages.Include(p => p.Product).ToList();
+            ViewBag.productImg = productImg;
+
             var item = _db.Products.Find(id);
             return View(item);
         }

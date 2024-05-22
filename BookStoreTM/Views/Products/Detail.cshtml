@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Chi tiết sản phẩm";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var productImg = ViewBag.productImg as List<ProductImage>;
 }
 @model BookStoreTM.Models.Product
 
@@ -9,7 +10,6 @@
 <main class="main-content">
     @if (Model != null)
     {
-
         <div class="breadcrumb-area breadcrumb-height" data-bg-image="assets/images/breadcrumb/bg/1-1-1920x373.jpg" style="background-image: url(&quot;assets/images/breadcrumb/bg/1-1-1920x373.jpg&quot;);">
             <div class="container h-100">
                 <div class="row h-100">
@@ -36,25 +36,18 @@
                             <div class="swiper-container single-product-slider swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events">
                                 <div class="swiper-wrapper" id="swiper-wrapper-357b619ba86e9e1c" aria-live="polite" style="width: 2280px; transform: translate3d(0px, 0px, 0px);">
                                     <div class="swiper-slide swiper-slide-visible swiper-slide-active" role="group" aria-label="1 / 4" style="width: 570px;">
-                                        <a href="assets/images/product/large-size/2-1-555x645.jpg" class="single-img gallery-popup">
+                                        <a href="@Model.Images" class="single-img gallery-popup">
                                             <img class="img-full" src="@Model.Images" alt="Product Image">
                                         </a>
                                     </div>
-                                    <div class="swiper-slide swiper-slide-next" role="group" aria-label="2 / 4" style="width: 570px;">
-                                        <a href="assets/images/product/large-size/2-2-555x645.jpg" class="single-img gallery-popup">
-                                            <img class="img-full" src="assets/images/product/large-size/2-2-555x645.jpg" alt="Product Image">
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide" role="group" aria-label="3 / 4" style="width: 570px;">
-                                        <a href="assets/images/product/large-size/2-3-555x645.jpg" class="single-img gallery-popup">
-                                            <img class="img-full" src="assets/images/product/large-size/2-3-555x645.jpg" alt="Product Image">
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide" role="group" aria-label="4 / 4" style="width: 570px;">
-                                        <a href="assets/images/product/large-size/2-4-555x645.jpg" class="single-img gallery-popup">
-                                            <img class="img-full" src="assets/images/product/large-size/2-4-555x645.jpg" alt="Product Image">
-                                        </a>
-                                    </div>
+                                    @foreach (var item in productImg)
+                                    {
+                                        <div class="swiper-slide swiper-slide-next" role="group" aria-label="2 / 4" style="width: 570px;">
+                                            <a href="@item.Url" class="single-img gallery-popup">
+                                                <img class="img-full" src="@item.Url" alt="Product Image">
+                                            </a>
+                                        </div>
+                                    }
                                 </div>
                                 <!-- Add Pagination -->
                                 <div class="swiper-pagination"></div>
@@ -70,13 +63,13 @@
                                     <div class="price-box pb-1">
                                         @if (Model.PriceSale > 0)
                                         {
-                                            <span class="new-price text-danger">@BookStoreTM.Common.Common.FormatNumber(Model.PriceSale, 0)<sup style="font-size: 25px; top: 0rem;}">₫</sup></span>
-                                            <span class="old-price text-primary">@BookStoreTM.Common.Common.FormatNumber(Model.Price, 0)<sup style="font-size: 25px; top: 0rem;}">₫</sup></span>
+                                            <span class="new-price text-danger">@BookStoreTM.Common.Common.FormatNumber(Model.PriceSale, 0) VND</span>
+                                            <span class="old-price text-primary">@BookStoreTM.Common.Common.FormatNumber(Model.Price, 0) VND</span>
                                         }
                                         else
                                         {
                                             <div class="price-box pb-1">
-                                                <span class="new-price text-danger">@BookStoreTM.Common.Common.FormatNumber(Model.Price, 0)<sup style="font-size: 25px; top: 0rem;}">₫</sup></span>
+                                                <span class="new-price text-danger">@BookStoreTM.Common.Common.FormatNumber(Model.Price, 0) VND</span>
                                             </div>
                                         }
                                     </div>
@@ -149,15 +142,12 @@
                                         <a href="javascript:void(0)" class="swiper-slide swiper-slide-visible swiper-slide-active swiper-slide-thumb-active" role="group" aria-label="1 / 4" style="width: 120px; margin-right: 30px;">
                                             <img class="img-full" src="@Model.Images" alt="Product Thumnail">
                                         </a>
-                                        <a href="javascript:void(0)" class="swiper-slide swiper-slide-visible swiper-slide-next" role="group" aria-label="2 / 4" style="width: 120px; margin-right: 30px;">
-                                            <img class="img-full" src="assets/images/product/large-size/2-2-555x645.jpg" alt="Product Thumnail">
-                                        </a>
-                                        <a href="javascript:void(0)" class="swiper-slide swiper-slide-visible" role="group" aria-label="3 / 4" style="width: 120px; margin-right: 30px;">
-                                            <img class="img-full" src="assets/images/product/large-size/2-3-555x645.jpg" alt="Product Thumnail">
-                                        </a>
-                                        <a href="javascript:void(0)" class="swiper-slide swiper-slide-visible" role="group" aria-label="4 / 4" style="width: 120px; margin-right: 30px;">
-                                            <img class="img-full" src="assets/images/product/large-size/2-4-555x645.jpg" alt="Product Thumnail">
-                                        </a>
+                                        @foreach (var item in productImg)
+                                        {
+                                            <a href="javascript:void(0)" class="swiper-slide swiper-slide-visible swiper-slide-next" role="group" aria-label="2 / 4" style="width: 120px; margin-right: 30px;">
+                                                <img class="img-full" src="@item.Url" alt="">
+                                            </a>
+                                        }
                                     </div>
                                     <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
                                 </div>
@@ -175,7 +165,7 @@
                         <ul class="nav product-tab-nav product-tab-style-2" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <a class="active btn btn-custom-size" id="description-tab" data-bs-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">
-                                    Description
+                                    Descripti   on
                                 </a>
                             </li>
                             <li class="nav-item" role="presentation">
@@ -880,4 +870,10 @@
     }
 
 </main>
-<!-- Main Content Area End Here  -->
+
+<style>
+    .single-product-slider .swiper-slide .single-img img {
+        height: auto !important;
+    }
+</style>
+

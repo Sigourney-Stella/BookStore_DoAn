@@ -1,9 +1,11 @@
 ﻿using BookStoreTM.Models.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookStoreTM.Areas.Admin.Controllers
 {
     [Area("admin")]
+    [Authorize]
     public class ThongKeController : Controller
     {
         private readonly AppDbContext _db;

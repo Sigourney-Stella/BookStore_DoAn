@@ -1,10 +1,12 @@
 ﻿
 using BookStoreTM.Models;
+using BookStoreTM.Models.EF;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookStoreTM.Models.Entities
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<AppUserModel>
     {
        
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
@@ -31,6 +33,9 @@ namespace BookStoreTM.Models.Entities
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
+            // Thêm ràng buộc unique cho các thực thể của bạn
             modelBuilder.Entity<Customer>()
                 .HasIndex(c => new { c.Fullname, c.Email })
                 .IsUnique();

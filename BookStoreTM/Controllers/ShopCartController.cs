@@ -56,7 +56,7 @@ namespace BookStoreTM.Controllers
             if (carts.Any(c => c.ProductId == id))
             {
                 carts.Where(c => c.ProductId == id).First().Quantity += 1;
-                items.SoLuong++;
+                //items.SoLuong++;
             }
             else
             {

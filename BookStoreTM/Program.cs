@@ -1,4 +1,6 @@
-﻿using BookStoreTM.Models.Entities;
+﻿using BookStoreTM.Models.EF;
+using BookStoreTM.Models.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookStoreTM
@@ -29,6 +31,34 @@ namespace BookStoreTM
                 options.Cookie.Name = ".Dev.Session";
             });
 
+            //Identity
+            builder.Services.AddIdentity<AppUserModel, IdentityRole>()
+            .AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
+
+
+            builder.Services.Configure<IdentityOptions>(options =>
+            {
+                // Password settings.
+                options.Password.RequireDigit = true;
+                options.Password.RequireLowercase = true;
+                options.Password.RequireNonAlphanumeric = true;
+                options.Password.RequireUppercase = true;
+                options.Password.RequiredLength = 4;
+                options.User.RequireUniqueEmail = true;
+            });
+
+            builder.Services.ConfigureApplicationCookie(options =>
+            {
+                // Cookie settings
+                options.Cookie.HttpOnly = true;
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+
+                options.LoginPath = "/Admin/Account/Login";
+                options.AccessDeniedPath = "/Admin/Account/Login";
+                options.SlidingExpiration = true;
+            });
+
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -40,9 +70,12 @@ namespace BookStoreTM
             }
 
             app.UseHttpsRedirection();
+
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

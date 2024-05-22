@@ -60,6 +60,12 @@
                             <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Khách hàng</font></font></p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="/Admin/Account" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Quản trị</font></font></p>
+                        </a>
+                    </li>
                 </ul>
             </li>
             <li class="nav-item">
@@ -122,8 +128,23 @@
                     </p>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="javascript:document.getElementById('logOffForm').submit()" class="nav-link">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>
+                        Đăng xuất (@User.Identity.Name)
+                    </p>
+                </a>
+            </li>
         </ul>
     </nav>
     <!-- /.sidebar-menu -->
 </div>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <form id="logOffForm" asp-controller="Account" asp-action="LogOff" method="post" style="display: none;">
+        @Html.AntiForgeryToken()
+    </form>
+}
 

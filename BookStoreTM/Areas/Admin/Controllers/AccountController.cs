@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using BookStoreTM.Models;
 using BookStoreTM.Models.EF;
+using BookStoreTM.Models.Entities;
 
 namespace BookStoreTM.Areas.Admin.Controllers
 {
@@ -28,13 +29,12 @@ namespace BookStoreTM.Areas.Admin.Controllers
         public IActionResult Index()
         {
 
-            var ítems = _db.Users.ToList();
-            return View(ítems);
+            var items = _db.Users.ToList();
+            return View(items);
         }
         public IActionResult Login(string returnUrl = null)
         {
             ViewBag.ReturnUrl = returnUrl;
-
             return View();
         }
 
@@ -50,13 +50,13 @@ namespace BookStoreTM.Areas.Admin.Controllers
                 {
                     if (returnUrl == null || returnUrl == "/")
                     {
-                        return RedirectToAction("index", "home");
+                        return RedirectToAction("index", "homeadmin");
                     }
 
                     return Redirect(returnUrl);
 
                 }
-                ModelState.AddModelError("", " Username hoặc Password bị sai");
+                ModelState.AddModelError("", " Tên đăng nhập hoặc mật khẩu bị sai!");
 
             }
             return View(loginVM);
@@ -93,7 +93,7 @@ namespace BookStoreTM.Areas.Admin.Controllers
         public async Task<IActionResult> LogOff()
         {
             await _signInManager.SignOutAsync();
-            return RedirectToAction("index", "home");
+            return RedirectToAction("index", "homeAdmin");
         }
 
         [HttpPost]

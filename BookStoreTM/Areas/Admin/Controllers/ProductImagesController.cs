@@ -8,11 +8,13 @@ using Microsoft.EntityFrameworkCore;
 using BookStoreTM.Models;
 using BookStoreTM.Models.Entities;
 using BookStoreTM.Models.EF;
+using Microsoft.AspNetCore.Authorization;
 using BookStoreTM.Common;
 
 namespace BookStoreTM.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class ProductImagesController : Controller
     {
         private readonly AppDbContext _db;
@@ -63,7 +65,7 @@ namespace BookStoreTM.Areas.Admin.Controllers
                 }
                 await _db.SaveChangesAsync();
             }
-            return RedirectToAction("Index", "Product");
+            return RedirectToAction("Create", "ProductImages");
         }
 
         [HttpPost]
@@ -85,47 +87,5 @@ namespace BookStoreTM.Areas.Admin.Controllers
             }
             return Json(new { success = false });
         }
-        //public IActionResult Index(int id)
-        //{
-        //    var productImage = _db.ProductImages.Where(x => x.ProductId == id).ToList();
-        //    return View(productImage);
-        //}
-
-
-        //public IActionResult Create()
-        //{
-        //    return View();
-        //}
-
-        //[HttpPost]
-        //public IActionResult Create(int productId, IFormFileCollection productImages)
-        //{
-
-        //    if (productImages != null && productImages.Count > 0)
-        //    {
-        //        foreach (var formFile in productImages)
-        //        {
-        //            if (formFile.Length > 0)
-        //            {
-        //                var filePath = Path.Combine(_hostEnvironment.WebRootPath, "images", formFile.FileName);
-        //                using (var stream = new FileStream(filePath, FileMode.Create))
-        //                {
-        //                    formFile.CopyToAsync(stream);
-        //                }
-
-        //                var productImage = new ProductImage
-        //                {
-        //                    ProductImgName = formFile.FileName,
-        //                    Url = "/images/" + formFile.FileName,
-        //                    ProductId = productId
-        //                };
-
-        //                _db.ProductImages.Add(productImage);
-        //            }
-        //        }
-        //        _db.SaveChanges();
-        //    }
-        //    return View();
-        //}
     }
 }

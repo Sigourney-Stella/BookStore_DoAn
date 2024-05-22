@@ -1,10 +1,12 @@
 ﻿using BookStoreTM.Models.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace BookStoreTM.Areas.Admin.Controllers
 {
-    [Area("admin")]
+    [Area("Admin")]
+    [Authorize]
     public class HomeAdminController : Controller
     {
         private readonly AppDbContext _db;
@@ -15,8 +17,8 @@ namespace BookStoreTM.Areas.Admin.Controllers
         }
         public IActionResult Index()
         {
-            var soLuongHD = _db.OrderBooks.Count();
-            ViewBag.soLuongHD = soLuongHD;
+            //var soLuongHD = _db.OrderBooks.Count();
+            //ViewBag.soLuongHD = soLuongHD;
             return View();
         }
         [HttpGet]

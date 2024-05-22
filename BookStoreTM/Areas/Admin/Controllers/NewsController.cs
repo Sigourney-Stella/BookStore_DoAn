@@ -7,11 +7,13 @@ using X.PagedList;
 
 using Microsoft.AspNetCore.Hosting;
 using BookStoreTM.Common;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace BookStoreTM.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class NewsController : Controller
     {
         private readonly AppDbContext _db;

@@ -48,6 +48,7 @@
                     </div>
                 </div>
             </form>
+
             <div class="col-md-6">
                 <h5>Danh sách hình ảnh</h5>
                 <table class="table table-hover table-bordered">
@@ -127,7 +128,7 @@
                     var conf = confirm('Bạn có muốn xóa các bản ghi này hay không?');
                     if (conf === true) {
                         $.ajax({
-                            url: '/admin/ProductImages/deleteAll',
+                            url: '/admin/ProductImages/DeleteAll',
                             type: 'POST',
                             data: { ids: str },
                             success: function (rs) {

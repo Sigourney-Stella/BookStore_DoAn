@@ -7,10 +7,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BookStoreTM.Models;
 using BookStoreTM.Models.Entities;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BookStoreTM.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class TransactStatusController : Controller
     {
         private readonly AppDbContext _context;
