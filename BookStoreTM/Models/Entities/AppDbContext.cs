@@ -30,6 +30,7 @@ namespace BookStoreTM.Models.Entities
         public DbSet<Customer> Customers { get; set; }
         public DbSet<ReceiptDetails> ReceiptDetails { get; set; }
         public DbSet<Favorite> Favorites { get; set; }
+        public DbSet<UserCart> UserCarts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

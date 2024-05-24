@@ -98,11 +98,11 @@ namespace BookStoreTM.Areas.Admin.Controllers
                         var nameImg = "SanPham" + ConvertVietNamToEnglish.LocDau(model.ProductName) + "." + tokens[tokens.Length - 1];
                         string result = nameImg.Replace(" ", "");
                         // upload ảnh vào thư mục wwwroot\\images\\category
-                        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\LayoutAdmin\\images\\products", result);
+                        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\imagesAdmin\\products", result);
                         using (var stream = new FileStream(path, FileMode.Create))
                         {
                             file.CopyTo(stream);
-                            model.Images = "/LayoutAdmin/images/products/" + result; // gán tên ảnh cho thuộc tinh Image
+                            model.Images = "/imagesAdmin/products/" + result; // gán tên ảnh cho thuộc tinh Image
                         }
                     }
                     model.CreatedDate = DateTime.Now;
@@ -150,11 +150,11 @@ namespace BookStoreTM.Areas.Admin.Controllers
                     var nameImg = "SanPham" + ConvertVietNamToEnglish.LocDau(model.ProductName) + "." + tokens[tokens.Length - 1];
                     string result = nameImg.Replace(" ", "");
                     // upload ảnh vào thư mục wwwroot\\images\\category
-                    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\LayoutAdmin\\images\\products", result);
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\imagesAdmin\\products", result);
                     using (var stream = new FileStream(path, FileMode.Create))
                     {
                         file.CopyTo(stream);
-                        model.Images = "/LayoutAdmin/images/products/" + result; // gán tên ảnh cho thuộc tinh Image
+                        model.Images = "/imagesAdmin/products/" + result; // gán tên ảnh cho thuộc tinh Image
                     }
                 }
                 model.UpdatedDate = DateTime.Now;

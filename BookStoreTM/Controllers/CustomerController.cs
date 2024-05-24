@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using NuGet.Protocol;
+using System.Linq;
+using System.Runtime.Serialization.DataContracts;
 
 namespace BookStoreTM.Controllers
 {
@@ -18,13 +20,19 @@ namespace BookStoreTM.Controllers
         }
         public IActionResult Login(string url)
         {
-            if (HttpContext.Session.GetString("Member") != null)
+            string dataJson = HttpContext.Session.GetString("Member");
+            if (dataJson != null)
             {
-                var dataLogin = JsonConvert.DeserializeObject<Customer>(HttpContext.Session.GetString("Member"));
-                ViewBag.Customer = dataLogin;
+                return RedirectToAction("Index", "Home");
             }
-            ViewBag.UrlAction = url;
             return View();
+            //if (HttpContext.Session.GetString("Member") != null)
+            //{
+            //    var dataLogin = JsonConvert.DeserializeObject<Customer>(HttpContext.Session.GetString("Member"));
+            //    ViewBag.Customer = dataLogin;
+            //}
+            //ViewBag.UrlAction = url;
+            //return View();
         }
 
         [HttpPost]
@@ -38,10 +46,58 @@ namespace BookStoreTM.Controllers
             {
                 //lưu session khi đăng nhập thành công
                 HttpContext.Session.SetString("Member", dataLogin);
-                if (!string.IsNullOrEmpty(urlAction))
+                //if (!string.IsNullOrEmpty(urlAction))
+                //{
+                //    return RedirectToAction(urlAction);
+                //}
+                // Tải giỏ hàng từ cơ sở dữ liệu vào session
+                var userCarts = _context.UserCarts.Where(x => x.CustomerID == data.CustomerID).ToList();
+
+                string cartSessionJson = HttpContext.Session.GetString("My-Cart");
+                if (!string.IsNullOrEmpty(cartSessionJson))
                 {
-                    return RedirectToAction(urlAction);
+                    List<ShopCart> cartSession = JsonConvert.DeserializeObject<List<ShopCart>>(cartSessionJson);
+                    // kiểm tra session có giỏ hàng chưa
+                    if (cartSession != null)
+                    {
+                        // kiểm tra trong giỏ hàng của session có sản phẩm đó hay chưa
+                        foreach (var item in cartSession)
+                        {
+                            var checkItem = userCarts.Where(x => x.ProductId == item.ProductId).Any();
+                            if (!checkItem)
+                            {
+                                var itemCart = new UserCart()
+                                {
+                                    CustomerID = data.CustomerID,
+                                    ProductId = item.ProductId,
+                                    ProductName = item.ProductName,
+                                    Price = (decimal)item.Price,
+                                    PriceSale = (decimal)item.PriceSale,
+                                    Quantity = item.Quantity,
+                                    ProductImg = item.ProductImg,
+                                    TotalPrice = (decimal)item.PriceSale * item.Quantity
+                                };
+                                _context.Add(itemCart);
+                                _context.SaveChanges();
+                            }
+                        }
+                    }
                 }
+                userCarts = _context.UserCarts.Where(x => x.CustomerID == data.CustomerID).ToList();
+                var carts = userCarts.Select(uc => new ShopCart
+                {
+                    ProductId = uc.ProductId,
+                    ProductName = uc.ProductName,
+                    Price = uc.Price,
+                    PriceSale = uc.PriceSale,
+                    Quantity = uc.Quantity,
+                    ProductImg = uc.ProductImg,
+                    TotalPrice = uc.PriceSale * uc.Quantity
+                }).ToList();
+
+
+                HttpContext.Session.SetString("My-Cart", JsonConvert.SerializeObject(carts));
+
                 return RedirectToAction("Index", "Home");
             }
             else
@@ -52,8 +108,14 @@ namespace BookStoreTM.Controllers
         }
         public IActionResult Registy()
         {
-            Customer model = new Customer();
-            return View(model);
+            string dataJson = HttpContext.Session.GetString("Member");
+            if (dataJson != null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            return View();
+            //Customer model = new Customer();
+            //return View(model);
         }
         [HttpPost]
         public IActionResult Registy(Customer model)

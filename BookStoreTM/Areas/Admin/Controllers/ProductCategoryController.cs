@@ -100,8 +100,14 @@ namespace BookStoreTM.Areas.Admin.Controllers
                 {
                     foreach (var item in items)
                     {
-                        var obj = _db.ProductCategories.Find(Convert.ToInt32(item));
-                        _db.ProductCategories.Remove(obj);
+                        var categoryId = Convert.ToInt32(item);
+                        var category = _db.ProductCategories.Include(pc => pc.Products).FirstOrDefault(pc => pc.ProductCategoryId == categoryId);
+
+                        if (category != null && category.Products.Any())
+                        {
+                            return Json(new { success = false, message = "Danh mục " + category.Name + " có sản phẩm và không thể bị xóa." });
+                        }
+                        _db.ProductCategories.Remove(category);
                         _db.SaveChanges();
                     }
                 }
@@ -109,6 +115,26 @@ namespace BookStoreTM.Areas.Admin.Controllers
             }
             return Json(new { success = false });
         }
+
+        //[HttpPost]
+        //public ActionResult DeleteAll(string ids)
+        //{
+        //    if (!string.IsNullOrEmpty(ids))
+        //    {
+        //        var items = ids.Split(',');
+        //        if (items != null && items.Any())
+        //        {
+        //            foreach (var item in items)
+        //            {
+        //                var obj = _db.ProductCategories.Find(Convert.ToInt32(item));
+        //                _db.ProductCategories.Remove(obj);
+        //                _db.SaveChanges();
+        //            }
+        //        }
+        //        return Json(new { success = true });
+        //    }
+        //    return Json(new { success = false });
+        //}
 
         ////xoá
         ////[Route("XoaDanhMuc")]

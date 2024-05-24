@@ -81,11 +81,11 @@ namespace BookStoreTM.Areas.Admin.Controllers
                         var nameImg = "Tintuc" + ConvertVietNamToEnglish.LocDau(TinTuc.Title) +"."+ tokens[tokens.Length-1];
                         string result = nameImg.Replace(" ", "");
                         // upload ảnh vào thư mục wwwroot\\images\\category
-                        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\LayoutAdmin\\images\\tintuc", result);
+                        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\imagesAdmin\\tintuc", result);
                         using (var stream = new FileStream(path, FileMode.Create))
                         {
                             file.CopyTo(stream);
-                            TinTuc.Image = "/LayoutAdmin/images/tintuc/" + result; // gán tên ảnh cho thuộc tinh Image
+                            TinTuc.Image = "/imagesAdmin/tintuc/" + result; // gán tên ảnh cho thuộc tinh Image
                         }
                     }
                     TinTuc.CreatedDate = DateTime.Now;
@@ -107,7 +107,7 @@ namespace BookStoreTM.Areas.Admin.Controllers
         public IActionResult SuaTinTuc(int TinTuc)
         {
             var tinTuc = _db.News.Find(TinTuc);
-            tinTuc.Image = "wwwroot\\LayoutAdmin\\images\\tintuc";
+            tinTuc.Image = "wwwroot\\imagesAdmin\\tintuc";
             //ViewBag.CategoryId = new SelectList(_db.Categories.ToList(), "CategoryId", "Title", tinTuc.CategoryId);
             return View(tinTuc);
         }
@@ -123,11 +123,11 @@ namespace BookStoreTM.Areas.Admin.Controllers
                     var file = files[0];
                     var FileName = file.FileName;
                     // upload ảnh vào thư mục wwwroot\\images\\category
-                    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\LayoutAdmin\\images\\tintuc", FileName);
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\imagesAdmin\\tintuc", FileName);
                     using (var stream = new FileStream(path, FileMode.Create))
                     {
                         file.CopyTo(stream);
-                        TinTuc.Image = "/LayoutAdmin/images/tintuc/" + FileName; // gán tên ảnh cho thuộc tinh Image
+                        TinTuc.Image = "/imagesAdmin/tintuc/" + FileName; // gán tên ảnh cho thuộc tinh Image
                     }
                 }
                 TinTuc.CreatedDate = DateTime.Now;

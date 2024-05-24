@@ -1,5 +1,4 @@
-﻿
-@model X.PagedList.IPagedList<BookStoreTM.Models.ProductCategory>
+﻿@model X.PagedList.IPagedList<BookStoreTM.Models.ProductCategory>
 @using X.PagedList.Mvc.Core;
 @{
     ViewData["Title"] = "Danh mục sản phẩm";
@@ -98,7 +97,6 @@
         $(document).ready(function () {
             //xoá bản ghi
             $('body').on('click', '.btnDelete', function () {
-
                 var id = $(this).data("id");
                 var conf = confirm("Bạn có muốn xóa không  ")
                 if (conf == true) {
@@ -161,6 +159,9 @@
                             success: function (rs) {
                                 if (rs.success) {
                                     location.reload();
+                                } else {
+                                    alert(rs.message);
+                                    
                                 }
                             }
                         });

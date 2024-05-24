@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\ckeditor\**" />
+    <Content Remove="wwwroot\ckeditor\**" />
+    <EmbeddedResource Remove="wwwroot\ckeditor\**" />
+    <None Remove="wwwroot\ckeditor\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter" Version="8.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.4" />
@@ -27,14 +34,10 @@
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="wwwroot\images\" />
-    <Folder Include="wwwroot\LayoutAdmin\images\products\" />
-    <Folder Include="wwwroot\LayoutAdmin\images\tintuc\" />
+    <Folder Include="wwwroot\imagesAdmin\proImg\" />
+    <Folder Include="wwwroot\imagesAdmin\products\" />
+    <Folder Include="wwwroot\imagesAdmin\tintuc\" />
     <Folder Include="wwwroot\product\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="wwwroot\ckeditor\.circleci\config.yml" />
   </ItemGroup>
 
   <ItemGroup>

@@ -47,7 +47,7 @@ namespace BookStoreTM.Areas.Admin.Controllers
                         string[] tokens = FileName.Split('.');
                         var nameImg = "Sach" + ConvertVietNamToEnglish.LocDau(productId.ToString()) + "." + tokens[tokens.Length - 1];
                         string result = nameImg.Replace(" ", "");
-                        var filePath = Path.Combine(_hostEnvironment.WebRootPath, "images", result);
+                        var filePath = Path.Combine(_hostEnvironment.WebRootPath, "\\imagesAdmin\\proImg", result);
                         using (var stream = new FileStream(filePath, FileMode.Create))
                         {
                             await formFile.CopyToAsync(stream);
@@ -56,7 +56,7 @@ namespace BookStoreTM.Areas.Admin.Controllers
                         var productImage = new ProductImage
                         {
                             ProductImgName = result,
-                            Url = "/images/" + formFile.FileName,
+                            Url = "/imagesAdmin/proImg" + result,
                             ProductId = productId,
                             IsDefault = false
                         };

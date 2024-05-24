@@ -43,8 +43,30 @@ namespace BookStoreTM.Areas.Admin.Controllers
                             Price = od.Price,
                             OriginalPrice = p.OriginalPrice
                         };
+            if (!string.IsNullOrEmpty(fromDate))
+            {
+                DateTime startDate = DateTime.ParseExact(fromDate, "dd/MM/yyyy", null);
+                query = query.Where(x => x.CreatedDate >= startDate);
+            }
+            if (!string.IsNullOrEmpty(toDate))
+            {
+                DateTime endDate = DateTime.ParseExact(toDate, "dd/MM/yyyy", null);
+                query = query.Where(x => x.CreatedDate < endDate);
+            }
 
-            return View();
+            var result = query.GroupBy(x => x.CreatedDate.Date).Select(x => new
+            {
+                Date = x.Key,
+                TotalBuy = x.Sum(y => y.Quantity * y.OriginalPrice),
+                TotalSell = x.Sum(y => y.Quantity * y.Price),
+            }).Select(x => new
+            {
+                Date = x.Date,
+                DoanhThu = x.TotalSell,
+                LoiNhuan = x.TotalSell - x.TotalBuy
+            })
+            .ToList();
+            return Json(new { Data = result });
         }
     }
 }

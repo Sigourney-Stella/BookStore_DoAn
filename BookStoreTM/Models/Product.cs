@@ -45,7 +45,7 @@ namespace BookStoreTM.Models
         public Decimal? PriceSale { get; set; }
 
         [Column(TypeName = "int")]
-        public int? Quatity { get; set; }
+        public int Quatity { get; set; }
         public bool IsActicve { get; set; }
         public bool IsHome { get; set; }
         public bool IsSale { get; set; }
@@ -70,6 +70,7 @@ namespace BookStoreTM.Models
         public ICollection<OrderDetails> OrderDetails { get; set; }
         public ICollection<Favorite> Favorites { get; set; }
         public ICollection<ProductImage> ProductImages { get; set; }
+        public ICollection<UserCart> UserCarts { get; set; }
 
     }
 }

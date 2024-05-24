@@ -14,8 +14,21 @@ namespace BookStoreTM.Areas.Admin.Controllers
         {
             _db = db;
         }
-        public IActionResult Index()
+        public IActionResult Index(int statusId)
         {
+            if(statusId == 0)
+            {
+
+            }
+            var soLuongHD = _db.OrderBooks.Count();
+            ViewBag.soLuongHD = soLuongHD;
+            var soLuongSP = _db.Products.Count();
+            ViewBag.soLuongSP = soLuongSP;
+            var soLuongDonHT = _db.OrderBooks.Where(x => x.TransactStatusID == 2).Count();
+            ViewBag.soLuongDonHT = soLuongDonHT;
+            var soLuongDonHuy = _db.OrderBooks.Where(x => x.TransactStatusID == 3).Count();
+            ViewBag.soLuongDonHuy = soLuongDonHuy;
+
             return View();
         }
         [HttpGet]
@@ -33,31 +46,7 @@ namespace BookStoreTM.Areas.Admin.Controllers
                             Price = od.Price,
                             OriginalPrice = p.OriginalPrice
                         };
-
-            if (!string.IsNullOrEmpty(fromDate))
-            {
-                DateTime startDate = DateTime.ParseExact(fromDate, "dd/MM/yyyy", null);
-                query = query.Where(x => x.CreatedDate >= startDate);
-            }
-            if (!string.IsNullOrEmpty(toDate))
-            {
-                DateTime endDate = DateTime.ParseExact(toDate, "dd/MM/yyyy", null);
-                query = query.Where(x => x.CreatedDate < endDate);
-            }
-
-            var result = query.GroupBy(x => x.CreatedDate.Date).Select(x => new
-            {
-                Date = x.Key,
-                TotalBuy = x.Sum(y => y.Quantity * y.OriginalPrice),
-                TotalSell = x.Sum(y => y.Quantity * y.Price),
-            }).Select(x => new
-            {
-                Date = x.Date,
-                DoanhThu = x.TotalSell,
-                LoiNhuan = x.TotalSell - x.TotalBuy
-            })
-            .ToList();
-            return Json(new { Data = result });
+            return View();
         }
     }
 }

@@ -35,12 +35,17 @@ namespace BookStoreTM.Controllers
 
         public IActionResult Add()
         {
-            var customer = JsonConvert.DeserializeObject<Customer>(HttpContext.Session.GetString("Member"));
-            if (customer == null)
+            string dataJson = HttpContext.Session.GetString("Member");
+            if (dataJson == null)
             {
-                // Khách hàng chưa đăng nhập, chuyển hướng đến trang đăng nhập
                 return RedirectToAction("Login", "Customer");
             }
+            var customer = JsonConvert.DeserializeObject<Customer>(HttpContext.Session.GetString("Member"));
+            //if (customer == null)
+            //{
+            //    // Khách hàng chưa đăng nhập, chuyển hướng đến trang đăng nhập
+            //    return RedirectToAction("Login", "Customer");
+            //} 
             var item = _db.Favorites.Where(x => x.CustomerID == customer.CustomerID).ToList();
             return View(item);
         }

@@ -695,6 +695,53 @@ namespace BookStoreTM.Migrations
                     b.ToTable("TransactStatus");
                 });
 
+            modelBuilder.Entity("BookStoreTM.Models.UserCart", b =>
+                {
+                    b.Property<int>("CartId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CartId"));
+
+                    b.Property<int>("CustomerID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("PriceSale")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ProductImg")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProductName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SoLuong")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("TotalPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("CartId");
+
+                    b.HasIndex("CustomerID");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("UserCart");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -932,6 +979,25 @@ namespace BookStoreTM.Migrations
                     b.Navigation("Receipt");
                 });
 
+            modelBuilder.Entity("BookStoreTM.Models.UserCart", b =>
+                {
+                    b.HasOne("BookStoreTM.Models.Customer", "Customer")
+                        .WithMany("UserCarts")
+                        .HasForeignKey("CustomerID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BookStoreTM.Models.Product", "Product")
+                        .WithMany("UserCarts")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Customer");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -988,6 +1054,8 @@ namespace BookStoreTM.Migrations
                     b.Navigation("Favorites");
 
                     b.Navigation("OrderBook");
+
+                    b.Navigation("UserCarts");
                 });
 
             modelBuilder.Entity("BookStoreTM.Models.OrderBook", b =>
@@ -1007,6 +1075,8 @@ namespace BookStoreTM.Migrations
                     b.Navigation("OrderDetails");
 
                     b.Navigation("ProductImages");
+
+                    b.Navigation("UserCarts");
                 });
 
             modelBuilder.Entity("BookStoreTM.Models.ProductCategory", b =>

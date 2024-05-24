@@ -38,6 +38,8 @@ namespace BookStoreTM.Models
         //
         public ICollection<OrderBook> OrderBook { get; set; }
         public ICollection<Favorite> Favorites { get; set; }
+        public ICollection<UserCart> UserCarts { get; set; }
+
 
     }
 }

@@ -8,6 +8,7 @@
         public string CategoryName { get; set; }
         public string ProductImg { get; set; }
         public int Quantity { get; set; }
+        public int MaxQuantity { get; set; }
         public int SoLuong { get; set; }
         public decimal Price { get; set; }
         public decimal PriceSale { get; set; }

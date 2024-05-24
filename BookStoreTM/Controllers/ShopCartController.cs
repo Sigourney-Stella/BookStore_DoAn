@@ -43,6 +43,12 @@ namespace BookStoreTM.Controllers
             {
                 total += item.Quantity * item.PriceSale;
                 count++;
+                // Lấy số lượng sản phẩm trong Products
+                var product = _db.Products.FirstOrDefault(p => p.ProductId == item.ProductId);
+                if (product != null)
+                {
+                    item.MaxQuantity = product.Quatity;
+                }
             }
             ViewBag.Total = total;
             ViewBag.Count = count;
@@ -53,6 +59,7 @@ namespace BookStoreTM.Controllers
         public IActionResult Add(int id)
         {
             var items = carts.SingleOrDefault(p => p.ProductId == id);
+            var p = _db.Products.FirstOrDefault(x => x.ProductId == id);
             if (carts.Any(c => c.ProductId == id))
             {
                 carts.Where(c => c.ProductId == id).First().Quantity += 1;
@@ -60,8 +67,6 @@ namespace BookStoreTM.Controllers
             }
             else
             {
-                var p = _db.Products.FirstOrDefault(x => x.ProductId == id);
-
                 var item = new ShopCart()
                 {
                     ProductId = p.ProductId,
@@ -72,16 +77,44 @@ namespace BookStoreTM.Controllers
                     ProductImg = p.Images,
                     TotalPrice = (decimal)p.PriceSale * 1
                 };
-                item.SoLuong++;
+               
                 carts.Add(item);
+
+                //đếm số sản phẩm vào giỏ hàng
+                var totalQuantity = carts.Sum(c => c.Quantity);
+                HttpContext.Session.SetInt32("CartTotalQuantity", totalQuantity);
+                ViewBag.CartTotalQuantity = totalQuantity;
             }
 
-            //đếm số sản phẩm vào giỏ hàng
-            var totalQuantity = carts.Sum(c => c.Quantity);
-            HttpContext.Session.SetInt32("CartTotalQuantity", totalQuantity);
-            ViewBag.CartTotalQuantity = totalQuantity;
-
+            //Lưu giỏ hàng vào Session
             HttpContext.Session.SetString("My-Cart", JsonConvert.SerializeObject(carts));
+
+            // Lưu giỏ hàng vào cơ sở dữ liệu nếu người dùng đã đăng nhập
+            if(HttpContext.Session.GetString("Member") != null)
+            {
+                var dataMember = JsonConvert.DeserializeObject<Customer>(HttpContext.Session.GetString("Member"));
+                var userCart = _db.UserCarts.SingleOrDefault(x => x.CustomerID == dataMember.CustomerID && x.ProductId == id);
+                if(userCart != null)
+                {
+                    userCart.Quantity += 1;
+                }
+                else
+                {
+                    var itemCart = new UserCart()
+                    {
+                        CustomerID = dataMember.CustomerID,
+                        ProductId = id,
+                        ProductName = p.ProductName,
+                        Price = (decimal)p.Price,
+                        PriceSale = (decimal)p.PriceSale,
+                        Quantity = 1,
+                        ProductImg = p.Images,
+                        TotalPrice = (decimal)p.PriceSale * 1
+                    };
+                    _db.Add(itemCart);
+                    _db.SaveChanges();
+                }
+            }
             return RedirectToAction("Index");
         }
         public IActionResult Remove(int id)
@@ -100,16 +133,40 @@ namespace BookStoreTM.Controllers
             {
                 carts.Where(c => c.ProductId == id).First().Quantity = quantity;
                 HttpContext.Session.SetString("My-Cart", JsonConvert.SerializeObject(carts));
+
+                // Cập nhật cơ sở dữ liệu nếu người dùng đã đăng nhập
+                if (HttpContext.Session.GetString("Member") != null)
+                {
+                    var dataMember = JsonConvert.DeserializeObject<Customer>(HttpContext.Session.GetString("Member"));
+                    var userCart = _db.UserCarts.SingleOrDefault(x => x.CustomerID == dataMember.CustomerID && x.ProductId == id);
+                    if (userCart != null)
+                    {
+                        userCart.Quantity = quantity;
+                        _db.SaveChanges();
+                    }
+                }
             }
             return RedirectToAction("Index");
         }
         public IActionResult Clear()
         {
             HttpContext.Session.Remove("My-Cart");
+
+            // Xóa giỏ hàng khỏi cơ sở dữ liệu nếu người dùng đã đăng nhập
+            if (HttpContext.Session.GetString("Member") != null)
+            {
+                var dataMember = JsonConvert.DeserializeObject<Customer>(HttpContext.Session.GetString("Member"));
+                var userCarts = _db.UserCarts.Where(x => x.CustomerID == dataMember.CustomerID);
+                _db.UserCarts.RemoveRange(userCarts);
+                _db.SaveChanges();
+            }
             return RedirectToAction("Index");
+
+
         }
         public IActionResult Order()
         {
+           
             //nếu chưa đăng nhập
             if (HttpContext.Session.GetString("Member") == null)
             {
@@ -119,9 +176,9 @@ namespace BookStoreTM.Controllers
             {
                 var dataMember = JsonConvert.DeserializeObject<Customer>(HttpContext.Session.GetString("Member"));
                 ViewBag.Customer = dataMember;
-
+                var userCart = _db.UserCarts.ToList();
                 decimal total = 0;
-                foreach (var item in carts)
+                foreach (var item in userCart)
                 {
                     if (item.PriceSale > 0 && item.PriceSale < item.Price)
                     {
@@ -136,8 +193,8 @@ namespace BookStoreTM.Controllers
                     var dataPay = _db.Payments.ToList();
                     ViewData["IdPayment"] = new SelectList(dataPay, "PaymentId", "PaymentName", 1);
                 }
+                return View(userCart);
             }
-            return View(carts);
         }
         public async Task<IActionResult> OrderPay(IFormCollection form)
         {

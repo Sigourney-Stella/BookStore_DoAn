@@ -85,7 +85,7 @@
                                                 <td class="quantity">
                                                     <div class="cart-plus-minus">
                                                         <div class="dec qtybutton"><i class="fa fa-minus"></i></div>
-                                                        <input class="cart-plus-minus-box" value="@item.Quantity" type="text">
+                                                        <input class="cart-plus-minus-box" value="@item.Quantity" data-max-quantity="@item.MaxQuantity" type="text">
                                                         <div class="inc qtybutton"><i class="fa fa-plus"></i></div>
                                                     </div>
                                                 </td>
@@ -93,7 +93,7 @@
                                                     <p data-money="@money" class="total-money">
                                                         <span id="money">
                                                             @BookStoreTM.Common.Common.FormatNumber(@money, 0)
-                                                            </span> VND
+                                                        </span> VND
                                                     </p>
                                                 </td>
                                                 <td class="product_remove btn-action">
@@ -178,18 +178,63 @@
 <script>
     $(document).ready(function () {
         $("#buyButton").click(function (e) {
-            // Kiểm tra giỏ hàng có sản phẩm hay không
+            // Kiểm tra số lượng hàng tr giỏ hàng có sản phẩm hay không
             if ($("tbody tr").length === 1 && $("tbody tr td").length === 1) {
-                alert("Bạn vẫn chưa chọn sản phẩm nào để mua.");
+                // alert("Bạn vẫn chưa chọn sản phẩm nào để mua.");
+                Swal.fire({
+                    title: "Bạn vẫn chưa chọn sản phẩm nào.",
+                    showClass: {
+                        popup: `
+                              animate__animated
+                              animate__fadeInUp
+                              animate__faster
+                            `
+                    },
+                    hideClass: {
+                        popup: `
+                              animate__animated
+                              animate__fadeOutDown
+                              animate__faster
+                            `
+                    }
+                });
                 e.preventDefault();
             } else {
                 // Tiến hành mua hàng
-                const member = "@HttpContextAccessor.HttpContext.Session.GetString("Member")";
-                if (member) {
-                    window.location.href = '@Url.Action("Order", "ShopCart")';
-                } else {
-                    window.location.href = '@Url.Action("Login", "Customer")';
-                }
+                //const member = "@HttpContextAccessor.HttpContext.Session.GetString("Member")";
+                //if (member) {
+                window.location.href = '@Url.Action("Order", "ShopCart")';
+                //} else {
+                // window.location.href = 'Url.Action("Login", "Customer")';
+                // }
+            }
+        });
+
+        $(".inc.qtybutton").click(function () {
+            var $input = $(this).siblings(".cart-plus-minus-box");
+            var currentVal = parseInt($input.val());
+            var maxVal = parseInt($input.data("max-quantity"));
+            if (currentVal <= maxVal) {
+                $input.val(currentVal);
+            } else {
+                $input.val(maxVal);
+                Swal.fire({
+                    title: "Sản phẩm còn lại là " + maxVal + ".Bạn vui lòng không mua quá số lượng!",
+                    showClass: {
+                        popup: `
+                                  animate__animated
+                                  animate__fadeInUp
+                                  animate__faster
+                                `
+                    },
+                    hideClass: {
+                        popup: `
+                                  animate__animated
+                                  animate__fadeOutDown
+                                  animate__faster
+                                `
+                    }
+                });
             }
         });
     });

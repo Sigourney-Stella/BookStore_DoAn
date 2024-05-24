@@ -18,7 +18,7 @@
     <!-- Vendor CSS (Contain Bootstrap, Icon Fonts) -->
     <link rel="stylesheet" href="/assets/css/vendor/font-awesome.min.css" />
     <link rel="stylesheet" href="/assets/css/vendor/Pe-icon-7-stroke.css" />
-    
+
     <!-- Plugin CSS (Global Plugi/ns Files) -->
     <link rel="stylesheet" href="/assets/css/plugins/animate.min.css">
     <link rel="stylesheet" href="/assets/css/plugins/jquery-ui.min.css">
@@ -28,8 +28,8 @@
     <!-- Style CSS -->
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="sweetalert2.min.css">
-   
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -37,7 +37,7 @@
 
         <!-- Begin Main Header Area -->
         <header class="main-header_area position-relative">
-           
+
             @await Component.InvokeAsync("ProductCategory")
 
             @await Html.PartialAsync("_HeaderPartial")
@@ -363,7 +363,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </header>
         <!-- Main Header Area End Here -->
         @RenderBody()
@@ -401,7 +401,7 @@
 
     <script src="~/js/jsshopcart.js" asp-append-version="true"></script>
     <script src="~/js/fiximagesize.js" asp-append-version="true"></script>
-    <script src="sweetalert2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.all.min.js"></script>
     <!--Main JS (Common Activation Codes)-->
     <script src="/assets/js/main.js"></script>
 
